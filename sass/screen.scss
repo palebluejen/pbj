@@ -5,16 +5,19 @@
 @include font-face("Novecento", font-files("Novecentowide-Light-webfont.ttf", ttf, "Novecentowide-Light-webfont.woff", woff, "Novecentowide-Light-webfont.otf", opentype), "Novecentowide-Light-webfont.eot", normal, normal);
 @include font-face("Novecento", font-files("Novecentowide-Bold-webfont.ttf", ttf, "Novecentowide-Bold-webfont.woff", woff, "Novecentowide-Bold-webfont.otf", opentype), "Novecentowide-Bold-webfont.eot", bold, normal);
 
+// @mixin respond-to($breakpoint) {
+//     @media only screen and (max-width: $breakpoint + px) { @content; }
+// }
 
 body {
-	border-left: 3em solid #000;
+  border-left: 3em solid #000;
     border-right: 3em solid #000;  
     font: 1.3em 'PT Sans', sans-serif;
-	background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ #000; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ #000; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body:after {
@@ -28,12 +31,12 @@ body:after {
 }
 
 header {
-	background: #000;
-	position: fixed;
-	left: 0; 
-	right: 0;
+  background: #000;
+  position: fixed;
+  left: 0; 
+  right: 0;
     top: 0;
-	padding: 1em 3em 1em;
+  padding: 1em 3em 1em;
     z-index: 99;
     height: 2em;
 }
@@ -77,17 +80,17 @@ nav ul.site-nav {
     
     li a {
         font: 0.8em 'Novecento', georgia, sans-serif;
-		font-weight: bold;
-		color: #FFF;
+    font-weight: bold;
+    color: #FFF;
         text-decoration: none;
         line-height: 3em;
     }
 }
 
 p {
-	font-size: 1em;
-	line-height: 1.6em;
-	color: #000;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #000;
 }
 
 
@@ -142,8 +145,8 @@ h3 {
 .text-block {
     width: 70%;
     max-width: 40em;
-	background: white;
-	margin: 2em auto;
+  background: white;
+  margin: 2em auto;
     padding: 3%;
 
     strong {
@@ -169,3 +172,192 @@ figure, .column {
         padding: 10%;
     }
 }
+
+ul {
+    list-style-type: square;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+
+// .bubble-container {
+//     width: 80%;
+//     max-width: 60em;
+//     margin: 2em auto;
+//     list-style: none;
+//     border: solid red 1px;
+//     overflow: auto;
+// }
+
+// .bubble {
+//     float: left;
+//     min-width: 6em;
+//     min-height: 6em;
+//     display: block;
+
+// }
+
+//  // .bubble:before {
+//  //    content: "";
+//  //    display: block;
+//  //    padding-top: 100%;  /* initial ratio of 1:1*/
+//  //    }
+// .bubble-content{
+//     border: solid 1px yellow;
+//     // position:  absolute;
+//     // top: 0;
+//     // left: 0;
+//     // bottom: 0;
+//     // right: 0;
+//             text-align: center;
+//     padding: 1%;
+//         font: .8em 'PT Sans', sans-serif;
+//     color: #000;
+//         background-color: #fff;
+//     -webkit-border-radius: 100%;
+//     border-radius: 100%;
+//     }
+
+.list {
+    width: 80%;
+    max-width: 60em;
+    margin: 2em auto;
+    list-style: none;
+    border: solid red 1px;
+    overflow: auto;
+}
+
+.list-item{
+    position: relative;
+    min-width: 6em;
+    // margin: 0.5% ;
+    float: left;
+    }
+
+.list-item:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* initial ratio of 1:1*/
+    }
+
+
+@for $string-length from 13 to 25{
+    .size-#{$string-length} {
+      width: ($string-length * .5em);
+    }
+}
+
+@for $string-length from 26 to 50{
+    .size-#{$string-length} {
+      width: $string-length * 0.25em;
+    }
+}
+
+@for $string-length from 51 to 100{
+    .size-#{$string-length} {
+      width: $string-length * 0.15em;
+    }
+}
+
+.list-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #000;
+    font: 0.8em 'PT Sans', sans-serif;
+    line-height: 1em;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    padding:  35% 20%;
+    text-align: center;
+    }
+
+// .flex-container {
+
+//   list-style: none;
+//   display: -webkit-box;
+//   display: -moz-box;
+//   display: -ms-flexbox;
+//   display: -webkit-flex;
+//   display: flex;
+//   -webkit-flex-flow: column wrap;
+//   justify-content: space-around;
+//   border: solid 1px green;
+
+//   // li:before {
+//   //   content: "";
+//   //   display: block;
+//   //   padding-top: 100%;  /* initial ratio of 1:1*/
+//   //   }
+
+//    li {
+//       position: relative;
+//       // min-width: 20%;
+//       // flex: 1;
+//       // -webkit-flex: 1;
+//       border: solid 1px blue;
+
+//         p {
+//         background: tomato;
+//         -webkit-border-radius: 100%;
+//         border-radius: 100%;
+//         line-height: 150px;
+//         color: white;
+//         font-weight: bold;
+//         font-size: 3em;
+//         text-align: center;
+//         border: solid 1px yellow;
+//         // position:  absolute;
+//         // top: 0;
+//         // left: 0;
+//         // bottom: 0;
+//         // right: 0;
+//         }
+
+//     }
+// }
+
+//         // .sm {
+//         //     // -webkit-flex: 2;
+//         //     // flex: 2;
+//         //     min-width: 20%;
+
+//         // }
+
+//         // .md {
+//         //     // -webkit-flex: 4;
+//         //     // flex: 4;
+//         //     min-width: 40%;
+//         // }
+
+//         // .lg {
+//         //     // -webkit-flex: 6;
+//         //     // flex: 6;
+//         //     min-width: 60%;
+//         // }
+
