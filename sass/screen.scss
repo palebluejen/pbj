@@ -2,6 +2,8 @@
 @import "compass/reset";
 @import "compass/css3/font-face";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+
 @include font-face("Novecento", font-files("Novecentowide-Light-webfont.ttf", ttf, "Novecentowide-Light-webfont.woff", woff, "Novecentowide-Light-webfont.otf", opentype), "Novecentowide-Light-webfont.eot", normal, normal);
 @include font-face("Novecento", font-files("Novecentowide-Bold-webfont.ttf", ttf, "Novecentowide-Bold-webfont.woff", woff, "Novecentowide-Bold-webfont.otf", opentype), "Novecentowide-Bold-webfont.eot", bold, normal);
 
@@ -11,8 +13,8 @@
 
 body {
   border-left: 3em solid #000;
-    border-right: 3em solid #000;  
-    font: 1.3em 'PT Sans', sans-serif;
+  border-right: 3em solid #000;  
+  font: 1em 'Open Sans', sans-serif;
   background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ #000; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -79,9 +81,9 @@ nav ul.site-nav {
     }
     
     li a {
-        font: 0.8em 'Novecento', georgia, sans-serif;
-    font-weight: bold;
-    color: #FFF;
+        font: 1em 'Novecento', 'Open Sans', sans-serif;
+        font-weight: bold;
+        color: #FFF;
         text-decoration: none;
         line-height: 3em;
     }
@@ -111,14 +113,14 @@ article:last-child {
     padding-bottom: 20em;
 }
 
-h2 {
+h2, h3 {
     width: 50%;
     max-width: 20em;
     margin: auto;
     padding: 1em 2em;
 }
 
-h3 {
+.column-head {
     width: 75%;
     width: calc(100% - 2.6em);
     margin: 2em auto 0;
@@ -126,7 +128,7 @@ h3 {
 }
 
 .section-header {
-    font: 1.2em 'Novecento', georgia, sans-serif;
+    font: 1.4em 'Novecento', 'Open Sans', sans-serif;
     color: #FFF;
     border: solid #FFF .3em;
     background: #000;
@@ -144,10 +146,11 @@ h3 {
 
 .text-block {
     width: 70%;
-    max-width: 40em;
+    max-width: 50em;
   background: white;
   margin: 2em auto;
     padding: 3%;
+    font-size: 1.1em;
 
     strong {
         font-weight: bold;
@@ -156,14 +159,13 @@ h3 {
 
 .column-container {
     width: 80%;
-    max-width: 60em;
+    max-width: 70em;
     overflow: auto;
-    margin: auto;
+    margin: auto auto 5em;
 }
 
 figure, .column {
     float: left;
-    width: 25%;
     width: 27.3333%;
     margin: 3%;
 
@@ -177,108 +179,92 @@ ul {
     list-style-type: square;
 }
 
-@mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-@mixin flex($values) {
-  -webkit-box-flex: $values;
-  -moz-box-flex:  $values;
-  -webkit-flex:  $values;
-  -ms-flex:  $values;
-  flex:  $values;
-}
-
-@mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-  -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
-  -webkit-order: $val;  
-  order: $val;
-}
-
-
-// .bubble-container {
-//     width: 80%;
-//     max-width: 60em;
-//     margin: 2em auto;
-//     list-style: none;
-//     border: solid red 1px;
-//     overflow: auto;
-// }
-
-// .bubble {
-//     float: left;
-//     min-width: 6em;
-//     min-height: 6em;
-//     display: block;
-
-// }
-
-//  // .bubble:before {
-//  //    content: "";
-//  //    display: block;
-//  //    padding-top: 100%;  /* initial ratio of 1:1*/
-//  //    }
-// .bubble-content{
-//     border: solid 1px yellow;
-//     // position:  absolute;
-//     // top: 0;
-//     // left: 0;
-//     // bottom: 0;
-//     // right: 0;
-//             text-align: center;
-//     padding: 1%;
-//         font: .8em 'PT Sans', sans-serif;
-//     color: #000;
-//         background-color: #fff;
-//     -webkit-border-radius: 100%;
-//     border-radius: 100%;
-//     }
+span.amp {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  }
 
 .list {
     width: 80%;
-    max-width: 60em;
+    // max-width: 80em;
     margin: 2em auto;
     list-style: none;
-    border: solid red 1px;
-    overflow: auto;
+         -webkit-column-count: 3;
+  -webkit-column-gap: 0;
+  -webkit-column-fill: auto;
+  padding: 0;
+  text-align: center;
 }
 
 .list-item{
     position: relative;
     min-width: 6em;
-    // margin: 0.5% ;
-    float: left;
-    }
-
-.list-item:before{
-    content: "";
-    display: block;
-    padding-top: 100%;  /* initial ratio of 1:1*/
+    min-height: 6em;
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  margin: 0;
     }
 
 
-@for $string-length from 13 to 25{
-    .size-#{$string-length} {
-      width: ($string-length * .5em);
-    }
-}
+// @for $string-length from 13 to 17{
+//     .size-#{$string-length} {
+//       width: ($string-length * 0.6em);
+//       height: ($string-length * 0.6em);
+//     }
+// }
 
-@for $string-length from 26 to 50{
-    .size-#{$string-length} {
-      width: $string-length * 0.25em;
-    }
-}
+// @for $string-length from 17 to 30{
+//     .size-#{$string-length} {
+//       width: ($string-length * 0.45em);
+//       height: ($string-length * 0.45em);
+//     }
+// }
 
-@for $string-length from 51 to 100{
-    .size-#{$string-length} {
-      width: $string-length * 0.15em;
-    }
+// @for $string-length from 30 to 50{
+//     .size-#{$string-length} {
+//       width: $string-length * 0.33em;
+//       height: ($string-length * 0.33em);
+//     }
+// }
+
+// @for $string-length from 50 to 70{
+//     .size-#{$string-length} {
+//       width: $string-length * 0.25em;
+//       height: ($string-length * 0.25em);
+//     }
+// }
+
+// @for $string-length from 70 to 100{
+//     .size-#{$string-length} {
+//       width: $string-length * 0.2em;
+//       height: ($string-length * 0.2em);
+//     }
+// }
+
+// $string-length: 13;
+// $sizer: 0.6em;
+
+// @while $string-length < 98 {
+//   .size-#{$string-length} {
+//     width: ($string-length * $sizer);
+//     height: ($string-length * $sizer);
+//   }
+//   $string-length: $string-length + 1;
+//   $sizer: $sizer - 0.0048em;
+// }
+
+$string-length: 13;
+$size: exponent($string-length, 1, 4) * 0.1;
+
+@while $string-length < 98 {
+  .size-#{$string-length} {
+    width: percentage($size);
+    height: percentage($size);
+  }
+  $string-length: $string-length + 1;
 }
 
 .list-content {
@@ -288,76 +274,20 @@ ul {
     bottom: 0;
     right: 0;
     color: #000;
-    font: 0.8em 'PT Sans', sans-serif;
-    line-height: 1em;
+    font: 1em 'Novecento', 'Open Sans', sans-serif;
+    font-weight: bold;
+    line-height: 1.2em;
     background: #FFF;
+    padding: 35% 18%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
-    padding:  35% 20%;
     text-align: center;
+
+      em {
+        font: 0.9em georgia, sans-serif;
+        font-weight: normal;
+        font-style: italic;
+        display: block;
+        margin: 0.6em 0;
+      }
     }
-
-// .flex-container {
-
-//   list-style: none;
-//   display: -webkit-box;
-//   display: -moz-box;
-//   display: -ms-flexbox;
-//   display: -webkit-flex;
-//   display: flex;
-//   -webkit-flex-flow: column wrap;
-//   justify-content: space-around;
-//   border: solid 1px green;
-
-//   // li:before {
-//   //   content: "";
-//   //   display: block;
-//   //   padding-top: 100%;  /* initial ratio of 1:1*/
-//   //   }
-
-//    li {
-//       position: relative;
-//       // min-width: 20%;
-//       // flex: 1;
-//       // -webkit-flex: 1;
-//       border: solid 1px blue;
-
-//         p {
-//         background: tomato;
-//         -webkit-border-radius: 100%;
-//         border-radius: 100%;
-//         line-height: 150px;
-//         color: white;
-//         font-weight: bold;
-//         font-size: 3em;
-//         text-align: center;
-//         border: solid 1px yellow;
-//         // position:  absolute;
-//         // top: 0;
-//         // left: 0;
-//         // bottom: 0;
-//         // right: 0;
-//         }
-
-//     }
-// }
-
-//         // .sm {
-//         //     // -webkit-flex: 2;
-//         //     // flex: 2;
-//         //     min-width: 20%;
-
-//         // }
-
-//         // .md {
-//         //     // -webkit-flex: 4;
-//         //     // flex: 4;
-//         //     min-width: 40%;
-//         // }
-
-//         // .lg {
-//         //     // -webkit-flex: 6;
-//         //     // flex: 6;
-//         //     min-width: 60%;
-//         // }
-
