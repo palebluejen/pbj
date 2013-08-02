@@ -197,15 +197,20 @@ span.amp {
   text-align: center;
 }
 
-.list-item{
+.list-item {
     position: relative;
     min-width: 6em;
-    min-height: 6em;
     display: inline-block;
     -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-break-inside: avoid;
-  margin: 0;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    margin: 0;
+    }
+
+.list-item:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* initial ratio of 1:1*/
     }
 
 
@@ -257,12 +262,10 @@ span.amp {
 // }
 
 $string-length: 13;
-$size: exponent($string-length, 1, 4) * 0.1;
 
 @while $string-length < 98 {
   .size-#{$string-length} {
-    width: percentage($size);
-    height: percentage($size);
+    width: percentage(sqrt($string-length) * 0.06);
   }
   $string-length: $string-length + 1;
 }
@@ -278,7 +281,7 @@ $size: exponent($string-length, 1, 4) * 0.1;
     font-weight: bold;
     line-height: 1.2em;
     background: #FFF;
-    padding: 35% 18%;
+    padding: 30% 15%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
     text-align: center;

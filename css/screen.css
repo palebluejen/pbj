@@ -277,7 +277,6 @@ span.amp {
 .list-item {
   position: relative;
   min-width: 6em;
-  min-height: 6em;
   display: inline-block;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
@@ -285,517 +284,440 @@ span.amp {
   margin: 0;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
+.list-item:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+
+/* line 267, ../sass/screen.scss */
 .size-13 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 21.63331%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-14 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 22.44994%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-15 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 23.2379%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-16 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 24%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-17 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 24.73863%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-18 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 25.45584%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-19 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 26.15339%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-20 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 26.83282%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-21 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 27.49545%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-22 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 28.14249%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-23 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 28.77499%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-24 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 29.39388%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-25 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 30%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-26 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 30.59412%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-27 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 31.17691%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-28 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 31.74902%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-29 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 32.31099%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-30 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 32.86335%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-31 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 33.40659%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-32 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 33.94113%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-33 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 34.46738%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-34 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 34.98571%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-35 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 35.49648%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-36 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 36%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-37 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 36.49658%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-38 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 36.98648%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-39 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 37.46999%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-40 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 37.94733%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-41 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 38.41875%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-42 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 38.88444%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-43 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 39.34463%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-44 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 39.7995%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-45 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 40.24922%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-46 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 40.69398%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-47 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 41.13393%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-48 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 41.56922%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-49 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 42%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-50 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 42.42641%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-51 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 42.84857%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-52 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 43.26662%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-53 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 43.68066%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-54 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 44.09082%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-55 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 44.49719%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-56 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 44.89989%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-57 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 45.29901%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-58 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 45.69464%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-59 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 46.08687%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-60 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 46.4758%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-61 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 46.8615%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-62 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 47.24405%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-63 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 47.62352%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-64 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 48%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-65 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 48.37355%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-66 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 48.74423%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-67 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 49.11212%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-68 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 49.47727%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-69 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 49.83974%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-70 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 50.1996%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-71 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 50.5569%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-72 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 50.91169%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-73 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 51.26402%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-74 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 51.61395%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-75 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 51.96152%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-76 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 52.30679%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-77 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 52.64979%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-78 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 52.99057%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-79 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 53.32917%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-80 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 53.66563%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-81 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 54%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-82 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 54.33231%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-83 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 54.6626%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-84 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 54.99091%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-85 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 55.31727%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-86 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 55.64171%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-87 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 55.96427%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-88 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 56.28499%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-89 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 56.60389%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-90 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 56.921%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-91 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 57.23635%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-92 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 57.54998%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-93 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 57.8619%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-94 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 58.17216%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-95 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 58.48077%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-96 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 58.78775%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .size-97 {
-  width: 18.98829%;
-  height: 18.98829%;
+  width: 59.09315%;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .list-content {
   position: absolute;
   top: 0;
@@ -807,12 +729,12 @@ span.amp {
   font-weight: bold;
   line-height: 1.2em;
   background: #FFF;
-  padding: 35% 18%;
+  padding: 30% 15%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
   text-align: center;
 }
-/* line 286, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .list-content em {
   font: 0.9em georgia, sans-serif;
   font-weight: normal;
