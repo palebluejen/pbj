@@ -80,11 +80,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-style: normal;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 body {
-  border-left: 3em solid #000;
-  border-right: 3em solid #000;
-  font: 1em 'Open Sans', sans-serif;
+  border-left: 3em solid black;
+  border-right: 3em solid black;
+  font: 1em/1.6em 'Open Sans', sans-serif;
+  color: black;
   background: url('../images/stars-01.gif?1375147839') fixed center center no-repeat black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -92,34 +93,35 @@ body {
   background-size: cover;
 }
 
-/* line 25, ../sass/screen.scss */
+/* bottom "border" */
+/* line 45, ../sass/screen.scss */
 body:after {
   content: "";
   position: fixed;
-  background: #000;
+  background: black;
   left: 0;
   right: 0;
   height: 3em;
   bottom: 0;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 header {
-  background: #000;
+  background: black;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   padding: 1em 3em 1em;
-  z-index: 99;
   height: 2em;
+  z-index: 99;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .logo {
   position: relative;
 }
-/* line 49, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .logo a {
   display: block;
   float: left;
@@ -132,57 +134,53 @@ header {
   width: 127px;
   height: 38px;
 }
-/* line 50, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 html.svg .logo a {
   background-image: url('../images/pbj-site-logo.svg?1374825968');
 }
-/* line 53, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 html.no-svg .logo a {
   background-image: url('../images/fallbacks/pbj-site-logo.png?1374825996');
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 nav ul.site-nav {
   text-align: right;
 }
-/* line 78, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 nav ul.site-nav li {
   display: inline-block;
   padding: 0 0 0 1em;
 }
-/* line 83, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 nav ul.site-nav li a {
   font: 1em 'Novecento', 'Open Sans', sans-serif;
   font-weight: bold;
-  color: #FFF;
+  color: white;
   text-decoration: none;
   line-height: 3em;
 }
 
-/* line 92, ../sass/screen.scss */
-p {
-  font-size: 1em;
-  line-height: 1.6em;
-  color: #000;
-}
-
-/* line 99, ../sass/screen.scss */
-.content {
+/* line 113, ../sass/screen.scss */
+.site-wrapper {
   margin: 4em auto 3em;
-  border: 1px solid #000;
+  border: 1px solid black;
 }
 
-/* line 104, ../sass/screen.scss */
+/* break */
+/* line 119, ../sass/screen.scss */
 article {
   padding-top: 15%;
 }
 
-/* line 112, ../sass/screen.scss */
+/* break */
+/* line 124, ../sass/screen.scss */
 article:last-child {
-  padding-bottom: 20em;
+  padding-bottom: 100%;
 }
 
-/* line 116, ../sass/screen.scss */
+/* break */
+/* line 129, ../sass/screen.scss */
 h2, h3 {
   width: 50%;
   max-width: 20em;
@@ -190,555 +188,636 @@ h2, h3 {
   padding: 1em 2em;
 }
 
-/* line 123, ../sass/screen.scss */
-.column-head {
-  width: 75%;
-  width: calc(100% - 2.6em);
-  margin: 2em auto 0;
-  padding: 1em 1em;
-}
-
-/* line 130, ../sass/screen.scss */
+/* break */
+/* line 137, ../sass/screen.scss */
 .section-header {
-  font: 1.4em 'Novecento', 'Open Sans', sans-serif;
-  color: #FFF;
-  border: solid #FFF .3em;
-  background: #000;
+  font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
+  color: white;
+  border: solid white 0.3em;
+  background: black;
   text-align: center;
   letter-spacing: 0.1em;
-  line-height: 1.5em;
   font-weight: bold;
 }
-/* line 140, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .section-header em {
   font-weight: normal;
   display: block;
 }
 
-/* line 147, ../sass/screen.scss */
+/* break */
+/* line 153, ../sass/screen.scss */
+.column-head {
+  width: 75%;
+  /* calc fallback for IE 8 */
+  width: calc(100% - 2.6em);
+  margin: 2em auto 0;
+  padding: 1em 1em;
+}
+
+/* break */
+/* line 161, ../sass/screen.scss */
 .text-block {
   width: 70%;
   max-width: 50em;
-  background: white;
   margin: 2em auto;
-  padding: 3%;
+  padding: 3em;
+  background: white;
   font-size: 1.1em;
 }
-/* line 155, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .text-block strong {
   font-weight: bold;
 }
 
-/* line 160, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
+.subhead {
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 1.5em;
+}
+
+/* break */
+/* line 181, ../sass/screen.scss */
 .column-container {
   width: 80%;
   max-width: 70em;
-  overflow: auto;
   margin: auto auto 5em;
+  overflow: auto;
 }
 
-/* line 167, ../sass/screen.scss */
+/* break */
+/* line 189, ../sass/screen.scss */
 figure, .column {
   float: left;
   width: 27.3333%;
   margin: 3%;
 }
-/* line 172, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 figure .text-block, .column .text-block {
   width: 80%;
   padding: 10%;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 ul {
   list-style-type: square;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 span.amp {
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 188, ../sass/screen.scss */
-.list {
+/* line 210, ../sass/screen.scss */
+.bubble-list {
   width: 80%;
-  margin: 2em auto;
+  max-width: 80em;
+  margin: 5em auto;
   list-style: none;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0;
-  -webkit-column-fill: auto;
-  padding: 0;
   text-align: center;
 }
 
-/* line 200, ../sass/screen.scss */
-.list-item {
+/* line 218, ../sass/screen.scss */
+.bubble {
   position: relative;
   min-width: 6em;
   display: inline-block;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-break-inside: avoid;
-  margin: 0;
+  margin: -0.8em;
+  vertical-align: bottom;
 }
 
-/* line 210, ../sass/screen.scss */
-.list-item:before {
+/* line 226, ../sass/screen.scss */
+.bubble:before {
   content: "";
   display: block;
   padding-top: 100%;
-  /* initial ratio of 1:1*/
+  /* this maintains the aspect ratio of the bubble - 1:1*/
 }
 
-/* line 267, ../sass/screen.scss */
-.size-13 {
-  width: 21.63331%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-14 {
-  width: 22.44994%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-15 {
-  width: 23.2379%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-16 {
-  width: 24%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-17 {
-  width: 24.73863%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-18 {
-  width: 25.45584%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-19 {
-  width: 26.15339%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-20 {
-  width: 26.83282%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-21 {
-  width: 27.49545%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-22 {
-  width: 28.14249%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-23 {
-  width: 28.77499%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-24 {
-  width: 29.39388%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-25 {
-  width: 30%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-26 {
-  width: 30.59412%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-27 {
-  width: 31.17691%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-28 {
-  width: 31.74902%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-29 {
-  width: 32.31099%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-30 {
-  width: 32.86335%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-31 {
-  width: 33.40659%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-32 {
-  width: 33.94113%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-33 {
-  width: 34.46738%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-34 {
-  width: 34.98571%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-35 {
-  width: 35.49648%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-36 {
-  width: 36%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-37 {
-  width: 36.49658%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-38 {
-  width: 36.98648%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-39 {
-  width: 37.46999%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-40 {
-  width: 37.94733%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-41 {
-  width: 38.41875%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-42 {
-  width: 38.88444%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-43 {
-  width: 39.34463%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-44 {
-  width: 39.7995%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-45 {
-  width: 40.24922%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-46 {
-  width: 40.69398%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-47 {
-  width: 41.13393%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-48 {
-  width: 41.56922%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-49 {
-  width: 42%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-50 {
-  width: 42.42641%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-51 {
-  width: 42.84857%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-52 {
-  width: 43.26662%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-53 {
-  width: 43.68066%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-54 {
-  width: 44.09082%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-55 {
-  width: 44.49719%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-56 {
-  width: 44.89989%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-57 {
-  width: 45.29901%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-58 {
-  width: 45.69464%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-59 {
-  width: 46.08687%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-60 {
-  width: 46.4758%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-61 {
-  width: 46.8615%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-62 {
-  width: 47.24405%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-63 {
-  width: 47.62352%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-64 {
-  width: 48%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-65 {
-  width: 48.37355%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-66 {
-  width: 48.74423%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-67 {
-  width: 49.11212%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-68 {
-  width: 49.47727%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-69 {
-  width: 49.83974%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-70 {
-  width: 50.1996%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-71 {
-  width: 50.5569%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-72 {
-  width: 50.91169%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-73 {
-  width: 51.26402%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-74 {
-  width: 51.61395%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-75 {
-  width: 51.96152%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-76 {
-  width: 52.30679%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-77 {
-  width: 52.64979%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-78 {
-  width: 52.99057%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-79 {
-  width: 53.32917%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-80 {
-  width: 53.66563%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-81 {
-  width: 54%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-82 {
-  width: 54.33231%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-83 {
-  width: 54.6626%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-84 {
-  width: 54.99091%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-85 {
-  width: 55.31727%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-86 {
-  width: 55.64171%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-87 {
-  width: 55.96427%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-88 {
-  width: 56.28499%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-89 {
-  width: 56.60389%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-90 {
-  width: 56.921%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-91 {
-  width: 57.23635%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-92 {
-  width: 57.54998%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-93 {
-  width: 57.8619%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-94 {
-  width: 58.17216%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-95 {
-  width: 58.48077%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-96 {
-  width: 58.78775%;
-}
-
-/* line 267, ../sass/screen.scss */
-.size-97 {
-  width: 59.09315%;
-}
-
-/* line 273, ../sass/screen.scss */
-.list-content {
+/* break */
+/* line 233, ../sass/screen.scss */
+.bubble-content {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  color: #000;
-  font: 1em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  line-height: 1.2em;
-  background: #FFF;
   padding: 30% 15%;
   -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
   border-radius: 100%;
+  background: white;
+  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
   text-align: center;
 }
-/* line 289, ../sass/screen.scss */
-.list-content em {
-  font: 0.9em georgia, sans-serif;
-  font-weight: normal;
-  font-style: italic;
+/* line 247, ../sass/screen.scss */
+.bubble-content em {
   display: block;
   margin: 0.6em 0;
+  font: 0.9em Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* break */
+/* line 259, ../sass/screen.scss */
+.size-1 {
+  width: 1.75em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-2 {
+  width: 2.47487em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-3 {
+  width: 3.03109em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-4 {
+  width: 3.5em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-5 {
+  width: 3.91312em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-6 {
+  width: 4.28661em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-7 {
+  width: 4.63006em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-8 {
+  width: 4.94975em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-9 {
+  width: 5.25em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-10 {
+  width: 5.53399em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-11 {
+  width: 5.80409em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-12 {
+  width: 6.06218em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-13 {
+  width: 6.30971em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-14 {
+  width: 6.5479em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-15 {
+  width: 6.77772em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-16 {
+  width: 7em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-17 {
+  width: 7.21543em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-18 {
+  width: 7.42462em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-19 {
+  width: 7.62807em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-20 {
+  width: 7.82624em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-21 {
+  width: 8.01951em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-22 {
+  width: 8.20823em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-23 {
+  width: 8.39271em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-24 {
+  width: 8.57321em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-25 {
+  width: 8.75em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-26 {
+  width: 8.92328em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-27 {
+  width: 9.09327em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-28 {
+  width: 9.26013em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-29 {
+  width: 9.42404em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-30 {
+  width: 9.58514em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-31 {
+  width: 9.74359em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-32 {
+  width: 9.89949em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-33 {
+  width: 10.05298em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-34 {
+  width: 10.20417em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-35 {
+  width: 10.35314em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-36 {
+  width: 10.5em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-37 {
+  width: 10.64483em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-38 {
+  width: 10.78772em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-39 {
+  width: 10.92875em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-40 {
+  width: 11.06797em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-41 {
+  width: 11.20547em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-42 {
+  width: 11.3413em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-43 {
+  width: 11.47552em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-44 {
+  width: 11.60819em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-45 {
+  width: 11.73936em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-46 {
+  width: 11.86908em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-47 {
+  width: 11.9974em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-48 {
+  width: 12.12436em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-49 {
+  width: 12.25em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-50 {
+  width: 12.37437em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-51 {
+  width: 12.4975em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-52 {
+  width: 12.61943em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-53 {
+  width: 12.74019em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-54 {
+  width: 12.85982em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-55 {
+  width: 12.97835em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-56 {
+  width: 13.0958em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-57 {
+  width: 13.21221em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-58 {
+  width: 13.3276em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-59 {
+  width: 13.44201em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-60 {
+  width: 13.55544em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-61 {
+  width: 13.66794em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-62 {
+  width: 13.77951em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-63 {
+  width: 13.89019em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-64 {
+  width: 14em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-65 {
+  width: 14.10895em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-66 {
+  width: 14.21707em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-67 {
+  width: 14.32437em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-68 {
+  width: 14.43087em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-69 {
+  width: 14.53659em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-70 {
+  width: 14.64155em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-71 {
+  width: 14.74576em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-72 {
+  width: 14.84924em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-73 {
+  width: 14.95201em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-74 {
+  width: 15.05407em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-75 {
+  width: 15.15544em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-76 {
+  width: 15.25615em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-77 {
+  width: 15.35619em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-78 {
+  width: 15.45558em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-79 {
+  width: 15.55434em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-80 {
+  width: 15.65248em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-81 {
+  width: 15.75em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-82 {
+  width: 15.84692em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-83 {
+  width: 15.94326em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-84 {
+  width: 16.03901em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-85 {
+  width: 16.1342em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-86 {
+  width: 16.22883em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-87 {
+  width: 16.32291em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-88 {
+  width: 16.41646em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-89 {
+  width: 16.50947em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-90 {
+  width: 16.60196em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-91 {
+  width: 16.69394em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-92 {
+  width: 16.78541em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-93 {
+  width: 16.87639em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-94 {
+  width: 16.96688em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-95 {
+  width: 17.05689em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-96 {
+  width: 17.14643em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-97 {
+  width: 17.2355em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-98 {
+  width: 17.32412em;
+}
+
+/* line 259, ../sass/screen.scss */
+.size-99 {
+  width: 17.41228em;
 }

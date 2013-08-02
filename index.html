@@ -9,15 +9,24 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="js/modernizr.js"></script>
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!-- local version <script src="js/jquery-1.10.2.min.js"></script>-->
 
     <script>
         $(function() {
-      $("#bubbles li").each(function() {
+      $("#values li").each(function() {
         // $(this).addClass($(this).text().length > 25 ? "lg" : "sm");
         $(this).addClass("size-" + $(this).text().length);
       });
     });
+        /*  Should try and convert from jquery to plain js
+            article on converting: http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/ (#5)
+            something like:
+            document.querySelector('#box').classList.add('wrap');
+
+            Copied and perverted from: http://stackoverflow.com/questions/2718374/add-css-class-to-link-based-on-character-count-with-jquery
+        */
+
     </script>
 </head>
 
@@ -41,7 +50,7 @@
   </header>
 
 
-  <div class="content">
+  <div class="site-wrapper">
 
     <article id="belong">
 
@@ -51,10 +60,10 @@
       </h2>
 
       <div class="text-block">
-        <p>If i could be doing anything at all in the world, I'd choose "working on the future with friends."</p>
+        <p class="subhead">If I could do anything in the world, I'd choose "working on the future with friends."</p>
 
         <p>
-          It might sound like a cliché, but it's not lip-service. I've been very lucky to have spent the last 5 months on a blissful sabbatical. I've travelled to new corners of the world including Belgrade, Bali and Costa Rica. I've practiced all variety of painting, drawing and arts & crafts, gardening, reading, catching up with old friends, and running, swimming and strolling in this amazing city. I truly love this things, and it has been wonderful. But while these things are fun, good, and maybe even important, beyond the short-term, they've honestly got nothing on "working on the future with friends."      
+          It might sound like a cliché, but it's not lip-service. I've been very lucky to have spent the last 6 months on a blissful sabbatical. I've travelled to new corners of the world including Belgrade, Bali and Costa Rica. I've practiced all variety of painting, drawing and arts & crafts, gardening, reading, catching up with old friends, and running, swimming and strolling in this amazing city. I truly love this things, and it has been wonderful. But while these things are fun, good, and maybe even important, beyond the short-term, they've honestly got nothing on "working on the future with friends."      
         </p>
       </div>
 
@@ -92,7 +101,7 @@
 
       <div class="column-container">
 
-        <div class="column">
+        <section id="strengths" class="column">
           <h3 class="section-header column-head"> Strengths </h3>
 
           <div class="text-block">
@@ -104,9 +113,9 @@
               <li>Adaptability</li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div class="column">
+        <section id="chops"class="column">
           <h3 class="section-header column-head"> Chops </h3>
 
           <div class="text-block">
@@ -120,9 +129,9 @@
               <li>branding/marketing</li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div class="column">
+        <section id="quirks" class="column">
           <h3 class="section-header column-head"> Quirks </h3>
 
           <div class="text-block">
@@ -134,45 +143,47 @@
               <li>starstuff</li>
             </ul>
           </div>
-        </div>
+        </quirks>
 
       </div>
 
-      <h3 class="section-header">Core Values</h3>
+      <section id="core-values">
+        <h3 class="section-header">Core Values</h3>
 
-      <ul id="bubbles" class="list">
-          <li class="list-item"> <p class="list-content">Care.</p></li>
-          <li class="list-item"> <p class="list-content">"Strong values, weakly held." <em>(do the work, then do it again)</em></p></li>
-          <li class="list-item"> <p class="list-content">Give what you have to offer.</p></li>
-          <li class="list-item size-20"> <p class="list-content"><img src="http://placekitten.com/g/80/80"></p></li>
-          <li class="list-item"> <p class="list-content">Seek challenges. <em> Don't be lazy</em></p></li>
-          <li class="list-item"> <p class="list-content">Open-mindedness. <em>atrophies if you don't actively expose it to new things</em></p></li>
-          <li class="list-item"> <p class="list-content">Breadth <br /> > <br />Depth</p></li>
-          <li class="list-item"> <p class="list-content">Chummy <span class="amp">&amp;</span> Friendly <span class="amp">&amp;</span> Neighborly <span class="amp">&amp;</span> Inviting.</p></li>
-          <li class="list-item"> <p class="list-content">"Good" is the enemy of "Great."<br /> "Perfect" is the enemy of the future <em>(and it's gross)</em></p></li>
-          <li class="list-item"> <p class="list-content">profit is not the bottom line</p></li>
-          <li class="list-item"> <p class="list-content">fear is not a good reason</p></li>
-          <li class="list-item"> <p class="list-content">comedy matters</p></li>
-          <li class="list-item"> <p class="list-content">No douchebags. <em>*personal definition of a douchebag: putting image over other people's feelings.</em></p></li>
-          <li class="list-item"> <p class="list-content">transparency almost always pays off. <em> Share all the things</em></p></li>
-          <li class="list-item"> <p class="list-content">if someone gives you homework, do it</p></li>
-          <li class="list-item"> <p class="list-content">investigate the impossible</p></li>
-          <li class="list-item"> <p class="list-content">make choices that enable <em>(rather than limit)</em> further choices</p></li>
-          <li class="list-item"> <p class="list-content">see it another way</p></li>
-          <li class="list-item"> <p class="list-content">take some time to celebrate <span class="amp">&amp;</span> some time to be critical <em>but not much</em></p></li>
-          <li class="list-item"> <p class="list-content">distrust certainty. <em>Make doubt into experimentation, not paralysis</em></p></li>
-          <li class="list-item"> <p class="list-content">abhor excess</p></li>
-          <li class="list-item"> <p class="list-content">liberally invest in serious tools, skills <span class="amp">&amp;</span>  relationships</p></li>
-          <li class="list-item"> <p class="list-content">mind your metrics</p></li>
-          <li class="list-item"> <p class="list-content">be observant <span class="amp">&amp;</span> alert. <br /> Anticipate <span class="amp">&amp;</span> read minds.</p></li>
-          <li class="list-item"> <p class="list-content">Say it out loud.</p></li>
-          <li class="list-item"> <p class="list-content">Revise this list as often as necessary. <em>But not more often</em></p></li>
+        <!-- Bubble size is controlled by the character-count of the list item. Works for values 1 to 100. -->
+        <ul id="values" class="bubble-list">
+          <li class="bubble"> <p class="bubble-content">Care.</p></li>
+          <li class="bubble"> <p class="bubble-content">"Strong values, weakly held." <em>(do the work, then do it again)</em></p></li>
+          <li class="bubble"> <p class="bubble-content">Give what you have to offer.</p></li>
+          <li class="bubble size-20"> <p class="bubble-content"><img src="http://placekitten.com/g/80/80"></p></li>
+          <li class="bubble"> <p class="bubble-content">Seek challenges. <em> Don't be lazy</em></p></li>
+          <li class="bubble"> <p class="bubble-content">Open-mindedness. <em>atrophies if you don't actively expose it to new things</em></p></li>
+          <li class="bubble"> <p class="bubble-content">Breadth <br /> > <br />Depth</p></li>
+          <li class="bubble"> <p class="bubble-content">Chummy <span class="amp">&amp;</span> Friendly <span class="amp">&amp;</span> Neighborly <span class="amp">&amp;</span> Inviting.</p></li>
+          <li class="bubble"> <p class="bubble-content">"Good" is the enemy of "Great."<br /> "Perfect" is the enemy of the future <em>(and it's gross)</em></p></li>
+          <li class="bubble"> <p class="bubble-content">profit is not the bottom line</p></li>
+          <li class="bubble"> <p class="bubble-content">comedy matters</p></li>
+          <li class="bubble"> <p class="bubble-content">No douchebags. <em>*personal definition of a douchebag: putting image over other people's feelings.</em></p></li>
+          <li class="bubble"> <p class="bubble-content">abhor excess</p></li>
+          <li class="bubble"> <p class="bubble-content">transparency almost always pays off. <em> Share all the things</em></p></li>
+          <li class="bubble"> <p class="bubble-content">investigate the impossible</p></li>
+          <li class="bubble"> <p class="bubble-content">make choices that enable <em>(rather than limit)</em> further choices</p></li>
+          <li class="bubble"> <p class="bubble-content">see it another way</p></li>
+          <li class="bubble"> <p class="bubble-content">fear is not a good reason</p></li>
+          <li class="bubble"> <p class="bubble-content">take some time to celebrate <span class="amp">&amp;</span> some time to be critical <em>but not much</em></p></li>
+          <li class="bubble"> <p class="bubble-content">distrust certainty. <em>Make doubt into experimentation, not paralysis</em></p></li>
+          <li class="bubble"> <p class="bubble-content">Do the homework.<em> You always learn something.</em></p></li>
+          <li class="bubble"> <p class="bubble-content">Invest in tools, skills <span class="amp">&amp;</span>  relationships</p></li>
+          <li class="bubble"> <p class="bubble-content">mind your metrics</p></li>
+          <li class="bubble"> <p class="bubble-content">be observant <span class="amp">&amp;</span> alert. <br /> Anticipate <span class="amp">&amp;</span> read minds.</p></li>
+          <li class="bubble"> <p class="bubble-content">Say it out loud.</p></li>
+          <li class="bubble"> <p class="bubble-content">Revise this list as often as necessary. <em>But not more often</em></p></li>
         </ul>
+      </section>
 
     </article>
 
     <article id="work">
-
       <h2 class="section-header"> 
           Work
       </h2>
@@ -260,6 +271,6 @@
   </div>
 
 
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 </body>
 </html>

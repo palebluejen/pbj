@@ -1,141 +1,147 @@
 
+
+// Compass imports -----------------------------------------------------------------------
+
 @import "compass/reset";
 @import "compass/css3/font-face";
+@import "compass/css3/background-size";
+@import "compass/css3/border-radius";
+
+
+// Fonts -----------------------------------------------------------------------
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@include font-face("Novecento",font-files("Novecentowide-Light-webfont.ttf",ttf,"Novecentowide-Light-webfont.woff",woff,"Novecentowide-Light-webfont.otf",opentype),"Novecentowide-Light-webfont.eot",normal,normal);
+@include font-face("Novecento",font-files("Novecentowide-Bold-webfont.ttf",ttf,"Novecentowide-Bold-webfont.woff",woff,"Novecentowide-Bold-webfont.otf",opentype),"Novecentowide-Bold-webfont.eot",bold,normal);
 
-@include font-face("Novecento", font-files("Novecentowide-Light-webfont.ttf", ttf, "Novecentowide-Light-webfont.woff", woff, "Novecentowide-Light-webfont.otf", opentype), "Novecentowide-Light-webfont.eot", normal, normal);
-@include font-face("Novecento", font-files("Novecentowide-Bold-webfont.ttf", ttf, "Novecentowide-Bold-webfont.woff", woff, "Novecentowide-Bold-webfont.otf", opentype), "Novecentowide-Bold-webfont.eot", bold, normal);
+// Colors -----------------------------------------------------------------------
+
+$frame-color         : #000000;
+$nav-color           : #FFFFFF;
+$page-bg-color       : #000000;
+$main-text-color     : #000000;
+$main-bg-color       : #FFFFFF;
+$heading-text-color  : #FFFFFF;
+$heading-bg-color    : #000000;
+$special-text-color  : #000000;
+$special-bg-color    : yellow;
+$link-color          : blue;
+
 
 // @mixin respond-to($breakpoint) {
 //     @media only screen and (max-width: $breakpoint + px) { @content; }
 // }
 
 body {
-  border-left: 3em solid #000;
-  border-right: 3em solid #000;  
-  font: 1em 'Open Sans', sans-serif;
-  background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ #000; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  border-left: 3em solid $frame-color;
+  border-right: 3em solid $frame-color;  
+  font: 1em/1.6em 'Open Sans', sans-serif;
+  color: $main-text-color;
+  background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ $page-bg-color; 
+  @include background-size(cover);
 }
 
+/* bottom "border" */
 body:after {
-    content: "";
-    position: fixed;
-    background: #000;
-    left: 0;
-    right: 0;
-    height: 3em;
-    bottom: 0;
+  content: "";
+  position: fixed;
+  background: $frame-color;
+  left: 0;
+  right: 0;
+  height: 3em;
+  bottom: 0;
 }
 
 header {
-  background: #000;
+  background: $frame-color;
   position: fixed;
   left: 0; 
   right: 0;
-    top: 0;
+  top: 0;
   padding: 1em 3em 1em;
-    z-index: 99;
-    height: 2em;
+  height: 2em;
+  z-index: 99;
 }
 
 .logo {
-    position: relative;
+  position: relative;
 
-    a {
-        html.svg & {
-            background-image: image-url("pbj-site-logo.svg");
-        }
-        html.no-svg & {
-            background-image: image-url("fallbacks/pbj-site-logo.png");
-        }
-        display: block;
-        float: left;
-        top: 10px;
-        left: 0;
-        position: absolute;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        text-indent: -9999em;   
-        width: 127px;
-        height: 38px;
-        
-        // @include respond-to(small-or-touch) {
-        //     width: 84px;
-        //     height: 33px;
-        //     @include background-size(84px, 33px);
-        // } 
-    }  
+  a {
+    html.svg & {
+        background-image: image-url("pbj-site-logo.svg");
+    }
+    
+    html.no-svg & {
+        background-image: image-url("fallbacks/pbj-site-logo.png");
+    }
+    display: block;
+    float: left;
+    top: 10px;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    text-indent: -9999em;   
+    width: 127px;
+    height: 38px;
+    
+    // @include respond-to(small-or-touch) {
+    //     width: 84px;
+    //     height: 33px;
+    //     @include background-size(84px, 33px);
+    // } 
+  }  
 }
 
 nav ul.site-nav {
-    text-align: right;
+  text-align: right;
 
     li {
-        display: inline-block;
-        padding: 0 0 0 1em;
+      display: inline-block;
+      padding: 0 0 0 1em;
     }
     
     li a {
-        font: 1em 'Novecento', 'Open Sans', sans-serif;
-        font-weight: bold;
-        color: #FFF;
-        text-decoration: none;
-        line-height: 3em;
+      font: 1em 'Novecento', 'Open Sans', sans-serif;
+      font-weight: bold;
+      color: $nav-color;
+      text-decoration: none;
+      line-height: 3em;
     }
 }
 
-p {
-  font-size: 1em;
-  line-height: 1.6em;
-  color: #000;
+.site-wrapper {
+  margin: 4em auto 3em;
+  border: 1px solid $frame-color;
 }
 
-
-.content {
-    margin: 4em auto 3em;
-    border: 1px solid #000;
-}
-
+/* break */
 article {
-    padding-top: 15%;
+  padding-top: 15%;
 }
 
-// article:first-child {
-//     padding-top: 1em;
-// }
-
+/* break */
 article:last-child {
-    padding-bottom: 20em;
+  padding-bottom: 100%;
 }
 
+/* break */
 h2, h3 {
-    width: 50%;
-    max-width: 20em;
-    margin: auto;
-    padding: 1em 2em;
+  width: 50%;
+  max-width: 20em;
+  margin: auto;
+  padding: 1em 2em;
 }
 
-.column-head {
-    width: 75%;
-    width: calc(100% - 2.6em);
-    margin: 2em auto 0;
-    padding: 1em 1em;
-}
-
+/* break */
 .section-header {
-    font: 1.4em 'Novecento', 'Open Sans', sans-serif;
-    color: #FFF;
-    border: solid #FFF .3em;
-    background: #000;
-    text-align: center;
-    letter-spacing: 0.1em;
-    line-height: 1.5em;
-    font-weight: bold;
+  font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
+  color: $heading-text-color;
+  border: solid $heading-text-color .3em;
+  background: $heading-bg-color;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: bold;
 
     em {
         font-weight: normal;
@@ -143,40 +149,56 @@ h2, h3 {
     }
 }
 
+/* break */
+.column-head {
+  width: 75%; /* calc fallback for IE 8 */
+  width: calc(100% - 2.6em);
+  margin: 2em auto 0;
+  padding: 1em 1em;
+}
 
+/* break */
 .text-block {
-    width: 70%;
-    max-width: 50em;
-  background: white;
+  width: 70%;
+  max-width: 50em;
   margin: 2em auto;
-    padding: 3%;
-    font-size: 1.1em;
+  padding: 3em;
+  background: $main-bg-color;
+  font-size: 1.1em;
 
-    strong {
-        font-weight: bold;
+  strong {
+      font-weight: bold;
     }
 }
 
+.subhead {
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 1.5em;
+}
+
+/* break */
 .column-container {
-    width: 80%;
-    max-width: 70em;
-    overflow: auto;
-    margin: auto auto 5em;
+  width: 80%;
+  max-width: 70em;
+  margin: auto auto 5em;
+  overflow: auto;
 }
 
+/* break */
 figure, .column {
-    float: left;
-    width: 27.3333%;
-    margin: 3%;
+  float: left;
+  width: 27.3333%;
+  margin: 3%;
 
-    .text-block {
-        width: 80%;
-        padding: 10%;
-    }
+  .text-block {
+    width: 80%;
+    padding: 10%;
+  }
 }
 
 ul {
-    list-style-type: square;
+  list-style-type: square;
 }
 
 span.amp {
@@ -185,112 +207,59 @@ span.amp {
   font-weight: normal;
   }
 
-.list {
-    width: 80%;
-    // max-width: 80em;
-    margin: 2em auto;
-    list-style: none;
-         -webkit-column-count: 3;
-  -webkit-column-gap: 0;
-  -webkit-column-fill: auto;
-  padding: 0;
+.bubble-list {
+  width: 80%;
+  max-width: 80em;
+  margin: 5em auto;
+  list-style: none;
   text-align: center;
 }
 
-.list-item {
-    position: relative;
-    min-width: 6em;
-    display: inline-block;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-    column-break-inside: avoid;
-    margin: 0;
-    }
+.bubble {
+  position: relative;
+  min-width: 6em;
+  display: inline-block;
+  margin: -0.8em;
+  vertical-align: bottom;
+}
 
-.list-item:before{
-    content: "";
+.bubble:before{
+  content: "";
+  display: block;
+  padding-top: 100%;  /* this maintains the aspect ratio of the bubble - 1:1*/
+}
+
+/* break */
+.bubble-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30% 15%;
+  @include border-radius (100%);
+  background: $main-bg-color;
+  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: $main-text-color;
+  text-align: center;
+
+  em {
     display: block;
-    padding-top: 100%;  /* initial ratio of 1:1*/
-    }
+    margin: 0.6em 0;
+    font: 0.9em Georgia, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+  }
+}
+/* break */
+$string-length: 1;
 
-
-// @for $string-length from 13 to 17{
-//     .size-#{$string-length} {
-//       width: ($string-length * 0.6em);
-//       height: ($string-length * 0.6em);
-//     }
-// }
-
-// @for $string-length from 17 to 30{
-//     .size-#{$string-length} {
-//       width: ($string-length * 0.45em);
-//       height: ($string-length * 0.45em);
-//     }
-// }
-
-// @for $string-length from 30 to 50{
-//     .size-#{$string-length} {
-//       width: $string-length * 0.33em;
-//       height: ($string-length * 0.33em);
-//     }
-// }
-
-// @for $string-length from 50 to 70{
-//     .size-#{$string-length} {
-//       width: $string-length * 0.25em;
-//       height: ($string-length * 0.25em);
-//     }
-// }
-
-// @for $string-length from 70 to 100{
-//     .size-#{$string-length} {
-//       width: $string-length * 0.2em;
-//       height: ($string-length * 0.2em);
-//     }
-// }
-
-// $string-length: 13;
-// $sizer: 0.6em;
-
-// @while $string-length < 98 {
-//   .size-#{$string-length} {
-//     width: ($string-length * $sizer);
-//     height: ($string-length * $sizer);
-//   }
-//   $string-length: $string-length + 1;
-//   $sizer: $sizer - 0.0048em;
-// }
-
-$string-length: 13;
-
-@while $string-length < 98 {
+@while $string-length < 100 {
   .size-#{$string-length} {
-    width: percentage(sqrt($string-length) * 0.06);
+    width: sqrt($string-length) * 1.75em;
+    // width: percentage(sqrt($string-length) * 0.06);
+    // font-size: 50%;
   }
   $string-length: $string-length + 1;
 }
-
-.list-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    color: #000;
-    font: 1em 'Novecento', 'Open Sans', sans-serif;
-    font-weight: bold;
-    line-height: 1.2em;
-    background: #FFF;
-    padding: 30% 15%;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
-    text-align: center;
-
-      em {
-        font: 0.9em georgia, sans-serif;
-        font-weight: normal;
-        font-style: italic;
-        display: block;
-        margin: 0.6em 0;
-      }
-    }
