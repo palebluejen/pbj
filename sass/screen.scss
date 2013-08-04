@@ -27,10 +27,97 @@ $special-text-color  : #000000;
 $special-bg-color    : yellow;
 $link-color          : blue;
 
+// Links -----------------------------------------------------------------------
+
+/* ROLL LINKS */
+.roll-link {
+    display: inline-block;
+    overflow: hidden;
+
+    vertical-align: top;
+
+    -webkit-perspective: 600px;
+       -moz-perspective: 600px;
+       -ms-perspective: 600px;
+       perspective: 600px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+       -ms-perspective-origin: 50% 50%;
+       perspective-origin: 50% 50%;
+       
+}
+
+.roll-link:hover {text-decoration:none;}
+
+.roll-link a {
+    display: block;
+    position: relative;
+    padding: 0 2px;
+
+    -webkit-transition: all 400ms ease;
+       -moz-transition: all 400ms ease;
+       -ms-transition: all 400ms ease;
+       transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+       -ms-transform-origin: 50% 0%;
+       transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+       -ms-transform-style: preserve-3d;
+       transform-style: preserve-3d;
+}
+.roll-link:hover a {
+        background: #e93a30;
+         
+
+        -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+           -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+           -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+           transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+}
+
+.roll-link a:after {
+    content: attr(data-title);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 2px;
+
+    color: #fff;
+    background: #e93a30;
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+       -ms-transform-origin: 50% 0%;
+       transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
 
 // @mixin respond-to($breakpoint) {
 //     @media only screen and (max-width: $breakpoint + px) { @content; }
 // }
+
+// Global -----------------------------------------------------------------------
+
+p {
+  margin: 1em 0;
+}
+
+em {
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
 
 body {
   border-left: 3em solid $frame-color;
@@ -143,7 +230,7 @@ h2, h3 {
   letter-spacing: 0.1em;
   font-weight: bold;
 
-    em {
+    .debold {
         font-weight: normal;
         display: block;
     }
@@ -160,15 +247,21 @@ h2, h3 {
 /* break */
 .text-block {
   width: 70%;
-  max-width: 50em;
+  max-width: 45em;
   margin: 2em auto;
-  padding: 3em;
+  padding: 2em 3em;
   background: $main-bg-color;
   font-size: 1.1em;
 
   strong {
       font-weight: bold;
     }
+
+  .special {
+    background: $special-bg-color;
+    font-style: italic;
+    color: $special-text-color;
+  }
 }
 
 .subhead {
@@ -186,7 +279,7 @@ h2, h3 {
 }
 
 /* break */
-figure, .column {
+.column {
   float: left;
   width: 27.3333%;
   margin: 3%;
@@ -195,10 +288,15 @@ figure, .column {
     width: 80%;
     padding: 10%;
   }
+
+    ul {
+    list-style-type: square;
+    margin-left: 1em;
+  }
 }
 
-ul {
-  list-style-type: square;
+figure {
+  @extend .column;
 }
 
 span.amp {
@@ -237,21 +335,21 @@ span.amp {
   bottom: 0;
   right: 0;
   padding: 30% 15%;
+  margin: 0;
   @include border-radius (100%);
   background: $main-bg-color;
   font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
   font-weight: bold;
   color: $main-text-color;
   text-align: center;
-
+  
   em {
     display: block;
     margin: 0.6em 0;
-    font: 0.9em Georgia, sans-serif;
-    font-weight: normal;
-    font-style: italic;
+    font-size: 0.9em;
   }
 }
+
 /* break */
 $string-length: 1;
 
