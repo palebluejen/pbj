@@ -1,4 +1,11 @@
 
+@mixin debug($color: red) {
+  border: {
+    color: $color;
+    width: 1px;
+    style: solid;
+  }
+}
 
 // Compass imports -----------------------------------------------------------------------
 
@@ -6,6 +13,9 @@
 @import "compass/css3/font-face";
 @import "compass/css3/background-size";
 @import "compass/css3/border-radius";
+@import "compass/css3/images";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
 
 
 // Fonts -----------------------------------------------------------------------
@@ -24,88 +34,94 @@ $main-bg-color       : #FFFFFF;
 $heading-text-color  : #FFFFFF;
 $heading-bg-color    : #000000;
 $special-text-color  : #000000;
-$special-bg-color    : yellow;
-$link-color          : blue;
+$special-bg-color    : #FFFAD2;
+$link-color          : #0F67FB;
 
 // Links -----------------------------------------------------------------------
 
+a {
+    color: $link-color;
+}
+a:hover, a:focus {
+    color: #2445ae;
+    text-decoration: none;
+}
+a:active {
+    color: black;
+}
+
 /* ROLL LINKS */
 .roll-link {
-    display: inline-block;
-    overflow: hidden;
-
-    vertical-align: top;
-
-    -webkit-perspective: 600px;
-       -moz-perspective: 600px;
-       -ms-perspective: 600px;
-       perspective: 600px;
-
-    -webkit-perspective-origin: 50% 50%;
-       -moz-perspective-origin: 50% 50%;
-       -ms-perspective-origin: 50% 50%;
-       perspective-origin: 50% 50%;
-       
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  @include perspective(600px);
+  @include perspective-origin(50% 50%);
 }
 
-.roll-link:hover {text-decoration:none;}
+.roll-link:hover {
+  text-decoration: none;
+}
 
 .roll-link a {
-    display: block;
-    position: relative;
-    padding: 0 2px;
-
-    -webkit-transition: all 400ms ease;
-       -moz-transition: all 400ms ease;
-       -ms-transition: all 400ms ease;
-       transition: all 400ms ease;
-    
-    -webkit-transform-origin: 50% 0%;
-       -moz-transform-origin: 50% 0%;
-       -ms-transform-origin: 50% 0%;
-       transform-origin: 50% 0%;
-    
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-       -ms-transform-style: preserve-3d;
-       transform-style: preserve-3d;
+  display: block;
+  position: relative;
+  padding: 0 0.5em;
+  @include transition(all 400ms ease);
+  @include transform-origin(50%, 0%);
+  @include transform-style(preserve-3d);
 }
-.roll-link:hover a {
-        background: #e93a30;
-         
 
-        -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-           -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-           -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-           transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+.roll-link:hover a {
+  // background: $link-color;
+  background-color: #08061d; // Old browsers
+  @include filter-gradient(#08061d, #40262d, vertical); // IE6-9
+  @include background-image(linear-gradient(top, #08061d 0%,#26192b 47%,#40262d 100%));
+  @include translate3d(0, 0, -30px);
+  @include rotateX(90deg);
+  //-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+  //-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+  //-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+  //transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+
 }
 
 .roll-link a:after {
-    content: attr(data-title);
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 0.5em;
+  color: $nav-color;
+  // background: $link-color;
+  background-color: #08061d; // Old browsers
+  @include filter-gradient(#08061d, #40262d, vertical); // IE6-9
+  @include background-image(linear-gradient(top, #08061d 0%,#26192b 47%,#40262d 100%));
+  @include transform-origin(50%, 0%);
+  // @include translate3d(0px, 105%, 0px);
+  // @include rotateX(-90deg);
 
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 2px;
-
-    color: #fff;
-    background: #e93a30;
-
-    -webkit-transform-origin: 50% 0%;
-       -moz-transform-origin: 50% 0%;
-       -ms-transform-origin: 50% 0%;
-       transform-origin: 50% 0%;
-
-    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-       -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-       transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+  // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
+  -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+  -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+  -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+  transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 }
 
-// @mixin respond-to($breakpoint) {
-//     @media only screen and (max-width: $breakpoint + px) { @content; }
-// }
+// Responsive Rules -----------------------------------------------------------------------
+
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 650px)  { @content; }
+  }
+}
 
 // Global -----------------------------------------------------------------------
 
@@ -120,12 +136,19 @@ em {
 }
 
 body {
-  border-left: 3em solid $frame-color;
-  border-right: 3em solid $frame-color;  
+  border-left: 4em solid $frame-color;
+  border-right: 4em solid $frame-color;  
   font: 1em/1.6em 'Open Sans', sans-serif;
   color: $main-text-color;
-  background:  image-url('stars-01.gif') fixed center center no-repeat/*,  image-url('space-18.gif') fixed center center no-repeat, */ $page-bg-color; 
-  @include background-size(cover);
+  // image-url('Apollo.jpg') center center no-repeat,  image-url('space-18.gif') fixed center center no-repeat,  
+  background-color: $page-bg-color; // Old browsers
+  @include filter-gradient(#000000, #000000, vertical); // IE6-9
+  @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#2e0d08 95%,#180604 98%,#000000 100%));
+
+  @include breakpoint(baby-bear) {
+    border-left: 1em solid $frame-color;
+    border-right: 1em solid $frame-color; 
+  }
 }
 
 /* bottom "border" */
@@ -135,8 +158,12 @@ body:after {
   background: $frame-color;
   left: 0;
   right: 0;
-  height: 3em;
+  height: 4em;
   bottom: 0;
+
+  @include breakpoint(baby-bear) {
+    height: 1em;
+  }  
 }
 
 header {
@@ -145,66 +172,115 @@ header {
   left: 0; 
   right: 0;
   top: 0;
-  padding: 1em 3em 1em;
-  height: 2em;
+  padding: 1em 4em 1em;
+  height: 4em;
   z-index: 99;
+  @include breakpoint(baby-bear) {
+    padding: 1em;
+    height: 2.5em;
+  }
 }
 
 .logo {
-  position: relative;
 
   a {
     html.svg & {
-        background-image: image-url("pbj-site-logo.svg");
+      background-image: image-url("pbj-site-logo.svg");
     }
     
     html.no-svg & {
-        background-image: image-url("fallbacks/pbj-site-logo.png");
+      background-image: image-url("fallbacks/pbj-site-logo.png");
     }
+
     display: block;
-    float: left;
-    top: 10px;
-    left: 0;
-    position: absolute;
+    top: 2em;
+    left: 4em;
+    position: fixed;
     overflow: hidden;
     background-repeat: no-repeat;
     text-indent: -9999em;   
-    width: 127px;
-    height: 38px;
+    width: 100px;
+    height: 30px;
+    z-index: 100;
     
-    // @include respond-to(small-or-touch) {
-    //     width: 84px;
-    //     height: 33px;
-    //     @include background-size(84px, 33px);
-    // } 
+    @include breakpoint(baby-bear) {
+      position: absolute;
+      width: 60px;
+      height: 18px;
+      top: 1em;
+      left: 1em;
+      @include background-size(60px, 18px);
+      margin: auto;
+      margin-bottom: 1em;
+    } 
   }  
 }
 
 nav ul.site-nav {
   text-align: right;
+  display: block;
+
+
+  // @include breakpoint(baby-bear) { 
+  //   text-align: center; 
+  // }
 
     li {
       display: inline-block;
       padding: 0 0 0 1em;
+      margin: 1em 0;
+      font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+      @include breakpoint(mama-bear) { 
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    li:nth-child(2) {
+      padding: 0;
+    }
+
+    .belong-nav {
+      font: 0.8em/3em 'Open Sans', sans-serif;
+      margin-right: 2em;
+      @include breakpoint(mama-bear) { 
+        width: 100%; 
+        padding: 0;
+        margin: 0;
+        text-align: right;
+        line-height: 1.8em;
+        font-size: 0.6em;
+      }
     }
     
     li a {
-      font: 1em 'Novecento', 'Open Sans', sans-serif;
-      font-weight: bold;
       color: $nav-color;
+      font-weight: bold;
       text-decoration: none;
-      line-height: 3em;
+      @include breakpoint(baby-bear) { 
+        font-size: 0.9em; 
+        line-height: 1em;
+        margin: 0.4em auto;
+
+      }
     }
 }
 
 .site-wrapper {
   margin: 4em auto 3em;
   border: 1px solid $frame-color;
+    background:  image-url('stars-01.gif') fixed center center no-repeat;
+    @include background-size(cover);
 }
 
-/* break */
 article {
   padding-top: 15%;
+  @include breakpoint(baby-bear) { 
+    padding-top: 50%;
+  }
+    @include breakpoint(mama-bear) { 
+    padding-top: 30%;
+  }
 }
 
 /* break */
@@ -212,15 +288,18 @@ article:last-child {
   padding-bottom: 100%;
 }
 
-/* break */
 h2, h3 {
   width: 50%;
   max-width: 20em;
   margin: auto;
   padding: 1em 2em;
+  
+  @include breakpoint(mama-bear) {
+    width: 60%;
+    padding: 0.5em 1em;
+  }
 }
 
-/* break */
 .section-header {
   font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
   color: $heading-text-color;
@@ -231,24 +310,20 @@ h2, h3 {
   font-weight: bold;
 
     .debold {
-        font-weight: normal;
-        display: block;
+      font-weight: normal;
+      display: block;
     }
+
+    @include breakpoint(mama-bear) { 
+      font-size: 1em;
+      line-height: 1.5em;
+  }
 }
 
-/* break */
-.column-head {
-  width: 75%; /* calc fallback for IE 8 */
-  width: calc(100% - 2.6em);
-  margin: 2em auto 0;
-  padding: 1em 1em;
-}
-
-/* break */
 .text-block {
   width: 70%;
   max-width: 45em;
-  margin: 2em auto;
+  margin: 2em auto 0;
   padding: 2em 3em;
   background: $main-bg-color;
   font-size: 1.1em;
@@ -262,41 +337,163 @@ h2, h3 {
     font-style: italic;
     color: $special-text-color;
   }
+
+  @include breakpoint(mama-bear) { 
+    width: 75%;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    padding: 1em 1.8em;
+  }
 }
 
 .subhead {
   font-weight: bold;
   font-size: 120%;
   margin-bottom: 1.5em;
+
+  @include breakpoint(mama-bear) { 
+    margin-bottom: 1em;
+    font-size: 100%;
+  }
 }
 
-/* break */
 .column-container {
   width: 80%;
-  max-width: 70em;
+  max-width: 80em;
   margin: auto auto 5em;
   overflow: auto;
+
+  @include breakpoint(mama-bear) {
+    width: 100%;
+    margin: auto;
+  }
 }
 
-/* break */
 .column {
   float: left;
   width: 27.3333%;
-  margin: 3%;
+  min-width: 17em;
+  margin: 2%;
+
+  @include breakpoint(mama-bear) { 
+    float: none;
+    width: 90%;
+    margin: 2% auto;
+  }
 
   .text-block {
     width: 80%;
     padding: 10%;
   }
 
-    ul {
+  ul {
     list-style-type: square;
     margin-left: 1em;
   }
 }
 
+/* break */
+.column-head {
+  width: 75%; /* calc fallback for IE 8 */
+  width: calc(100% - 2.6em);
+  margin: 2em auto 0;
+  padding: 1em 1em;
+
+  @include breakpoint(mama-bear) { 
+    width: 65%;
+    padding: 1em 0;
+  }
+}
+
+.column-1, .column-2, .column-3 {
+  display: block;
+  min-height: 190px;
+  background: no-repeat;
+  @include background-size(101% auto);
+  margin-top: -2em;
+
+  @media screen and (min-width: 400px) and (max-width: 800px) {
+    margin-top: -10em;
+    min-height: 350px;
+  }
+}
+
+.column-1 {
+  html.svg & {
+    background-image: image-url('column-footer-1.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('column-footer-1.png');
+  }
+}
+
+.column-2 {
+  html.svg & {
+    background-image: image-url('column-footer-2.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('column-footer-2.png');
+  }
+}
+
+.column-3 {
+  html.svg & {
+    background-image: image-url('column-footer-3.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('column-footer-3.png');
+  }
+}
+
+.icon-strengths, .icon-chops, .icon-quirks {
+  display: block;
+  width: 50px;
+  min-height: 50px;
+  background: no-repeat;
+  margin: auto;
+
+  @media screen and (min-width: 400px) and (max-width: 800px)  {
+    float: left;
+  }
+}
+
+.icon-strengths {
+  html.svg & {
+    background-image: image-url('icon-strengths.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('icon-strengths.png');
+  }
+}
+
+.icon-chops {
+  html.svg & {
+    background-image: image-url('icon-chops.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('icon-chops.png');
+  }
+}
+
+.icon-quirks {
+  html.svg & {
+    background-image: image-url('icon-quirks.svg');
+  }
+    
+  html.no-svg & {
+    background-image: image-url('icon-quirks.png');
+  }
+}
+
+
 figure {
   @extend .column;
+  text-align: center;
 }
 
 span.amp {
@@ -311,6 +508,10 @@ span.amp {
   margin: 5em auto;
   list-style: none;
   text-align: center;
+  @include breakpoint(mama-bear) { 
+    width: 90%;
+    margin: 3em auto;
+  }
 }
 
 .bubble {
@@ -327,7 +528,6 @@ span.amp {
   padding-top: 100%;  /* this maintains the aspect ratio of the bubble - 1:1*/
 }
 
-/* break */
 .bubble-content {
   position: absolute;
   top: 0;
@@ -350,14 +550,15 @@ span.amp {
   }
 }
 
-/* break */
 $string-length: 1;
 
 @while $string-length < 100 {
   .size-#{$string-length} {
     width: sqrt($string-length) * 1.75em;
     // width: percentage(sqrt($string-length) * 0.06);
-    // font-size: 50%;
+    @include breakpoint(mama-bear) { 
+      font-size: 75%;
+    }
   }
   $string-length: $string-length + 1;
 }
