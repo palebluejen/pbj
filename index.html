@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
     <title>Consider again, this pale, blue jen.</title>
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -19,7 +21,7 @@
         $(this).addClass("size-" + $(this).text().length);
       });
     });
-        /*  Should try and convert from jquery to plain js
+        /*  Should try and convert from jquery to plain js or find another thing to base the bubble size on
             article on converting: http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/ (#5)
             something like:
             document.querySelector('#box').classList.add('wrap');
@@ -50,8 +52,32 @@
 
   </header>
 
-
   <div class="site-wrapper">
+
+    <div class="pbj-home">
+
+      <div class="pbj-collage underground layer-12 group-shrink"></div>
+      <div class="pbj-collage underground layer-11 group-shrink"></div>
+      <div class="pbj-collage underground layer-10 group-shrink"></div>
+      <div class="pbj-collage underground layer-9 group-shrink"></div>
+      <div class="pbj-collage underground layer-8 group-shrink"></div>
+      <div class="pbj-collage underground layer-7r group-shrink"></div>
+      <div class="pbj-collage underground layer-7l group-shrink"></div>
+      <div class="pbj-collage underground layer-6 group-shrink group-disappear"></div>
+      <div class="pbj-collage underground layer-5 group-shrink"></div>
+      <div class="pbj-collage underground layer-4 group-shrink"></div>
+
+      <p class="pbj-title-block">
+        <span class="super-title" data-shadow-text="PALE">PALE</span>
+        <span class="super-title" data-shadow-text="BLUE">BLUE</span>
+        <span class="super-title" data-shadow-text="JEN">JEN</span>
+      </p>
+
+      <div class="pbj-collage layer-3r group-shrink group-right"></div>
+      <div class="pbj-collage layer-3l group-shrink group-left"></div>
+      <div class="pbj-collage layer-2 group-shrink group-left"></div>
+      <div class="pbj-collage layer-1 group-left"></div>
+    </div>
 
     <article id="belong">
 
@@ -66,6 +92,7 @@
         <p>
           It might sound cliché, but it's not lip-service. I've been very lucky to have spent the last 6 months on a blissful sabbatical. I took the time to clear out my own personal backlog. I travelled to new corners of the world including <a class="roll-link" href="http://resonate.io/"><span data-title="Belgrade">Belgrade</span></a>, <a href="http://www.flickr.com/photos/b9punk/sets/72157633103844836/">Bali</a> and <a href="http://www.flickr.com/photos/b9punk/sets/72157633396847820/">Costa Rica</a>.  I practiced painting, drawing and <a href="http://pinterest.com">arts <span class="amp">&amp;</span> crafts</a>, caught up with my reading list, spent time with friends and my family in Colorado, and got into gardening, running, and swimming. It has been wonderful, but when I think of doing this forever I go mad. It's nice for a vacation, but as a lifestyle its honestly got nothing on "working on the future with friends."      
         </p>
+        <div class="string-blend-1"></div> 
       </div>
 
       <div class="text-block">
@@ -187,7 +214,7 @@
             </ul>
           </div>
           <div class="column-3"></div>
-        </quirks>
+        </section>
 
       </div>
 
@@ -232,13 +259,20 @@
           Work
       </h2>
 
-      <div class="text-block">
+<!--       <div class="super-title-wrapper"> -->
+        <p class="title-block">
+          <span class="super-title" data-shadow-text="Behance"><a href="http://be.net/palebluejen">Behance</a></span>
+          <span class="super-title" data-shadow-text="Dribbble"><a href="http://dribbble.com/palebluejen">Dribbble</a></span>
+        </p>
+<!--       </div>  -->
+
+<!--       <div class="text-block">
         <p class="subhead">Pride is cheap.</p>
 
         <p>
           It used to be a point of pride that I built my online portfolio from scratch, but time is unkind to old code. For now I'm keeping <a href="http://be.net/palebluejen">my portfolio on  Behance</a> to benefit from their network-culture community and SEO juice, and because it's a waste of time to reproduce a worse version of a solved problem. I have better things to prove. I'm also just starting to get into <a href="http://dribbble.com/palebluejen">dribbble</a>. Here's a taste:
         </p>
-      </div> 
+      </div> -->
 
       <div class="column-container">
         <figure> 
@@ -273,6 +307,7 @@
       <h2 class="section-header"> 
           <strong>R&#xe9;sum&#xe9;</strong>
       </h2>
+
 
       <div class="text-block">
         <p class="subhead"><a href="jennifer-gergen-resume.pdf">Download <span class="amp">&amp;</span> view my resume pdf.</a> </p>
@@ -319,14 +354,15 @@
 
       <div class="text-block">
         <p>I live on the internet. Find me here and say hello!</p>
+      </div>
 
-        <ul>
-          <li>email</li>
-          <li>about.me</li>
-          <li>pinterest</li>
-          <li>twitter</li>
-          <li>readmill</li>
-          <li> <a href="http://about.me/jgergen">About.me</a></li>
+      <div class="triangle-list-container">
+        <ul class="triangle-list">
+          <li class="triangle size-20"> <p class="triangle-content">email</p></li>
+          <li class="triangle size-50"> <p class="triangle-content">pinterest</p></li>
+          <li class="triangle size-60"> <p class="triangle-content">twitter</p></li>
+          <li class="triangle size-60"> <p class="triangle-content">readmill</p></li>
+          <li class="triangle size-30"> <p class="triangle-content"> <a href="http://about.me/jgergen">About.me</a></p></li>
         </ul>
       </div>
 
