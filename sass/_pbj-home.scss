@@ -1,0 +1,185 @@
+
+@import "base";
+
+// PBJ home illustration -----------------------------------------------------------------------
+
+.pbj-home {
+  width: 100%;
+  min-height: 70em;
+  margin: 0;
+  padding: 0;
+  background: image-url('pbj-home-bg.png') bottom center repeat-x;
+}
+
+.layer-12{
+  position: absolute;
+  width: 844px;
+  height: 300px;
+  top: 0;
+  left: calc(50% - 422px);
+  background: image-url('pbj-home-layer-12.gif') no-repeat;
+}
+
+.layer-11{
+  position: absolute;
+  width: 475px;
+  height: 237px;
+  top: 0;
+  left: 5%;
+  background: image-url('pbj-home-layer-11.gif') no-repeat;
+}
+
+.layer-10{
+  position: absolute;
+  width: 393px;
+  height: 391px;
+  top: 32em;
+  left: 18%;
+  background: image-url('pbj-home-layer-10.gif') no-repeat;
+}
+
+.layer-9{
+  position: absolute;
+  width: 1200px;
+  height: 418px;
+  top: 30em;
+  left: calc(50% - 600px);
+  background: image-url('pbj-home-layer-9.gif') no-repeat;
+}
+
+.layer-8{
+  position: absolute;
+  width: 591px;
+  height: 591px;
+  top: 3em;
+  right: 10%;
+  background: image-url('pbj-home-layer-8.gif') no-repeat;
+}
+
+.layer-7r{
+  position: absolute;
+  width: 310px;
+  height: 371px;
+  top: 8em;
+  right: 30%;
+  background: image-url('pbj-home-layer-7r.gif') no-repeat;
+}
+
+.layer-7l{
+  position: absolute;
+  width: 472px;
+  height: 445px;
+  top: 12em;
+  left: 12%;
+  background: image-url('pbj-home-layer-7l.gif') no-repeat;
+}
+
+.layer-6{
+  position: absolute;
+  width: 46px;
+  height: 38px;
+  top: 50em;
+  right: 25%;
+  background: image-url('pbj-home-layer-6.gif') no-repeat;
+}
+
+.layer-5{
+  position: absolute;
+  width: 278px;
+  height: 238px;
+  top: 24em;
+  right: 32%;
+  background: image-url('pbj-home-layer-5.gif') no-repeat;
+}
+
+.layer-4{
+  position: absolute;
+  width: 666px;
+  height: 22px;
+  top: 40em;
+  left: 10%;
+  background: image-url('pbj-home-layer-4.png') no-repeat;
+}
+
+
+.layer-3l{
+  position: absolute;
+  width: 381px;
+  height: 472px;
+  top: 25em;
+  left: 5%;
+  background: image-url('pbj-home-layer-3l.gif') no-repeat;
+}
+
+.layer-3r{
+  position: absolute;
+  width: 156px;
+  height: 191px;
+  top: 1em;
+  right: 15%;
+  background: image-url('pbj-home-layer-3r.gif') no-repeat;
+}
+
+.layer-2{
+  position: absolute;
+  width: 144px;
+  height: 520px;
+  top: 5em;
+  left: 20%;
+  background: image-url('pbj-home-layer-2.gif') no-repeat;
+}
+
+.layer-1{
+  position: absolute;
+  width: 761px;
+  height: 1114px;
+  top: 5em;
+  left: 30%;
+  left: calc(50% - 380px);
+  background: image-url('pbj-home-layer-1.gif') no-repeat;
+}
+
+.pbj-collage {
+  overflow: hidden;
+  max-width: 99%;
+  max-height: 70em;
+  @include background-size(contain);
+
+  @include breakpoint(mama-bear) {
+    max-height: 50em;
+  }
+  @include breakpoint(baby-bear) {
+    max-height: 30em;
+  }
+}
+
+.underground {
+  z-index: 0;
+}
+
+.group-shrink{
+  @include breakpoint(mama-bear) {
+    @include background-size(75%);
+  }
+  @include breakpoint(baby-bear) {
+    @include background-size(50%);
+  }
+}
+
+.group-left {
+  @include breakpoint(mama-bear) {
+    left: 10%;
+  }
+  @include breakpoint(baby-bear) {
+    left: 5%;
+  }
+}
+
+.group-disappear {
+  @include breakpoint(mama-bear) {
+    display: none;
+  }
+  @include breakpoint(baby-bear) {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+
+@mixin debug($color: red) {
+  border: {
+    color: $color;
+    width: 1px;
+    style: solid;
+  }
+}
+
+// Fonts -----------------------------------------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@include font-face("Novecento",font-files("Novecentowide-Light-webfont.ttf",ttf,"Novecentowide-Light-webfont.woff",woff,"Novecentowide-Light-webfont.otf",opentype),"Novecentowide-Light-webfont.eot",normal,normal);
+@include font-face("Novecento",font-files("Novecentowide-Bold-webfont.ttf",ttf,"Novecentowide-Bold-webfont.woff",woff,"Novecentowide-Bold-webfont.otf",opentype),"Novecentowide-Bold-webfont.eot",bold,normal);
+
+// Colors -----------------------------------------------------------------------
+
+$frame-color         : #000000;
+$nav-color           : #FFFFFF;
+$page-bg-color       : #000000;
+$main-text-color     : #000000;
+$main-bg-color       : #FFFFFF;
+$heading-text-color  : #FFFFFF;
+$heading-bg-color    : #000000;
+$special-text-color  : #000000;
+$special-bg-color    : #FFFAD2;
+$link-color          : #0F67FB;
+
+// SVG Fallback -----------------------------------------------------------------------
+
+@mixin img-svg($name, $repeat: no-repeat, $pos1: top, $pos2: center) {
+  html.svg & {
+    background-image: image-url("#{$name}.svg");
+    background-repeat: $repeat;
+    background-position: $pos1 $pos2;
+  }
+
+  html.no-svg & {
+    background-image: image-url("fallbacks/#{$name}.png");
+    background-repeat: $repeat;
+    background-position: $pos1 $pos2;
+  }
+}
+
+// Responsive Rules -----------------------------------------------------------------------
+
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (min-width: 1200px) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 650px)  { @content; }
+  }
+}
