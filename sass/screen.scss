@@ -15,10 +15,7 @@
 
 // Global -----------------------------------------------------------------------
 
-html, body
-{
-  font: 1em/1.6em 'Open Sans', sans-serif;
-  color: $main-text-color;
+html, body{
   position: relative; /* this seemed to fix the bug where chrome wouldn't show text after making an element absolutely positioned */
 }
 
@@ -42,14 +39,22 @@ span.amp {
 // Links -----------------------------------------------------------------------
 
 a {
-    color: $link-color;
+  color: $link-text-color;
+  // background: $link-bg-color;
+  text-decoration: none;
+  padding: 0 0.2em;
+  // border-radius: 0.3em;
+  border-bottom: dotted 1px $link-text-color;
 }
+
 a:hover, a:focus {
-    color: #2445ae;
-    text-decoration: none;
+  color: white;
+  background: $link-text-color;
+  border-radius: 0.2em;
 }
+
 a:active {
-    color: black;
+  color: black;
 }
 
 .roll-link {
@@ -65,6 +70,7 @@ a:active {
 }
 
 .roll-link a {
+  @include unpink;
   display: block;
   position: relative;
   padding: 0 0.5em;
@@ -89,25 +95,27 @@ a:active {
   color: $main-text-color;
   background: $main-bg-color;
   @include transform-origin(50%, 0%);
-  // @include translate3d(0px, 105%, 0px);
-  // @include rotateX(-90deg);
-
-  // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
   -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
   -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
   -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
   transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+  // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
+  // @include translate3d(0px, 105%, 0px);
+  // @include rotateX(-90deg);
+  // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
 }
 
 // Layout -----------------------------------------------------------------------
 
 body {
+  font: 1em/1.6em 'Open Sans', sans-serif;
+  color: $main-text-color;
   border-left: 4em solid $frame-color;
-  border-right: 4em solid $frame-color;  
+  border-right: 4em solid $frame-color;
+  background:  image-url('backup-bg.jpg') top center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
   background-color: $page-bg-color; // Old browsers
-  @include filter-gradient(#000000, #000000, vertical); // IE6-9
   @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#2e0d08 95%,#180604 98%,#000000 100%));
-
+  
   @include breakpoint(baby-bear) {
     border-left: none;
     border-right: none; 
@@ -133,10 +141,10 @@ body:after {
   margin: 4em auto 3em;
   border: 1px solid $frame-color;
   background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
-  // background-size: auto;
-    @include breakpoint(papa-bear) { 
-      @include background-size(cover);
-    }
+  
+  @include breakpoint(papa-bear) { 
+    @include background-size(cover);
+  }
 }
 
 article {
@@ -177,15 +185,19 @@ h2, h3 {
   width: 93%;
   width: calc(100% - 1em);
 
-  @include breakpoint(mama-bear) {
-    width: calc(100% - 0.1em); /* weird... don't quite understand why.. maybe just don't totally understand ems */
-  }
+  // @include breakpoint(mama-bear) {
+  //   width: calc(100% - 0.1em); weird... don't quite understand why.. maybe just don't totally understand ems
+  // }
 
 }
 
 .pbj-title-block {
   position: absolute;
   letter-spacing: 0.3em;
+}
+
+.pbj-title-block span{
+  // width: 4em;
 }
 
 .title-block {
@@ -195,60 +207,64 @@ h2, h3 {
 }
 
 .super-title, .super-title:after{
-    white-space: nowrap;
-    display: block;
-    position: relative;
-    padding: 0 0.5em;
-    width: 4em;
-    border-bottom: solid 0.08em #FFFFFF;
-    margin: auto;
-    text-align: center;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  padding: 0 0.5em;
+  width: 40%;
+  border-bottom: solid 0.08em #FFFFFF;
+  margin: auto;
+  text-align: center;
 
-    @include breakpoint(mama-bear) { 
-      font-size: .5em;
-      letter-spacing: 0.5em;
-      width: 5em;
-    }
+  @include breakpoint(mama-bear) { 
+    font-size: .5em;
+    letter-spacing: 0.5em;
+    width: 5em;
+  }
 
-    @include breakpoint(baby-bear) { 
-      font-size: .3em;
-      letter-spacing: 0.5em;
-      width: 5em;
-    }
+  @include breakpoint(baby-bear) { 
+    font-size: .3em;
+    letter-spacing: 0.5em;
+    width: 5em;
+  }
 }
 
 .super-title {
-    z-index: 0;
-    text-shadow: .1em .1em 0 $main-text-color ;
-    filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
+  z-index: 0;
+  text-shadow: .1em .1em 0 $main-text-color ;
+  filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
 }
 
-.super-title:after {
-    content: attr(data-shadow-text);
-    // color: #ff0000;
-    color: $main-text-color ;
-    border: none;
-    text-shadow: none;
-    text-align: center;
-    position: absolute;
-    left: -0.08em;
-    top: -0.08em;
-    z-index: -1;
-    -webkit-mask-image: image-url('text-mask.png');
+// .super-title:after {
+//   content: attr(data-shadow-text);
+//   color: #ff0000;
+//   // color: $main-text-color ;
+//   border: none;
+//   text-shadow: none;
+//   text-align: center;
+//   position: absolute;
+//   left: -0.08em;
+//   top: -0.08em;
+//   z-index: -1;
+//   -webkit-mask-image: image-url('text-mask.png');
 
-    @include breakpoint(mama-bear) { 
-      font-size: 1em;
-    }
+//   @include breakpoint(mama-bear) { 
+//     font-size: 1em;
+//   }
 
-    @include breakpoint(baby-bear) { 
-      font-size: 1em;
-    }
-}
+//   @include breakpoint(baby-bear) { 
+//     font-size: 1em;
+//   }
+// }
 
 .super-title:last-child {
   border: none;
 }
 
+.super-title a{
+  // @include unpink;
+  margin: 40em auto;
+}
 
 .section-header {
   font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
@@ -259,14 +275,14 @@ h2, h3 {
   font-weight: bold;
   text-align: center;
 
-    .debold {
-      font-weight: normal;
-      display: block;
-    }
+  .debold {
+    font-weight: normal;
+    display: block;
+  }
 
-    @include breakpoint(mama-bear) { 
-      font-size: 1em;
-      line-height: 1.5em;
+  @include breakpoint(mama-bear) { 
+    font-size: 1em;
+    line-height: 1.5em;
   }
 }
 
@@ -279,8 +295,8 @@ h2, h3 {
   font-size: 1.1em;
 
   strong {
-      font-weight: bold;
-    }
+    font-weight: bold;
+  }
 
   .special {
     background: $special-bg-color;
@@ -318,6 +334,7 @@ header {
   padding: 1em 4em 1em;
   height: 4em;
   z-index: 99;
+  
   @include breakpoint(baby-bear) {
     padding: 1em;
     height: 2.5em;
@@ -327,14 +344,8 @@ header {
 .logo {
 
   a {
-    html.svg & {
-      background-image: image-url('pbj-site-logo.svg');
-    }
-    
-    html.no-svg & {
-      background-image: image-url('fallbacks/pbj-site-logo.png');
-    }
-
+    @include unpink;
+    @include img-svg (pbj-site-logo);
     display: block;
     top: 2em;
     left: 4em;
@@ -445,25 +456,6 @@ nav ul.site-nav {
   @include img-svg('string-blend-2');
 }
 
-// About -----------------------------------------------------------------------
-
-// #strengths li {
-//   padding: 0em 0 0.7em 2em;
-//   background: image-url('icon-strengths.svg') no-repeat;
-//   @include background-size(1.1em);
-// }
-
-// #chops li {
-//   padding: 0em 0 0.7em 2em;
-//   background: image-url('icon-chops.svg') no-repeat;
-//   @include background-size(1.2em);
-// }
-
-// #quirks li {
-//   padding: 0em 0 0.7em 2em;
-//   background: image-url('icon-quirks.svg') no-repeat;
-//   @include background-size(1.1em);
-// }
 
 // Column Rules -----------------------------------------------------------------------
 
@@ -503,13 +495,13 @@ nav ul.site-nav {
   }
 
   ul {
-    // list-style-type: square;
-    margin: 5em 10em 5em 0;
-    list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+    list-style-type: disc;
+    margin: 0 0 0 1.2em;
   }
 }
+
+
+// About -----------------------------------------------------------------------
 
 .column-head {
   width: 75%; /* calc fallback for IE 8 */
@@ -552,7 +544,6 @@ nav ul.site-nav {
   display: block;
   width: 50px;
   min-height: 50px;
-  background: no-repeat;
   margin: auto;
 
   @media screen and (min-width: 400px) and (max-width: 800px)  {
@@ -629,22 +620,27 @@ figure {
   padding-top: 100%;  /* this maintains the aspect ratio of the bubble - 1:1*/
 }
 
-.bubble-content {
+.bubble-content, .triangle-content {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 30% 15%;
   margin: 0;
+  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: $main-text-color;
+  text-align: center;
+  z-index: 0;
+}
+
+.bubble-content {
+  padding: 30% 15%;
   @include border-radius (100%);
   background: $main-bg-color;
-  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $main-text-color;
-  text-align: center;
 
   html.no-borderradius & {
+    /* thought about doing a resizable svg circle graphic as the bg here, but browsers without border-radius also do not have svg, instead squares */
     border: solid 0.5em black;
     padding: 10%;
   }
@@ -655,37 +651,6 @@ figure {
     font-size: 0.9em;
   }
 }
-
-.triangle-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  z-index: 0;
-  // background-image: image-url('triangle-down.svg');
-  // @include background-size(100% auto);
-  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $main-text-color;
-  text-align: center;
-
-  html.no-borderradius & {
-    border: solid 0.5em black;
-    padding: 10%;
-  }
-  
-  em {
-    display: block;
-    margin: 0.6em 0;
-    font-size: 0.9em;
-  }
-}
-
-// .triangle:nth-child(odd){
-//   background: red;
-// }
 
 .triangle-content:before{
   content: "";
@@ -694,10 +659,9 @@ figure {
   height: 99%;
   top: 0;
   left: 0;
-  z-index: -1;
-  background-image: image-url('triangle-down.svg');
+  @include img-svg('triangle-down');
   @include background-size(100% auto);
-  opacity: 50%;
+  z-index: -1;
 }
 
 .triangle:nth-child(even) .triangle-content{
@@ -705,7 +669,6 @@ figure {
 }
 
 .triangle:nth-child(odd) .triangle-content{
-  // top: -50%;
   padding: 50% 15%;
   line-height: 3em;
 }
@@ -719,7 +682,6 @@ $string-length: 1;
 @while $string-length < 100 {
   .size-#{$string-length} {
     width: sqrt($string-length) * 1.75em;
-    // width: percentage(sqrt($string-length) * 0.06);
     @include breakpoint(mama-bear) { 
       font-size: 75%;
     }

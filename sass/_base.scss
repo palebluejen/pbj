@@ -24,7 +24,8 @@ $heading-text-color  : #FFFFFF;
 $heading-bg-color    : #000000;
 $special-text-color  : #000000;
 $special-bg-color    : #FFFAD2;
-$link-color          : #0F67FB;
+$link-text-color     : #ec008c;
+$link-bg-color		 : #e1f2fb;
 
 // SVG Fallback -----------------------------------------------------------------------
 
@@ -54,4 +55,18 @@ $link-color          : #0F67FB;
   @else if $point == baby-bear {
     @media (max-width: 650px)  { @content; }
   }
+}
+
+// Unpink this link! -----------------------------------------------------------------------
+
+@mixin unpink {
+	background: none;
+	border: none;
+	color: inherit;
+
+	& hover {
+		background: none;
+		border: none;
+		color: inherit;
+	}
 }
