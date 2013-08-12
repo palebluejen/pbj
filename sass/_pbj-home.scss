@@ -150,11 +150,6 @@
   @include single-transition(all, 0.5, linear);
 }
 
-.underground {
-  z-index: 0;
-}
-
-
 .group-disappear {
   @include breakpoint(mama-bear) {
     display: none;

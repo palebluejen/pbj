@@ -9,7 +9,6 @@
 @import "compass/css3/transform";
 @import "compass/css3/transition";
 @import "compass/css3/box-shadow";
-// @import "animate";
 @import "pbj-home";
 @import "base";
 
@@ -52,54 +51,6 @@ a {
     background: $link-text-color;
     border-radius: 0.2em;
   }
-}
-
-.roll-link {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  @include perspective(600px);
-  @include perspective-origin(50% 50%);
-}
-
-.roll-link:hover {
-  text-decoration: none;
-}
-
-.roll-link a {
-  @include unpink;
-  display: block;
-  position: relative;
-  padding: 0 0.5em;
-  @include transition(all 400ms ease);
-  @include transform-origin(50%, 0%);
-  @include transform-style(preserve-3d);
-}
-
-.roll-link:hover a {
-  background: $main-bg-color;
-  @include translate3d(0, 0, -30px);
-  @include rotateX(90deg);
-}
-
-.roll-link a:after {
-  content: attr(data-title);
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 0 0.5em;
-  color: $main-text-color;
-  background: $main-bg-color;
-  @include transform-origin(50%, 0%);
-  -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-  -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-  -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-  transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-  // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
-  // @include translate3d(0px, 105%, 0px);
-  // @include rotateX(-90deg);
-  // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
 }
 
 // Layout -----------------------------------------------------------------------
@@ -150,7 +101,6 @@ body:after {
 
 article {
   padding-top: 15%;
-  // width: 100%;
   
   @include breakpoint(mama-bear) { 
     padding-top: 30%;
@@ -177,107 +127,57 @@ h2, h3 {
   }
 }
 
-.title-block, .pbj-title-block {
+.title-block{
   font: 9em 'Novecento', 'Open Sans', sans-serif;
   font-weight: bold;
   color: $heading-text-color;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
-}
-
-.pbj-title-block {
   position: absolute;
   letter-spacing: 0.3em;
   margin: 1.5em auto;
   @include animate(bounceIn, 1s, 3s);
+
+  @include breakpoint(mama-bear) { 
+    font-size: .5em;
+    letter-spacing: 0.5em;
+    font-size: 5em;
+    margin-top: 2.5em;
+  }
+
+  @include breakpoint(baby-bear) { 
+    font-size: .3em;
+    letter-spacing: 0.5em;
+    font-size: 3em;
+    margin-top: 3em;
+  }
 }
 
-.title-block {
-  position: relative;
-  font-size: 4em;
-  letter-spacing: 0.1em;
-  margin: 1.5em auto;
-}
-
-.pbj-super-title, .pbj-super-title:after, .super-title, .super-title:after{
+.super-title {
   white-space: nowrap;
   display: block;
   position: relative;
   padding: 0 0.5em;
   border-bottom: solid 0.08em #FFFFFF;
   margin: auto;
-
-  @include breakpoint(mama-bear) { 
-    font-size: .5em;
-    letter-spacing: 0.5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    font-size: .3em;
-    letter-spacing: 0.5em;
-  }
-}
-
-.pbj-super-title, .pbj-super-title:after {
   width: 4em;
-
-  @include breakpoint(mama-bear) { 
-    width: 5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    width: 5em;
-  }
-}
-
-.super-title, .super-title:after{
-  width: 6em;
-
-  @include breakpoint(mama-bear) { 
-    width: 9em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    width: 9em;
-  }
-}
-
-.super-title {
-  z-index: 0;
   text-shadow: .1em .1em 0 $main-text-color ;
   filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
-}
 
-.super-title:after {
-  content: attr(data-shadow-text);
-  color: #ff0000;
-  // color: $main-text-color ;
-  border: none;
-  text-shadow: none;
-  position: absolute;
-  left: -0.08em;
-  top: -0.08em;
-  z-index: -1;
-  -webkit-mask-image: image-url('text-mask.png');
+  &:last-child {
+    border: none;
+  }
 
   @include breakpoint(mama-bear) { 
-    font-size: 1em;
+    width: 5em;
   }
 
   @include breakpoint(baby-bear) { 
-    font-size: 1em;
+    width: 5em;
   }
 }
 
-.super-title:last-child {
-  border: none;
-}
-
-.super-title a{
-  // @include unpink;
-  margin: 40em auto;
-}
 
 .section-header {
   font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
@@ -371,17 +271,6 @@ header {
     height: 30px;
     z-index: 100;
     @include animate(fadeInDown, 1s, 0s);
-    
-    // @include breakpoint(baby-bear) {
-    //   position: absolute;
-    //   width: 60px;
-    //   height: 18px;
-    //   top: 1em;
-    //   left: 1em;
-    //   @include background-size(60px, 18px);
-    //   margin: auto;
-    //   margin-bottom: 1em;
-    // } 
 
     @include breakpoint(baby-bear) { 
       display: none;
@@ -393,7 +282,7 @@ header {
   text-align: right;
   display: block;
   font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
-  @include animate(fadeInDown, 1s, 0s);
+  @include animate(fadeInDown, 0.5s, 0s);
 
   span {
     display: inline-block;
@@ -409,29 +298,6 @@ header {
     font-weight: bold;
     text-decoration: none;
   }
-
-  // span:nth-child(2) {
-  //   padding: 0;
-  // }
-
-  // .belong-nav {
-  //   font: 0.8em/3em 'Open Sans', sans-serif;
-  //   // margin-right: 2em;
-    
-  //   @include breakpoint(mama-bear) { 
-  //     width: 100%; 
-  //     padding: 0;
-  //     margin: 0;
-  //     text-align: right;
-  //     line-height: 1.8em;
-  //     font-size: 0.6em;
-  //   }
-  // }
-  .close-menu {
-    display: none;
-    border: none;
-    padding: 0 0.5em;
-  }
 }
 
 .menu-controls a{
@@ -443,19 +309,17 @@ header {
   .menu-controls a {
       position: fixed;
       display: block;
-      // left: calc(50% - 2.5em);
-      color: white;
-      font: 0.8em/6em 'Novecento', 'Open Sans', sans-serif;
-      background: black;
-      padding: 0;
+      color: $nav-color;
+      font: 1.2em/4.5em 'Novecento', 'Open Sans', sans-serif;
+      background: $frame-color;
       text-align: right;
-      padding-right: 1.5em;
       text-decoration: none;
       transition: all 0.3s ease;
       width: 5em;
       height: 5em;
-      margin: -2em 0 0 -3.5em;
-      border-radius: 0 0 60% 0;
+      margin: -1em 0 0 -3em;
+      padding-right: 2em;
+      border-radius: 0 0 100% 0;
       border: none;
   }
 
@@ -464,19 +328,17 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0.5em 0;
+    padding: 1em 0;
     background: black;
     text-align: center;
     transition: height 0.3s ease;
+    
     a {
       display: inline-block;
       color: white;
       font-size: 0.8em;
+      margin: 0 0.8em;
     }
-    // .belong-nav {
-    //   width: auto;
-    // }
-  
   }
 
   #main-nav:target {
@@ -492,94 +354,52 @@ header {
   }
 }
 
-// @media (max-width: 650px) {
+.roll-link {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  @include perspective(600px);
+  @include perspective-origin(50% 50%);
 
-//   .menu-controls a {
-//       position: fixed;
-//       display: block;
-//       color: white;
-//       font-size: 1.2em;
-//       background: black;
-//       padding: 1em;
-//       text-align: center;
-//       text-decoration: none;
-//       transition: all 0.3s ease;
-//   }
+  &:hover {
+    text-decoration: none;
+  }
 
-//   .main-nav {
-//     display: none;
-//     position: fixed;
-//     top: 0;
-//     width: 100%;
-//     padding: 1em;
-//     background: black;
-//     text-align: center;
-//     transition: height 0.3s ease;
-//     a {
-//       display: inline-block;
-//       color: white;
-//       &:hover, &:focus {
-//         color: pink;
-//         text-decoration: none;
-//       }
-//     }
-
-//   }
-
-//   #main-nav:target {
-//     display: block;
-//   }
-
-//   #main-nav:target + .menu-controls {
-//        display: none; 
-//   }
-// }
-
-
-// nav {
-//   display: none;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   padding: 1em;
-//   background: black;
-//   text-align: center;
-//   transition: height 0.3s ease;
-//   a {
-//     display: inline-block;
-//     color: white;
-//     &:hover, &:focus {
-//       color: pink;
-//       text-decoration: none;
-//     }
-//   }
-
-// }
-
-
-.top-link {
-  display: none;
-
-  @include breakpoint(baby-bear) { 
-    display: block;
-    width: 100%;
+  a {
     @include unpink;
-    text-align: center;
-    font: 1em 'Novecento', 'Open Sans', sans-serif;
-    font-weight: bold;
-    color: $nav-color;
-    padding: 0;
+    display: block;
+    position: relative;
+    padding: 0 0.5em;
+    @include transition(all 400ms ease);
+    @include transform-origin(50%, 0%);
+    @include transform-style(preserve-3d);
   }
 
-  &:before {
-    content: "";
-    @include img-svg('triangle-up');
-    background-position: center center;
-    padding: 0 1.5em 0 0;
+  a:hover{
+    background: $main-bg-color;
+    @include translate3d(0, 0, -30px);
+    @include rotateX(90deg);
   }
-    &:hover {
-    color: $link-text-color;
-  }
+
+  a:after{
+    content: attr(data-title);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 0.5em;
+    color: $main-text-color;
+    background: $main-bg-color;
+    @include transform-origin(50%, 0%);
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
+    // @include translate3d(0px, 105%, 0px);
+    // @include rotateX(-90deg);
+    // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
+    }
 }
 
 
