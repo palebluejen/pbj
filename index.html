@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta charset="utf-8">
     <title>Consider again, this pale, blue jen.</title>
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -40,17 +40,22 @@
       <a href="#">pale blue jen</a>
     </h1>
 
-    <nav>
-      <ul class="site-nav">
-        <li class="belong-nav"><a href="#belong" >Where do I belong?</a></li>
-        <li class="roll-link"><a data-title="About" href="#about">About</a></li>
-        <li class="roll-link"><a data-title="Work" href="#work">Work</a></li>
-        <li class="roll-link"><a data-title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></li>
-        <li class="roll-link"><a data-title="Hello." href="#contact">Hello.</a></li>
-      </ul>
+    <nav id="main-nav" class="main-nav">
+        <span class="roll-link"><a data-title="?" href="#belong">?</a></span>
+        <span class="roll-link"><a data-title="About" href="#about">About</a></span>
+        <span class="roll-link"><a data-title="Work" href="#work">Work</a></span>
+        <span class="roll-link"><a data-title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></span>
+        <span class="roll-link"><a data-title="Hello." href="#contact">Hello.</a></span>
+        <a href="" target="_self" class="close-menu">X</a>
     </nav>
 
-    <a class="top-link" href="#">Top</a>
+    <!-- <a class="top-link" href="#">Top</a> -->
+
+    <div class="menu-controls">
+      <a href="#main-nav" class="open-menu">
+        &#9776;
+      </a>
+    </div>
 
   </header>
 
