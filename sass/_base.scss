@@ -29,17 +29,15 @@ $link-bg-color		 : #e1f2fb;
 
 // SVG Fallback -----------------------------------------------------------------------
 
-@mixin img-svg($name, $repeat: no-repeat, $pos1: top, $pos2: center) {
+@mixin img-svg($name, $repeat: no-repeat) {
   html.svg & {
     background-image: image-url("#{$name}.svg");
     background-repeat: $repeat;
-    background-position: $pos1 $pos2;
   }
 
   html.no-svg & {
     background-image: image-url("fallbacks/#{$name}.png");
     background-repeat: $repeat;
-    background-position: $pos1 $pos2;
   }
 }
 
@@ -64,7 +62,7 @@ $link-bg-color		 : #e1f2fb;
 	border: none;
 	color: inherit;
 
-	& hover {
+	&:hover {
 		background: none;
 		border: none;
 		color: inherit;
