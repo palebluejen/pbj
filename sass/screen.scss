@@ -1,680 +1,680 @@
 
-// Imports -----------------------------------------------------------------------
+  // Imports -----------------------------------------------------------------------
 
-@import "compass/reset";
-@import "compass/css3/font-face";
-@import "compass/css3/background-size";
-@import "compass/css3/border-radius";
-@import "compass/css3/images";
-@import "compass/css3/transform";
-@import "compass/css3/transition";
-@import "compass/css3/box-shadow";
-@import "pbj-home";
-@import "base";
+  @import "compass/reset";
+  @import "compass/css3/font-face";
+  @import "compass/css3/background-size";
+  @import "compass/css3/border-radius";
+  @import "compass/css3/images";
+  @import "compass/css3/transform";
+  @import "compass/css3/transition";
+  @import "compass/css3/box-shadow";
+  @import "pbj-home";
+  @import "base";
 
 
-// Global -----------------------------------------------------------------------
+  // Global -----------------------------------------------------------------------
 
-html, body{
-  position: relative; /* this seemed to fix the bug where chrome wouldn't show text after making an element absolutely positioned */
-}
-
-p {
-  margin: 1em 0;
-}
-
-em {
-  font-family: Georgia, sans-serif;
-  font-weight: normal;
-  font-style: italic;
-}
-
-span.amp {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  html, body{
+    position: relative; /* this seemed to fix the bug where chrome wouldn't show text after making an element absolutely positioned */
   }
 
-
-// Links -----------------------------------------------------------------------
-
-a {
-  color: $link-text-color;
-  // background: $link-bg-color;
-  text-decoration: none;
-  padding: 0 0.2em;
-  // border-radius: 0.3em;
-  border-bottom: dotted 1px $link-text-color;
-
-  &:hover, a:focus {
-    color: white;
-    background: $link-text-color;
-    border-radius: 0.2em;
-  }
-}
-
-// Layout -----------------------------------------------------------------------
-
-body {
-  font: 1em/1.6em 'Open Sans', sans-serif;
-  color: $main-text-color;
-  border-left: 4em solid $frame-color;
-  border-right: 4em solid $frame-color;
-  background:  image-url('backup-bg.jpg') top center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
-  background-color: $page-bg-color; // Old browsers
-  @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#2e0d08 95%,#180604 98%,#000000 100%));
-  
-  @include breakpoint(baby-bear) {
-    border-left: none;
-    border-right: none; 
-  }
-}
-
-/* bottom "border" */
-body:after {
-  content: "";
-  position: fixed;
-  background: $frame-color;
-  left: 0;
-  right: 0;
-  height: 4em;
-  bottom: 0;
-
-  @include breakpoint(baby-bear) {
-    height: 0;
-  }  
-}
-
-.site-wrapper {
-  margin: 4em auto;
-  border: 1px solid $frame-color;
-  background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
-  
-  @include breakpoint(papa-bear) { 
-    @include background-size(cover);
+  p {
+    margin: 1em 0;
   }
 
-  @include breakpoint(baby-bear) { 
-    margin: 1em auto;
-  }
-}
-
-article {
-  padding-top: 15%;
-  
-  @include breakpoint(mama-bear) { 
-    padding-top: 30%;
-  }
-  @include breakpoint(baby-bear) { 
-    padding-top: 50%;
-  }
-}
-
-/* break */
-article:last-child {
-  padding-bottom: 100%;
-}
-
-h2, h3 {
-  width: 50%;
-  max-width: 20em;
-  margin: 0 auto 2em;
-  padding: 1em 2em;
-  
-  @include breakpoint(mama-bear) {
-    width: 60%;
-    padding: 0.5em 1em;
-  }
-}
-
-.title-block{
-  font: 9em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $heading-text-color;
-  text-transform: uppercase;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  letter-spacing: 0.3em;
-  margin: 1.5em auto;
-  @include animate(bounceIn, 1s, 3s);
-
-  @include breakpoint(mama-bear) { 
-    font-size: .5em;
-    letter-spacing: 0.5em;
-    font-size: 5em;
-    margin-top: 2.5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    font-size: .3em;
-    letter-spacing: 0.5em;
-    font-size: 3em;
-    margin-top: 3em;
-  }
-}
-
-.super-title {
-  white-space: nowrap;
-  display: block;
-  position: relative;
-  padding: 0 0.5em;
-  border-bottom: solid 0.08em #FFFFFF;
-  margin: auto;
-  width: 4em;
-  text-shadow: .1em .1em 0 $main-text-color ;
-  filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
-
-  &:last-child {
-    border: none;
-  }
-
-  @include breakpoint(mama-bear) { 
-    width: 5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    width: 5em;
-  }
-}
-
-
-.section-header {
-  font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
-  color: $heading-text-color;
-  border: solid $heading-text-color .3em;
-  background: $heading-bg-color;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  text-align: center;
-
-  .debold {
+  em {
+    font-family: Georgia, sans-serif;
     font-weight: normal;
-    display: block;
-  }
-
-  @include breakpoint(mama-bear) { 
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-}
-
-.text-block {
-  width: 70%;
-  max-width: 45em;
-  margin: auto;
-  padding: 2em 3em;
-  background: $main-bg-color;
-  font-size: 1.1em;
-
-  strong {
-    font-weight: bold;
-  }
-
-  .special {
-    background: $special-bg-color;
     font-style: italic;
-    color: $special-text-color;
   }
 
-  @include breakpoint(mama-bear) { 
-    width: 75%;
-    font-size: 0.9em;
-    line-height: 1.4em;
-    padding: 1em 1.8em;
-  }
-}
+  span.amp {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    }
 
-.subhead {
-  font-weight: bold;
-  font-size: 120%;
-  margin-bottom: 1.5em;
 
-  @include breakpoint(mama-bear) { 
-    margin-bottom: 1em;
-    font-size: 100%;
-  }
-}
-
-// Header -----------------------------------------------------------------------
-
-header {
-  background: $frame-color;
-  position: fixed;
-  left: 0; 
-  right: 0;
-  top: 0;
-  padding: 2em 4em 0em;
-  height: 4em;
-  z-index: 99;
-  
-
-  @include breakpoint(baby-bear) {
-    padding: 0;
-    height: 0;
-  }
-}
-
-.logo {
+  // Links -----------------------------------------------------------------------
 
   a {
-    @include unpink;
-    @include img-svg (pbj-site-logo);
-    display: block;
-    top: 2em;
-    left: 4em;
+    color: $link-text-color;
+    // background: $link-bg-color;
+    text-decoration: none;
+    padding: 0 0.2em;
+    // border-radius: 0.3em;
+    border-bottom: dotted 1px $link-text-color;
+
+    &:hover, a:focus {
+      color: white;
+      background: $link-text-color;
+      border-radius: 0.2em;
+    }
+  }
+
+  // Layout -----------------------------------------------------------------------
+
+  body {
+    font: 1em/1.6em 'Open Sans', sans-serif;
+    color: $main-text-color;
+    border-left: 4em solid $frame-color;
+    border-right: 4em solid $frame-color;
+    background:  image-url('backup-bg.jpg') top center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
+    background-color: $page-bg-color; // Old browsers
+    @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#2e0d08 95%,#180604 98%,#000000 100%));
+    
+    @include breakpoint(baby-bear) {
+      border-left: none;
+      border-right: none; 
+    }
+  }
+
+  /* bottom "border" */
+  body:after {
+    content: "";
     position: fixed;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    text-indent: -9999em;   
-    width: 100px;
-    height: 30px;
-    z-index: 100;
-    @include animate(fadeInDown, 1s, 0s);
+    background: $frame-color;
+    left: 0;
+    right: 0;
+    height: 4em;
+    bottom: 0;
+
+    @include breakpoint(baby-bear) {
+      height: 0;
+    }  
+  }
+
+  .site-wrapper {
+    margin: 4em auto;
+    border: 1px solid $frame-color;
+    background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
+    
+    @include breakpoint(papa-bear) { 
+      @include background-size(cover);
+    }
 
     @include breakpoint(baby-bear) { 
-      display: none;
+      margin: 1em auto;
     }
-  }  
-}
+  }
 
-.main-nav {
-  text-align: right;
-  display: block;
-  font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
-  @include animate(fadeInDown, 0.5s, 0s);
-
-  span {
-    display: inline-block;
+  article {
+    padding-top: 15%;
     
     @include breakpoint(mama-bear) { 
-      margin: 0;
-      padding: 0;
+      padding-top: 30%;
+    }
+    @include breakpoint(baby-bear) { 
+      padding-top: 50%;
     }
   }
 
-  span a {
-    color: $nav-color;
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
-.menu-controls a{
-  display: none;
-}
-  
-
-@include breakpoint(baby-bear){  
-  .menu-controls a {
-      position: fixed;
-      display: block;
-      color: $nav-color;
-      font: 1.2em/4.5em 'Novecento', 'Open Sans', sans-serif;
-      background: $frame-color;
-      text-align: right;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      width: 5em;
-      height: 5em;
-      margin: -1em 0 0 -3em;
-      padding-right: 2em;
-      border-radius: 0 0 100% 0;
-      border: none;
+  /* break */
+  article:last-child {
+    padding-bottom: 100%;
   }
 
-  .main-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1em 0;
-    background: black;
-    text-align: center;
-    transition: height 0.3s ease;
+  h2, h3 {
+    width: 50%;
+    max-width: 20em;
+    margin: 0 auto 2em;
+    padding: 1em 2em;
     
-    a {
-      display: inline-block;
-      color: white;
-      font-size: 0.8em;
-      margin: 0 0.8em;
+    @include breakpoint(mama-bear) {
+      width: 60%;
+      padding: 0.5em 1em;
     }
   }
 
-  #main-nav:target {
-    display: block;
+  .title-block{
+    font: 9em 'Novecento', 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: $heading-text-color;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    letter-spacing: 0.3em;
+    margin: 1.5em auto;
+    @include animate(bounceIn, 1s, 3s);
 
-    .close-menu {
-      display: inline-block;
+    @include breakpoint(mama-bear) { 
+      font-size: .5em;
+      letter-spacing: 0.5em;
+      font-size: 5em;
+      margin-top: 2.5em;
+    }
+
+    @include breakpoint(baby-bear) { 
+      font-size: .3em;
+      letter-spacing: 0.5em;
+      font-size: 3em;
+      margin-top: 3em;
     }
   }
-  
-  #main-nav:target + .menu-controls {
-       display: none; 
-  }
-}
 
-.roll-link {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  @include perspective(600px);
-  @include perspective-origin(50% 50%);
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  a {
-    @include unpink;
+  .super-title {
+    white-space: nowrap;
     display: block;
     position: relative;
     padding: 0 0.5em;
-    @include transition(all 400ms ease);
-    @include transform-origin(50%, 0%);
-    @include transform-style(preserve-3d);
-  }
-
-  a:hover{
-    background: $main-bg-color;
-    @include translate3d(0, 0, -30px);
-    @include rotateX(90deg);
-  }
-
-  a:after{
-    content: attr(data-title);
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 0.5em;
-    color: $main-text-color;
-    background: $main-bg-color;
-    @include transform-origin(50%, 0%);
-    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
-    // @include translate3d(0px, 105%, 0px);
-    // @include rotateX(-90deg);
-    // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
-    }
-}
-
-
-// Belong -----------------------------------------------------------------------
-
-.string-blend-1, .string-blend-2 {
-  display: block;
-  margin: 0 auto;
-  width: 83%;
-  max-width: 56em;
-  min-height: 150px;
-  background-position: top center;
-  background-repeat: no-repeat;
-  @include background-size(cover);
-
-  @include breakpoint(mama-bear) { 
-    width: 84%;
-    @include background-size(cover);
-    min-height: 82px;
-  }
-
-  @include breakpoint(baby-bear) { 
-    width: 88%;
-    @include background-size(cover);
-    min-height: 60px;
-  }
-}
-
-.string-blend-1 {
-  @include img-svg('string-blend-1');
-}
-
-.string-blend-2 {
-  @include img-svg('string-blend-2');
-}
-
-
-// Column Rules -----------------------------------------------------------------------
-
-.column-container {
-  width: 80%;
-  max-width: 80em;
-  margin: auto auto 5em;
-  overflow: auto;
-
-  @include breakpoint(mama-bear) {
-    width: 100%;
+    border-bottom: solid 0.08em #FFFFFF;
     margin: auto;
+    width: 4em;
+    text-shadow: .1em .1em 0 $main-text-color ;
+    filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
+
+    &:last-child {
+      border: none;
+    }
+
+    @include breakpoint(mama-bear) { 
+      width: 5em;
+    }
+
+    @include breakpoint(baby-bear) { 
+      width: 5em;
+    }
   }
 
-  @media screen and (min-width: 400px) and (max-width: 1000px) {
-    width: 100%;
-    font-size: 1em;
-  }
-}
 
+  .section-header {
+    font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
+    color: $heading-text-color;
+    border: solid $heading-text-color .3em;
+    background: $heading-bg-color;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    text-align: center;
 
-.column {
-  float: left;
-  width: 27.3333%;
-  min-width: 13em;
-  margin: 2%;
+    .debold {
+      font-weight: normal;
+      display: block;
+    }
 
-  @include breakpoint(mama-bear) { 
-    float: none;
-    width: 90%;
-    margin: 2% auto;
+    @include breakpoint(mama-bear) { 
+      font-size: 1em;
+      line-height: 1.5em;
+    }
   }
 
   .text-block {
-    width: 80%;
-    padding: 10%;
-  }
+    width: 70%;
+    max-width: 45em;
+    margin: auto;
+    padding: 2em 3em;
+    background: $main-bg-color;
+    font-size: 1.1em;
 
-  ul {
-    list-style-type: disc;
-    margin: 0 0 0 1.2em;
-  }
-}
+    strong {
+      font-weight: bold;
+    }
 
+    .special {
+      background: $special-bg-color;
+      font-style: italic;
+      color: $special-text-color;
+    }
 
-// About -----------------------------------------------------------------------
-
-.column-head {
-  width: 75%; /* calc fallback for IE 8 */
-  width: calc(100% - 2.6em);
-  margin: 2em auto;
-  padding: 1em 1em;
-
-  @include breakpoint(mama-bear) { 
-    width: 65%;
-    padding: 1em 0;
-  }
-}
-
-.column-1, .column-2, .column-3{
-  display: block;
-  min-height: 190px;
-  background: no-repeat;
-  @include background-size(100% auto);
-  margin-top: -2em;
-
-  @media screen and (min-width: 400px) and (max-width: 800px) {
-    margin-top: -7em;
-    min-height: 350px;
-  }
-}
-
-.column-1 {
-  @include img-svg('column-footer-1');
-}
-
-.column-2 {
-  @include img-svg('column-footer-2');
-}
-
-.column-3 {
-  @include img-svg('column-footer-3');
-}
-
-.icon-strengths, .icon-chops, .icon-quirks {
-  display: block;
-  width: 50px;
-  min-height: 50px;
-  margin: auto;
-
-  @media screen and (min-width: 400px) and (max-width: 800px)  {
-    float: left;
-  }
-}
-
-.icon-strengths {
-  @include img-svg('icon-strengths');
-}
-
-.icon-chops {
-  @include img-svg('icon-chops');
-}
-
-.icon-quirks {
-  @include img-svg('icon-quirks');
-}
-
-
-// Work -----------------------------------------------------------------------
-
-figure {
-  @extend .column;
-  text-align: center;
-}
-
-
-// Core Values Bubbles & "Hello" Social media Triangles -----------------------------------------------------------------------
-
-.bubble-list, .triangle-list {
-  width: 80%;
-  max-width: 80em;
-  margin: 5em auto;
-  list-style: none;
-  text-align: center;
-
-  @include breakpoint(mama-bear) { 
-    width: 90%;
-    margin: 3em auto;
-  }
-}
-
-.triangle-list {
-  @include img-svg('polygon-mesh-1');
-  @include background-size(contain);
-  min-height: 30em;
-  padding-top: 20%;
-}
-
-.bubble, .triangle {
-  position: relative;
-  min-width: 6em;
-  display: inline-block;
-  vertical-align: bottom;
-
-  html.no-borderradius & {
-    min-width: 8em;
-    vertical-align: middle;
-  }
-}
-
-.bubble {
-  margin: -0.8em;
-}
-
-.triangle {
-  margin: -1em;
-}
-
-.bubble:before, .triangle:before{
-  content: "";
-  display: block;
-  padding-top: 100%;  /* this maintains the aspect ratio of the bubble - 1:1*/
-}
-
-.bubble-content, .triangle-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $main-text-color;
-  text-align: center;
-  z-index: 0;
-
-  &:hover {
-    @include scale(1.2, 1.2);
-  }
-}
-
-.bubble-content {
-  padding: 30% 15%;
-  @include border-radius (100%);
-  background: $main-bg-color;
-
-  html.no-borderradius & {
-    /* thought about doing a resizable svg circle graphic as the bg here, but browsers without border-radius also do not have svg, instead squares */
-    border: solid 0.5em black;
-    padding: 10%;
-  }
-  
-  em {
-    display: block;
-    margin: 0.6em 0;
-    font-size: 0.9em;
-  }
-
-    &:hover {
-    @include single-box-shadow(rgba(255, 255, 255, 0.5), 0, 0, 0em, 1em);
-    z-index: 5;
-  }
-}
-
-.triangle-content:before{
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 99%;
-  top: 0;
-  left: 0;
-  @include img-svg('triangle-down');
-  @include background-size(100% auto);
-  z-index: -1;
-}
-
-.triangle:nth-child(even) .triangle-content{
-  padding: 30% 15%;
-}
-
-.triangle:nth-child(odd) .triangle-content{
-  padding: 50% 15%;
-  line-height: 3em;
-}
-
-.triangle:nth-child(odd) .triangle-content:before{
-  @include rotate(180deg);
-}
-
-$string-length: 1;
-
-@while $string-length < 100 {
-  .size-#{$string-length} {
-    width: sqrt($string-length) * 1.75em;
     @include breakpoint(mama-bear) { 
-      font-size: 75%;
+      width: 75%;
+      font-size: 0.9em;
+      line-height: 1.4em;
+      padding: 1em 1.8em;
     }
   }
-  $string-length: $string-length + 1;
-}
+
+  .subhead {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 1.5em;
+
+    @include breakpoint(mama-bear) { 
+      margin-bottom: 1em;
+      font-size: 100%;
+    }
+  }
+
+  // Header -----------------------------------------------------------------------
+
+  header {
+    background: $frame-color;
+    position: fixed;
+    left: 0; 
+    right: 0;
+    top: 0;
+    padding: 2em 4em 0em;
+    height: 4em;
+    z-index: 99;
+    
+
+    @include breakpoint(baby-bear) {
+      padding: 0;
+      height: 0;
+    }
+  }
+
+  .logo {
+
+    a {
+      @include unpink;
+      @include img-svg (pbj-site-logo);
+      display: block;
+      top: 2em;
+      left: 4em;
+      position: fixed;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      text-indent: -9999em;   
+      width: 100px;
+      height: 30px;
+      z-index: 100;
+      @include animate(fadeInDown, 1s, 0s);
+
+      @include breakpoint(baby-bear) { 
+        display: none;
+      }
+    }  
+  }
+
+  .main-nav {
+    text-align: right;
+    display: block;
+    font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+    @include animate(fadeInDown, 0.5s, 0s);
+
+    span {
+      display: inline-block;
+      
+      @include breakpoint(mama-bear) { 
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    span a {
+      color: $nav-color;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  .menu-controls a{
+    display: none;
+  }
+    
+
+  @include breakpoint(baby-bear){  
+    .menu-controls a {
+        position: fixed;
+        display: block;
+        color: $nav-color;
+        font: 1.2em/4.5em 'Novecento', 'Open Sans', sans-serif;
+        background: $frame-color;
+        text-align: right;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: 5em;
+        height: 5em;
+        margin: -1em 0 0 -3em;
+        padding-right: 2em;
+        border-radius: 0 0 100% 0;
+        border: none;
+    }
+
+    .main-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1em 0;
+      background: black;
+      text-align: center;
+      transition: height 0.3s ease;
+      
+      a {
+        display: inline-block;
+        color: white;
+        font-size: 0.8em;
+        margin: 0 0.8em;
+      }
+    }
+
+    #main-nav:target {
+      display: block;
+
+      .close-menu {
+        display: inline-block;
+      }
+    }
+    
+    #main-nav:target + .menu-controls {
+         display: none; 
+    }
+  }
+
+  .roll-link {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    @include perspective(600px);
+    @include perspective-origin(50% 50%);
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    a {
+      @include unpink;
+      display: block;
+      position: relative;
+      padding: 0 0.5em;
+      @include transition(all 400ms ease);
+      @include transform-origin(50%, 0%);
+      @include transform-style(preserve-3d);
+    }
+
+    a:hover{
+      background: $main-bg-color;
+      @include translate3d(0, 0, -30px);
+      @include rotateX(90deg);
+    }
+
+    a:after{
+      content: attr(data-title);
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0 0.5em;
+      color: $main-text-color;
+      background: $main-bg-color;
+      @include transform-origin(50%, 0%);
+      -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+      -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+      -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+      transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+      // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
+      // @include translate3d(0px, 105%, 0px);
+      // @include rotateX(-90deg);
+      // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
+      }
+  }
+
+
+  // Belong -----------------------------------------------------------------------
+
+  .string-blend-1, .string-blend-2 {
+    display: block;
+    margin: 0 auto;
+    width: 83%;
+    max-width: 56em;
+    min-height: 150px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+
+    @include breakpoint(mama-bear) { 
+      width: 84%;
+      @include background-size(cover);
+      min-height: 82px;
+    }
+
+    @include breakpoint(baby-bear) { 
+      width: 88%;
+      @include background-size(cover);
+      min-height: 60px;
+    }
+  }
+
+  .string-blend-1 {
+    @include img-svg('string-blend-1');
+  }
+
+  .string-blend-2 {
+    @include img-svg('string-blend-2');
+  }
+
+
+  // Column Rules -----------------------------------------------------------------------
+
+  .column-container {
+    width: 80%;
+    max-width: 80em;
+    margin: auto auto 5em;
+    overflow: auto;
+
+    @include breakpoint(mama-bear) {
+      width: 100%;
+      margin: auto;
+    }
+
+    @media screen and (min-width: 400px) and (max-width: 1000px) {
+      width: 100%;
+      font-size: 1em;
+    }
+  }
+
+
+  .column {
+    float: left;
+    width: 27.3333%;
+    min-width: 13em;
+    margin: 2%;
+
+    @include breakpoint(mama-bear) { 
+      float: none;
+      width: 90%;
+      margin: 2% auto;
+    }
+
+    .text-block {
+      width: 80%;
+      padding: 10%;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin: 0 0 0 1.2em;
+    }
+  }
+
+
+  // About -----------------------------------------------------------------------
+
+  .column-head {
+    width: 75%; /* calc fallback for IE 8 */
+    width: calc(100% - 2.6em);
+    margin: 2em auto;
+    padding: 1em 1em;
+
+    @include breakpoint(mama-bear) { 
+      width: 65%;
+      padding: 1em 0;
+    }
+  }
+
+  .column-1, .column-2, .column-3{
+    display: block;
+    min-height: 190px;
+    background: no-repeat;
+    @include background-size(100% auto);
+    margin-top: -2em;
+
+    @media screen and (min-width: 400px) and (max-width: 800px) {
+      margin-top: -7em;
+      min-height: 350px;
+    }
+  }
+
+  .column-1 {
+    @include img-svg('column-footer-1');
+  }
+
+  .column-2 {
+    @include img-svg('column-footer-2');
+  }
+
+  .column-3 {
+    @include img-svg('column-footer-3');
+  }
+
+  .icon-strengths, .icon-chops, .icon-quirks {
+    display: block;
+    width: 50px;
+    min-height: 50px;
+    margin: auto;
+
+    @media screen and (min-width: 400px) and (max-width: 800px)  {
+      float: left;
+    }
+  }
+
+  .icon-strengths {
+    @include img-svg('icon-strengths');
+  }
+
+  .icon-chops {
+    @include img-svg('icon-chops');
+  }
+
+  .icon-quirks {
+    @include img-svg('icon-quirks');
+  }
+
+
+  // Work -----------------------------------------------------------------------
+
+  figure {
+    @extend .column;
+    text-align: center;
+  }
+
+
+  // Core Values Bubbles & "Hello" Social media Triangles -----------------------------------------------------------------------
+
+  .bubble-list, .triangle-list {
+    width: 80%;
+    max-width: 80em;
+    margin: 5em auto;
+    list-style: none;
+    text-align: center;
+
+    @include breakpoint(mama-bear) { 
+      width: 90%;
+      margin: 3em auto;
+    }
+  }
+
+  .triangle-list {
+    @include img-svg('polygon-mesh-1');
+    @include background-size(contain);
+    min-height: 30em;
+    padding-top: 20%;
+  }
+
+  .bubble, .triangle {
+    position: relative;
+    min-width: 6em;
+    display: inline-block;
+    vertical-align: bottom;
+
+    html.no-borderradius & {
+      min-width: 8em;
+      vertical-align: middle;
+    }
+  }
+
+  .bubble {
+    margin: -0.8em;
+  }
+
+  .triangle {
+    margin: -1em;
+  }
+
+  .bubble:before, .triangle:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* this maintains the aspect ratio of the bubble - 1:1*/
+  }
+
+  .bubble-content, .triangle-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: $main-text-color;
+    text-align: center;
+    z-index: 0;
+
+    &:hover {
+      @include scale(1.2, 1.2);
+    }
+  }
+
+  .bubble-content {
+    padding: 30% 15%;
+    @include border-radius (100%);
+    background: $main-bg-color;
+
+    html.no-borderradius & {
+      /* thought about doing a resizable svg circle graphic as the bg here, but browsers without border-radius also do not have svg, instead squares */
+      border: solid 0.5em black;
+      padding: 10%;
+    }
+    
+    em {
+      display: block;
+      margin: 0.6em 0;
+      font-size: 0.9em;
+    }
+
+      &:hover {
+      @include single-box-shadow(rgba(255, 255, 255, 0.5), 0, 0, 0em, 1em);
+      z-index: 5;
+    }
+  }
+
+  .triangle-content:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 99%;
+    top: 0;
+    left: 0;
+    @include img-svg('triangle-down');
+    @include background-size(100% auto);
+    z-index: -1;
+  }
+
+  .triangle:nth-child(even) .triangle-content{
+    padding: 30% 15%;
+  }
+
+  .triangle:nth-child(odd) .triangle-content{
+    padding: 50% 15%;
+    line-height: 3em;
+  }
+
+  .triangle:nth-child(odd) .triangle-content:before{
+    @include rotate(180deg);
+  }
+
+  $string-length: 1;
+
+  @while $string-length < 100 {
+    .size-#{$string-length} {
+      width: sqrt($string-length) * 1.75em;
+      @include breakpoint(mama-bear) { 
+        font-size: 75%;
+      }
+    }
+    $string-length: $string-length + 1;
+  }
 
