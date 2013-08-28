@@ -1,347 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta charset="utf-8">
-    <title>Consider again, this pale, blue jen.</title>
-    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="js/modernizr.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!-- local version <script src="js/jquery-1.10.2.min.js"></script>-->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta name="robots" content="noindex">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+      <meta charset="utf-8">
+      <title>Consider again, this pale, blue jen.</title>
+      <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+      <!--[if IE]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <script src="js/modernizr.js"></script>
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <!-- local version <script src="js/jquery-1.10.2.min.js"></script>-->
 
-    <script>
-        $(function() {
-      $("#values li").each(function() {
-        // $(this).addClass($(this).text().length > 25 ? "lg" : "sm");
-        $(this).addClass("size-" + $(this).text().length);
+      <script>
+          $(function() {
+        $("#values li").each(function() {
+          // $(this).addClass($(this).text().length > 25 ? "lg" : "sm");
+          $(this).addClass("size-" + $(this).text().length);
+        });
       });
-    });
-        /*  Should try and convert from jquery to plain js or find another thing to base the bubble size on
-            article on converting: http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/ (#5)
-            something like:
-            document.querySelector('#box').classList.add('wrap');
+          /*  Should try and convert from jquery to plain js or find another thing to base the bubble size on
+              article on converting: http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/ (#5)
+              something like:
+              document.querySelector('#box').classList.add('wrap');
 
-            Copied and perverted from: http://stackoverflow.com/questions/2718374/add-css-class-to-link-based-on-character-count-with-jquery
-        */
+              Copied and perverted from: http://stackoverflow.com/questions/2718374/add-css-class-to-link-based-on-character-count-with-jquery
+          */
 
-    </script>
-</head>
+      </script>
+  </head>
 
-<body>
+  <body>
 
-  <header>
+    <header>
 
-    <h1 class="logo">
-      <a href="#">pale blue jen</a>
-    </h1>
+      <h1 class="logo">
+        <a href="#">pale blue jen</a>
+      </h1>
 
-    <nav id="main-nav" class="main-nav">
-        <span class="roll-link"><a data-title="?" href="#belong">?</a></span>
-        <span class="roll-link"><a data-title="About" href="#about">About</a></span>
-        <span class="roll-link"><a data-title="Work" href="#work">Work</a></span>
-        <span class="roll-link"><a data-title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></span>
-        <span class="roll-link"><a data-title="Hello." href="#contact">Hello.</a></span>
-    </nav>
+      <nav id="main-nav" class="main-nav">
+          <span class="roll-link"><a data-title="?" href="#belong">?</a></span>
+          <span class="roll-link"><a data-title="About" href="#about">About</a></span>
+          <span class="roll-link"><a data-title="Work" href="#work">Work</a></span>
+          <span class="roll-link"><a data-title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></span>
+          <span class="roll-link"><a data-title="Hello." href="#contact">Hello.</a></span>
+      </nav>
 
-    <div class="menu-controls">
-      <a href="#main-nav" class="open-menu">
-        &#9776;
-      </a>
-    </div>
-
-  </header>
-
-  <div class="site-wrapper">
-
-    <div class="pbj-home">
-
-      <div class="pbj-collage layer-12 group-disappear"></div> <!-- string blend -->
-      <div class="pbj-collage layer-11"></div> <!-- petri dish -->
-      <div class="pbj-collage layer-10"></div> <!-- hypercube -->
-      <div class="pbj-collage layer-9 group-disappear"></div> <!-- black triangle + lightning -->
-      <div class="pbj-collage layer-8"></div> <!-- wonder wheel -->
-      <div class="pbj-collage layer-7r"></div> <!-- arc + microscope -->
-      <div class="pbj-collage layer-7l group-disappear"></div> <!-- arc + triangle + gem + microbs -->
-      <div class="pbj-collage layer-6 group-disappear"></div> <!-- small gem -->
-      <div class="pbj-collage layer-5 "></div> <!-- impossible triangle -->
-      <div class="pbj-collage layer-4 "></div> <!-- squiggle -->
-
-      <p class="title-block">
-        <span class="super-title" data-shadow-text="PALE">PALE</span>
-        <span class="super-title" data-shadow-text="BLUE">BLUE</span>
-        <span class="super-title" data-shadow-text="JEN">JEN</span>
-      </p>
-
-      <div class="pbj-collage layer-3r"></div> <!-- jellyfish + triangle -->
-      <div class="pbj-collage layer-3l"></div> <!-- jellyfish + shell -->
-      <div class="pbj-collage layer-2"></div> <!-- bubbles -->
-      <div class="pbj-collage layer-1"></div> <!-- liquid + shattered glass -->
-    </div>
-
-    <article id="belong">
-
-      <h2 class="section-header"> 
-          <span class="debold">Friends of the Internet,</span>
-          Where do I belong?
-      </h2>
-
-      <div class="text-block">
-        <p class="subhead">If I could do anything, I'd choose "working on the future with friends."</p>
-
-        <p>
-          It might sound glib, but it's not lip-service. I've been very lucky to have spent the last 6 months on a blissful sabbatical. I took the time to clear out my own personal backlog. I travelled to new corners of the world including <a class="roll-link" href="http://resonate.io/"><span data-title="Belgrade">Belgrade</span></a>, <a href="http://www.flickr.com/photos/b9punk/sets/72157633103844836/">Bali</a> and <a href="http://www.flickr.com/photos/b9punk/sets/72157633396847820/">Costa Rica</a>.  I practiced painting, drawing and <a href="http://pinterest.com">arts <span class="amp">&amp;</span> crafts</a>, caught up with my reading list, spent time with friends and my family in Colorado, and got into gardening, running, and swimming. It has been wonderful vacation, but as lifestyle it's got nothing on making Internet. 
-        </p>
-        <p>
-          The internet is the most interesting thing...maybe ever. And it's getting more interesting as it swallows or disrupts everything from information, politics, biology, to the planet itself. Designing software and network culture has become the truest, and most relevant of the humanities! Right now it badly needs more design thinking to help identify and solve the right problems and broker the relationship between humans and computers. As a futurist and a designer I really can't think of anything else I'd rather do with my time. Even, like, hookers and blow.
-        </p>
+      <div class="menu-controls">
+        <a href="#main-nav" class="open-menu">
+          &#9776;
+        </a>
       </div>
 
-      <div class="string-blend-1"></div> 
+    </header>
 
-      <div class="text-block">
-        <p>
-          So, friends, please help me find where I belong. Deciding what to work on, and who to spend the majority of your waking hours with is a pretty big deal, so I made this site to paint a more complete picture of who i am and what I'm looking for than my resume and portfolio can. If I could write my own ticket, it'd look something like this:
-        </p>
-        <p>
-          I am seeking a senior design-related role on a life-changing, internet software project. With any luck, one of the lives it's been changing (or will) is mine. Ideally this role exists on a small, cross-functional, highly-autonomous team of self-managed, chummy, curious, achievers, who move swiftly to gather and measure user feedback and behavior, which they use to plan, build, and ship interesting and useful products and features. Even more ideally, this team lives within a socially, and environmentally responsible company or organization, with a strong long-term vision and sense of values, who's primary users' success and happiness are directly linked to it's subsistence. And still has a sense of humor about the whole thing.
-        </p>
+    <div class="site-wrapper">
 
-        <p>
-          Please keep scrolling to read a bit more <a href="#about">about me</a>, have a look at <a href="#work">my work</a>, and <a href="#resume">my resume</a> to get a sense of what i can bring to the table. Then, please <a href="#contact">say hello</a>!
-        </p>
-      </div>
-      <div class="string-blend-2"></div> 
+      <div class="pbj-home">
 
-    </article>
+        <div class="pbj-collage layer-12 group-disappear"></div> <!-- string blend -->
+        <div class="pbj-collage layer-11"></div> <!-- petri dish -->
+        <div class="pbj-collage layer-10"></div> <!-- hypercube -->
+        <div class="pbj-collage layer-9 group-disappear"></div> <!-- black triangle + lightning -->
+        <div class="pbj-collage layer-8"></div> <!-- wonder wheel -->
+        <div class="pbj-collage layer-7r"></div> <!-- arc + microscope -->
+        <div class="pbj-collage layer-7l group-disappear"></div> <!-- arc + triangle + gem + microbs -->
+        <div class="pbj-collage layer-6 group-disappear"></div> <!-- small gem -->
+        <div class="pbj-collage layer-5 "></div> <!-- impossible triangle -->
+        <div class="pbj-collage layer-4 "></div> <!-- squiggle -->
 
-    <article id="about">
-
-      <h2 class="section-header"> 
-          About
-      </h2>
-
-      <div class="text-block">
-        <p class="subhead">"Ideally, if anything was any good, it would be indescribable." <em>- Edward Gorey</em> </p>
-      </div>
-
-      <div class="column-container">
-
-        <section id="strengths" class="column">
-          <h3 class="section-header column-head"> Strengths </h3>
-
-          <div class="text-block">
-            <div class="icon-strengths"></div>
-            <p>
-              There's an increasing amount of science that says if you're interested in greatness, and happiness (I am) then you're a lot better off growing talents that you're already good at, rather than trying to catch up your weaknesses and arranging your life around getting to do what you're best at everyday. The folks at Gallup have compiled a <a href="http://pinterest.com/gallup/gallup-strengths-center/">lexicon of "talents"</a> and a <a href="http://www.freestrengthsfinder.com/1-free-strengthsfinder-test.html">tool</a> to help you identify yours. <a href="http://pinterest.com/palebluejen/my-strengths/">These are mine</a>:
-            </p>
-
-            <ul>
-              <li>Futuristic</li>
-              <li>Relator</li>
-              <li>Self-Assurance</li>
-              <li>Achiever</li>
-              <li>Adaptability</li>
-            </ul>
-          </div>
-          <div class="column-1"></div>
-        </section>
-
-        <section id="chops" class="column">
-          <h3 class="section-header column-head"> Chops </h3>
-
-          <div class="text-block">
-          <div class="icon-chops"></div>
-            <p>
-              Perhaps you've read this far, and you're still wondering what I <em> do</em>.
-            </p>
-
-            <ul>
-              <li>ui/product design</li>
-              <li>agile/lean kool-aid</li>
-              <li>responsive advocacy (it's fun <span class="amp">&amp;</span> futureproof!)</li>
-              <li>sass evangelism <em> have a look at the sass for this site on <a href="https://github.com/b9punk/pbj/blob/master/sass/screen.scss">github</a> </em></li>
-              <li>user testing</li>
-              <li>basic information architecture/wireframing</li>
-              <li>branding/marketing creative</li>
-              <li>illustration, icons, graphics</li>
-              <li>occasional animations, recovered flash designer, current gif enthusiast</li>
-            </ul>
-          </div>
-          <div class="column-2"></div>
-
-        </section>
-
-        <section id="quirks" class="column">
-          <h3 class="section-header column-head"> Quirks </h3>
-
-          <div class="text-block">
-          <div class="icon-quirks"></div>
-            <p>
-              Yes. Come for the chops, but stay for the quirks! 
-            </p>
-
-            <ul>
-              <li>eau de whiteboard marker</li>
-              <li>team-building, cheer-leading, pep-rallying, trust-falling</li>
-              <li>starstuff, psudeo-science</li>
-              <li>design assets in version control/file naming nerdery</li>
-              <li>lolcats</li>
-              <li>component/pattern style-guide musings</li>
-              <li>non-stop comedy</li>
-              <li>contagious karaoke obsession</li>
-              <li>98% percentile in clumbsiness </li>
-              <li>hardcore Bruce Sterling <span class="amp">&amp;</span> Bret Victor fangirl</li>
-            </ul>
-          </div>
-          <div class="column-3"></div>
-        </section>
-
-      </div>
-
-      <section id="core-values">
-        <h3 class="section-header">Core Values</h3>
-
-        <!-- Bubble size is controlled by the character-count of the list item. Works for values 1 to 100. -->
-        <ul id="values" class="bubble-list">
-          <li class="bubble"> <p class="bubble-content">Care.</p></li>
-          <li class="bubble"> <p class="bubble-content">"Strong values, weakly held." <em>(do the work, then do it again)</em></p></li>
-          <li class="bubble"> <p class="bubble-content">Give what you have to offer.</p></li>
-          <li class="bubble size-20"> <p class="bubble-content"><img src="http://placekitten.com/g/80/80"></p></li>
-          <li class="bubble"> <p class="bubble-content">Seek challenges. <em> Don't be lazy</em></p></li>
-          <li class="bubble"> <p class="bubble-content">Open-mindedness. <em>atrophies if you don't actively expose it to new things</em></p></li>
-          <li class="bubble"> <p class="bubble-content">Breadth <br /> > <br />Depth</p></li>
-          <li class="bubble"> <p class="bubble-content">Chummy <span class="amp">&amp;</span> Friendly <span class="amp">&amp;</span> Neighborly <span class="amp">&amp;</span> Inviting.</p></li>
-          <li class="bubble"> <p class="bubble-content">"Good" is the enemy of "Great."<br /> "Perfect" is the enemy of the future <em>(and it's gross)</em></p></li>
-          <li class="bubble"> <p class="bubble-content">profit is not the bottom line</p></li>
-          <li class="bubble"> <p class="bubble-content">comedy matters</p></li>
-          <li class="bubble"> <p class="bubble-content">No douchebags. <em>*personal definition of a douchebag: putting image over other people's feelings.</em></p></li>
-          <li class="bubble"> <p class="bubble-content">abhor excess</p></li>
-          <li class="bubble"> <p class="bubble-content">transparency almost always pays off. <em> Share all the things</em></p></li>
-          <li class="bubble"> <p class="bubble-content">investigate the impossible</p></li>
-          <li class="bubble"> <p class="bubble-content">make choices that enable <em>(rather than limit)</em> further choices</p></li>
-          <li class="bubble"> <p class="bubble-content">see it another way</p></li>
-          <li class="bubble"> <p class="bubble-content">fear is not a good reason</p></li>
-          <li class="bubble"> <p class="bubble-content">take some time to celebrate <span class="amp">&amp;</span> some time to be critical <em>but not much</em></p></li>
-          <li class="bubble"> <p class="bubble-content">distrust certainty. <em>Make doubt into experimentation, not paralysis</em></p></li>
-          <li class="bubble"> <p class="bubble-content">Do the homework.<em> You always learn something.</em></p></li>
-          <li class="bubble"> <p class="bubble-content">Invest in tools, skills <span class="amp">&amp;</span>  relationships</p></li>
-          <li class="bubble"> <p class="bubble-content">mind your metrics</p></li>
-          <li class="bubble"> <p class="bubble-content">be observant <span class="amp">&amp;</span> alert. <br /> Anticipate <span class="amp">&amp;</span> read minds.</p></li>
-          <li class="bubble"> <p class="bubble-content">Say it out loud.</p></li>
-          <li class="bubble"> <p class="bubble-content">Revise this list as often as necessary. <em>But not more often</em></p></li>
-        </ul>
-      </section>
-
-    </article>
-
-    <article id="work">
-      <h2 class="section-header"> 
-          Work
-      </h2>
-
-<!-- 
         <p class="title-block">
-          <span class="super-title" data-shadow-text="Behance"><a href="http://be.net/palebluejen">Behance</a></span>
-          <span class="super-title" data-shadow-text="Dribbble"><a href="http://dribbble.com/palebluejen">Dribbble</a></span>
+          <span class="super-title" data-shadow-text="PALE">PALE</span>
+          <span class="super-title" data-shadow-text="BLUE">BLUE</span>
+          <span class="super-title" data-shadow-text="JEN">JEN</span>
         </p>
- -->
 
-      <div class="column-container">
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
-
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
-
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
-
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
-
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
-
-        <figure> 
-          <img src="http://placekitten.com/g/300/300"> 
-        </figure>
+        <div class="pbj-collage layer-3r"></div> <!-- jellyfish + triangle -->
+        <div class="pbj-collage layer-3l"></div> <!-- jellyfish + shell -->
+        <div class="pbj-collage layer-2"></div> <!-- bubbles -->
+        <div class="pbj-collage layer-1"></div> <!-- liquid + shattered glass -->
       </div>
 
-      <div class="text-block">
-        <p class="subhead">View my full <a href="http://be.net/palebluejen"> portfolio on Behance</a> or my new <a href="http://dribbble.com/palebluejen">Dribbble.</a></p>
-      </div>
+      <article id="belong">
 
-    </article>
+        <h2 class="section-header"> 
+            <span class="debold">Friends of the Internet,</span>
+            Where do I belong?
+        </h2>
 
-    <article id="resume">
+        <div class="text-block">
+          <p class="subhead">If I could do anything, I'd choose "working on the future with friends."</p>
 
-      <h2 class="section-header"> 
-          <strong>R&#xe9;sum&#xe9;</strong>
-      </h2>
+          <p>
+            It might sound glib, but it's not lip-service. I've been very lucky to have spent the last 6 months on a blissful sabbatical. I took the time to clear out my own personal backlog. I travelled to new corners of the world including <a class="roll-link" href="http://resonate.io/"><span data-title="Belgrade">Belgrade</span></a>, <a href="http://www.flickr.com/photos/b9punk/sets/72157633103844836/">Bali</a> and <a href="http://www.flickr.com/photos/b9punk/sets/72157633396847820/">Costa Rica</a>.  I practiced painting, drawing and <a href="http://pinterest.com">arts <span class="amp">&amp;</span> crafts</a>, caught up with my reading list, spent time with friends and my family in Colorado, and got into gardening, running, and swimming. It has been wonderful vacation, but as lifestyle it's got nothing on making Internet. 
+          </p>
+          <p>
+            The internet is the most interesting thing...maybe ever. And it's getting more interesting as it swallows or disrupts everything from information, politics, biology, to the planet itself. Designing software and network culture has become the truest, and most relevant of the humanities! Right now it badly needs more design thinking to help identify and solve the right problems and broker the relationship between humans and computers. As a futurist and a designer I really can't think of anything else I'd rather do with my time. Even, like, hookers and blow.
+          </p>
+        </div>
 
-      <div class="text-block">
+        <div class="string-blend-1"></div> 
 
-        <p class="subhead"><a href="jennifer-gergen-resume.pdf">Download <span class="amp">&amp;</span> view my resume pdf</a> or visit my <a href="http://www.linkedin.com/in/jennifergergen">LinkedIn profile.</a></p> 
+        <div class="text-block">
+          <p>
+            So, friends, please help me find where I belong. Deciding what to work on, and who to spend the majority of your waking hours with is a pretty big deal, so I made this site to paint a more complete picture of who i am and what I'm looking for than my resume and portfolio can. If I could write my own ticket, it'd look something like this:
+          </p>
+          <p>
+            I am seeking a senior design-related role on a life-changing, internet software project. With any luck, one of the lives it's been changing (or will) is mine. Ideally this role exists on a small, cross-functional, highly-autonomous team of self-managed, chummy, curious, achievers, who move swiftly to gather and measure user feedback and behavior, which they use to plan, build, and ship interesting and useful products and features. Even more ideally, this team lives within a socially, and environmentally responsible company or organization, with a strong long-term vision and sense of values, who's primary users' success and happiness are directly linked to it's subsistence. And still has a sense of humor about the whole thing.
+          </p>
 
-        <p>
-          In case you're not into that stuff, here's a story instead:
-        </p>
-      </div>
+          <p>
+            Please keep scrolling to read a bit more <a href="#about">about me</a>, have a look at <a href="#work">my work</a>, and <a href="#resume">my resume</a> to get a sense of what i can bring to the table. Then, please <a href="#contact">say hello</a>!
+          </p>
+        </div>
+        <div class="string-blend-2"></div> 
 
-      <div class="text-block" style="margin-top: 1em">
-        <p class="subhead">Luckily, I did everything wrong.</p>
-        <p>
-          Thirteen years ago, I dropped out of art school in Colorado, to try to make a living working on the internet in New York City. What seemed (even to me) like a slew of dubious decisions at the time, could not have prepared me more perfectly for the way the world has been turning out. Young and hungry, I had motive and opportunity to become skilled and practiced among the best and brightest.
-        </p>
+      </article>
 
-        <p>
-          In those early years nothing on the internet really worked yet. The browsers were fighting, the specs were bad, connection speeds were slow, platforms differences were numerous and treacherous, and no one really knew what the internet was good at, but it was supposed to change the world. So I became experienced at designing flashy moving-target projects in war-time conditions. In those strange days after the first bust and before the next boom most of the money came from advertisers, so I worked first in a boutique studio, and later as a contractor for big-time ad agencies. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to web ui/product design.
-        </p>
+      <article id="about">
 
-        <p>
-          Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of TheLadders core product. In six months, we built a brand-new application, and since I was involved from very beginning planning stages, and my awesome team was eager to experiment, we tried out a number of new approaches including responsive design, an atomic-style organization of components and patterns, SASS stylesheet pre-processing, and collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
-        </p>
+        <h2 class="section-header"> 
+            About
+        </h2>
 
-        <p>
-          If Ray Kurzweil is right, and we are going to live forever, (and I keep up my lucky-streak), I hope for future versions of this story to include many more tales of good and interesting projects, built smart and fast, and not without a little daring, that have an obvious or essential part to play in making our future one of the good ones.
-        </p>
-      </div>
+        <div class="text-block">
+          <p class="subhead">"Ideally, if anything was any good, it would be indescribable." <em>- Edward Gorey</em> </p>
+        </div>
 
-    </article>
+        <div class="column-container">
 
-    <article id="contact">
+          <section id="strengths" class="column">
+            <h3 class="section-header column-head"> Strengths </h3>
 
-      <h2 class="section-header"> 
-          Hello.
-      </h2>
+            <div class="text-block">
+              <div class="icon-strengths"></div>
+              <p>
+                There's an increasing amount of science that says if you're interested in greatness, and happiness (I am) then you're a lot better off growing talents that you're already good at, rather than trying to catch up your weaknesses and arranging your life around getting to do what you're best at everyday. The folks at Gallup have compiled a <a href="http://pinterest.com/gallup/gallup-strengths-center/">lexicon of "talents"</a> and a <a href="http://www.freestrengthsfinder.com/1-free-strengthsfinder-test.html">tool</a> to help you identify yours. <a href="http://pinterest.com/palebluejen/my-strengths/">These are mine</a>:
+              </p>
 
-<!--       <img src="images/electronic-mail.gif" /> -->
+              <ul>
+                <li>Futuristic</li>
+                <li>Relator</li>
+                <li>Self-Assurance</li>
+                <li>Achiever</li>
+                <li>Adaptability</li>
+              </ul>
+            </div>
+            <div class="column-1"></div>
+          </section>
 
-      <div class="triangle-list-container">
-        <ul class="triangle-list">
-          <li class="triangle size-20"> <p class="triangle-content">email</p></li>
-          <li class="triangle size-50"> <p class="triangle-content">pinterest</p></li>
-          <li class="triangle size-60"> <p class="triangle-content">twitter</p></li>
-          <li class="triangle size-60"> <p class="triangle-content">readmill</p></li>
-          <li class="triangle size-30"> <a href="http://about.me/jgergen"><p class="triangle-content"> About.me</p></a></li>
-        </ul>
-      </div>
+          <section id="chops" class="column">
+            <h3 class="section-header column-head"> Chops </h3>
 
-    </article>
+            <div class="text-block">
+            <div class="icon-chops"></div>
+              <p>
+                Perhaps you've read this far, and you're still wondering what I <em> do</em>.
+              </p>
 
-  </div>
+              <ul>
+                <li>ui/product design</li>
+                <li>agile/lean kool-aid</li>
+                <li>responsive advocacy (it's fun <span class="amp">&amp;</span> futureproof!)</li>
+                <li>sass evangelism <em> have a look at the sass for this site on <a href="https://github.com/b9punk/pbj/blob/master/sass/screen.scss">github</a> </em></li>
+                <li>user testing</li>
+                <li>basic information architecture/wireframing</li>
+                <li>branding/marketing creative</li>
+                <li>illustration, icons, graphics</li>
+                <li>occasional animations, recovered flash designer, current gif enthusiast</li>
+              </ul>
+            </div>
+            <div class="column-2"></div>
+
+          </section>
+
+          <section id="quirks" class="column">
+            <h3 class="section-header column-head"> Quirks </h3>
+
+            <div class="text-block">
+            <div class="icon-quirks"></div>
+              <p>
+                Yes. Come for the chops, but stay for the quirks! 
+              </p>
+
+              <ul>
+                <li>eau de whiteboard marker</li>
+                <li>team-building, cheer-leading, pep-rallying, trust-falling</li>
+                <li>starstuff, psudeo-science</li>
+                <li>design assets in version control/file naming nerdery</li>
+                <li>lolcats</li>
+                <li>component/pattern style-guide musings</li>
+                <li>non-stop comedy</li>
+                <li>contagious karaoke obsession</li>
+                <li>98% percentile in clumbsiness </li>
+                <li>hardcore Bruce Sterling <span class="amp">&amp;</span> Bret Victor fangirl</li>
+              </ul>
+            </div>
+            <div class="column-3"></div>
+          </section>
+
+        </div>
+
+        <section id="core-values">
+          <h3 class="section-header">Core Values</h3>
+
+          <!-- Bubble size is controlled by the character-count of the list item. Works for values 1 to 100. -->
+          <ul id="values" class="bubble-list">
+            <li class="bubble"> <p class="bubble-content">Care.</p></li>
+            <li class="bubble"> <p class="bubble-content">"Strong values, weakly held." <em>(do the work, then do it again)</em></p></li>
+            <li class="bubble"> <p class="bubble-content">Give what you have to offer.</p></li>
+            <li class="bubble size-20"> <p class="bubble-content"><img src="http://placekitten.com/g/80/80"></p></li>
+            <li class="bubble"> <p class="bubble-content">Seek challenges. <em> Don't be lazy</em></p></li>
+            <li class="bubble"> <p class="bubble-content">Open-mindedness. <em>atrophies if you don't actively expose it to new things</em></p></li>
+            <li class="bubble"> <p class="bubble-content">Breadth <br /> > <br />Depth</p></li>
+            <li class="bubble"> <p class="bubble-content">Chummy <span class="amp">&amp;</span> Friendly <span class="amp">&amp;</span> Neighborly <span class="amp">&amp;</span> Inviting.</p></li>
+            <li class="bubble"> <p class="bubble-content">"Good" is the enemy of "Great."<br /> "Perfect" is the enemy of the future <em>(and it's gross)</em></p></li>
+            <li class="bubble"> <p class="bubble-content">profit is not the bottom line</p></li>
+            <li class="bubble"> <p class="bubble-content">comedy matters</p></li>
+            <li class="bubble"> <p class="bubble-content">No douchebags. <em>*personal definition of a douchebag: putting image over other people's feelings.</em></p></li>
+            <li class="bubble"> <p class="bubble-content">abhor excess</p></li>
+            <li class="bubble"> <p class="bubble-content">transparency almost always pays off. <em> Share all the things</em></p></li>
+            <li class="bubble"> <p class="bubble-content">investigate the impossible</p></li>
+            <li class="bubble"> <p class="bubble-content">make choices that enable <em>(rather than limit)</em> further choices</p></li>
+            <li class="bubble"> <p class="bubble-content">see it another way</p></li>
+            <li class="bubble"> <p class="bubble-content">fear is not a good reason</p></li>
+            <li class="bubble"> <p class="bubble-content">take some time to celebrate <span class="amp">&amp;</span> some time to be critical <em>but not much</em></p></li>
+            <li class="bubble"> <p class="bubble-content">distrust certainty. <em>Make doubt into experimentation, not paralysis</em></p></li>
+            <li class="bubble"> <p class="bubble-content">Do the homework.<em> You always learn something.</em></p></li>
+            <li class="bubble"> <p class="bubble-content">Invest in tools, skills <span class="amp">&amp;</span>  relationships</p></li>
+            <li class="bubble"> <p class="bubble-content">mind your metrics</p></li>
+            <li class="bubble"> <p class="bubble-content">be observant <span class="amp">&amp;</span> alert. <br /> Anticipate <span class="amp">&amp;</span> read minds.</p></li>
+            <li class="bubble"> <p class="bubble-content">Say it out loud.</p></li>
+            <li class="bubble"> <p class="bubble-content">Revise this list as often as necessary. <em>But not more often</em></p></li>
+          </ul>
+        </section>
+
+      </article>
+
+      <article id="work">
+        <h2 class="section-header"> 
+            Work
+        </h2>
+
+  <!-- 
+          <p class="title-block">
+            <span class="super-title" data-shadow-text="Behance"><a href="http://be.net/palebluejen">Behance</a></span>
+            <span class="super-title" data-shadow-text="Dribbble"><a href="http://dribbble.com/palebluejen">Dribbble</a></span>
+          </p>
+   -->
+
+        <div class="column-container">
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+
+          <figure> 
+            <img src="http://placekitten.com/g/300/300"> 
+          </figure>
+        </div>
+
+        <div class="text-block">
+          <p class="subhead">View my full <a href="http://be.net/palebluejen"> portfolio on Behance</a> or my new <a href="http://dribbble.com/palebluejen">Dribbble.</a></p>
+        </div>
+
+      </article>
+
+      <article id="resume">
+
+        <h2 class="section-header"> 
+            <strong>R&#xe9;sum&#xe9;</strong>
+        </h2>
+
+        <div class="text-block">
+
+          <p class="subhead"><a href="jennifer-gergen-resume.pdf">Download <span class="amp">&amp;</span> view my resume pdf</a> or visit my <a href="http://www.linkedin.com/in/jennifergergen">LinkedIn profile.</a></p> 
+
+          <p>
+            In case you're not into that stuff, here's a story instead:
+          </p>
+        </div>
+
+        <div class="text-block" style="margin-top: 1em">
+          <p class="subhead">Luckily, I did everything wrong.</p>
+          <p>
+            Thirteen years ago, I dropped out of art school in Colorado, to try to make a living working on the internet in New York City. What seemed (even to me) like a slew of dubious decisions at the time, could not have prepared me more perfectly for the way the world has been turning out. Young and hungry, I had motive and opportunity to become skilled and practiced among the best and brightest.
+          </p>
+
+          <p>
+            In those early years nothing on the internet really worked yet. The browsers were fighting, the specs were bad, connection speeds were slow, platforms differences were numerous and treacherous, and no one really knew what the internet was good at, but it was supposed to change the world. So I became experienced at designing flashy moving-target projects in war-time conditions. In those strange days after the first bust and before the next boom most of the money came from advertisers, so I worked first in a boutique studio, and later as a contractor for big-time ad agencies. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to web ui/product design.
+          </p>
+
+          <p>
+            Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of TheLadders core product. In six months, we built a brand-new application, and since I was involved from very beginning planning stages, and my awesome team was eager to experiment, we tried out a number of new approaches including responsive design, an atomic-style organization of components and patterns, SASS stylesheet pre-processing, and collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
+          </p>
+
+          <p>
+            If Ray Kurzweil is right, and we are going to live forever, (and I keep up my lucky-streak), I hope for future versions of this story to include many more tales of good and interesting projects, built smart and fast, and not without a little daring, that have an obvious or essential part to play in making our future one of the good ones.
+          </p>
+        </div>
+
+      </article>
+
+      <article id="contact">
+
+        <h2 class="section-header"> 
+            Hello.
+        </h2>
+
+  <!--       <img src="images/electronic-mail.gif" /> -->
+
+        <div class="triangle-list-container">
+          <ul class="triangle-list">
+            <li class="triangle size-20"> <p class="triangle-content">email</p></li>
+            <li class="triangle size-50"> <p class="triangle-content">pinterest</p></li>
+            <li class="triangle size-60"> <p class="triangle-content">twitter</p></li>
+            <li class="triangle size-60"> <p class="triangle-content">readmill</p></li>
+            <li class="triangle size-30"> <a href="http://about.me/jgergen"><p class="triangle-content"> About.me</p></a></li>
+          </ul>
+        </div>
+
+      </article>
+
+    </div>
 
 
 
-</body>
-</html>
+  </body>
+  </html>
