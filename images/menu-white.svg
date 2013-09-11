@@ -9,7 +9,7 @@
 	 xml:space="preserve">
 <defs>
 </defs>
-<rect opacity="0.7" fill="#7E8FA2" width="16" height="3.4"/>
-<rect y="5.9" opacity="0.7" fill="#7E8FA2" width="16" height="3.4"/>
-<rect y="11.6" opacity="0.7" fill="#7E8FA2" width="16" height="3.4"/>
+<rect fill="#FFFFFF" width="16" height="3.4"/>
+<rect y="5.9" fill="#FFFFFF" width="16" height="3.4"/>
+<rect y="11.6" fill="#FFFFFF" width="16" height="3.4"/>
 </svg>
