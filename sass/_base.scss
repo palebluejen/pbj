@@ -9,6 +9,10 @@
 
 // Fonts -----------------------------------------------------------------------
 
+@font-face {
+ src: local('☺');
+}
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
 @include font-face("Novecento",font-files("Novecentowide-Light-webfont.ttf",ttf,"Novecentowide-Light-webfont.woff",woff,"Novecentowide-Light-webfont.otf",opentype),"Novecentowide-Light-webfont.eot",normal,normal);
 @include font-face("Novecento",font-files("Novecentowide-Bold-webfont.ttf",ttf,"Novecentowide-Bold-webfont.woff",woff,"Novecentowide-Bold-webfont.otf",opentype),"Novecentowide-Bold-webfont.eot",bold,normal);

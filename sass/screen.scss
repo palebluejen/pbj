@@ -4,7 +4,6 @@
 @import "compass/reset";
 @import "compass/css3/font-face";
 @import "compass/css3/background-size";
-@import "compass/css3/border-radius";
 @import "compass/css3/images";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
@@ -14,10 +13,6 @@
 
 
 // Global -----------------------------------------------------------------------
-
-html, body{
-  position: relative; /* this seemed to fix the bug where chrome wouldn't show text after making an element absolutely positioned */
-}
 
 p {
   margin: 1em 0;
@@ -64,8 +59,7 @@ body {
   border-right: 4em solid $frame-color;
   background:  image-url('backup-bg.jpg') top center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
   background-color: $page-bg-color; // Old browsers
-  @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#2e0d08 95%,#180604 98%,#000000 100%));
-  
+  @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#04061b 96%,#22234f 100%));  
   @include breakpoint(baby-bear) {
     border-left: none;
     border-right: none; 
@@ -89,7 +83,7 @@ body:after {
 
 .site-wrapper {
   margin: 4em auto;
-  border: 1px solid $frame-color;
+  // border: 1px solid $frame-color;
   background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
   
   @include breakpoint(papa-bear) { 
@@ -97,7 +91,8 @@ body:after {
   }
 
   @include breakpoint(baby-bear) { 
-    margin: 1em auto;
+    margin: 1em auto 0;
+    border: none;
   }
 }
 
@@ -238,7 +233,7 @@ h2, h3 {
   }
 }
 
-blockquote {
+.my-own-ticket {
   font-size: 80%;
   line-height: 1.5em;
   font-weight: bold;
@@ -246,6 +241,7 @@ blockquote {
   border: solid 1px #CCCCCC;
   padding: 2em;
 }
+
 // Header -----------------------------------------------------------------------
 
 header {
@@ -254,10 +250,9 @@ header {
   left: 0; 
   right: 0;
   top: 0;
-  padding: 2em 4em 0em;
-  height: 4em;
+  // padding: 2em 4em 0em;
+  height: 6em;
   z-index: 99;
-  
 
   @include breakpoint(baby-bear) {
     padding: 0;
@@ -266,33 +261,48 @@ header {
 }
 
 .logo {
+  @include img-svg(pbj-site-logo);
+  @include animate(fadeInDown, 1s, 0s);
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  top: 2em;
+  left: 4em;
 
   a {
     @include unpink;
-    @include img-svg (pbj-site-logo);
-    display: block;
-    top: 2em;
-    left: 4em;
-    position: fixed;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    text-indent: -9999em;   
     width: 100px;
     height: 30px;
+    display: block;
+    text-indent: -9999em;   
     z-index: 100;
-    @include animate(fadeInDown, 1s, 0s);
+    background-position: 0 4em;
+    
 
-    @include breakpoint(baby-bear) { 
-      display: none;
+    &:hover {
+      @include img-svg(pbj-site-logo-arrows);
+      @include single-transition(background-position, 0.5s, ease)
     }
-  }  
+  }
+
+  @include breakpoint(baby-bear) { 
+    display: none;
+  }
 }
 
+
 .main-nav {
-  text-align: right;
+  position: absolute;
+  top: 2em;
+  right: 4em;
   display: block;
   font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
   @include animate(fadeInDown, 0.5s, 0s);
+
+  @include breakpoint(baby-bear) { 
+    top: 0;
+    right: 0;
+  }
 
   span {
     display: inline-block;
@@ -320,16 +330,14 @@ header {
       position: fixed;
       display: block;
       color: $nav-color;
-      font: 1.2em/4.5em 'Novecento', 'Open Sans', sans-serif;
+      @include img-svg('menu-white');
       background: $frame-color;
-      text-align: right;
+      text-align: center;
       text-decoration: none;
       transition: all 0.3s ease;
-      width: 5em;
-      height: 5em;
-      margin: -1em 0 0 -3em;
-      padding-right: 2em;
-      border-radius: 0 0 100% 0;
+      padding: 0.4em 0.7em;
+      margin: 0.5em;
+      // border-radius: 100%;
       border: none;
   }
 
@@ -392,7 +400,7 @@ header {
   }
 
   a:after{
-    content: attr(data-title);
+    content: attr(title);
     display: block;
     position: absolute;
     left: 0;
@@ -552,9 +560,8 @@ header {
 
 .icon-strengths, .icon-chops, .icon-quirks {
   display: block;
-  width: 50px;
-  min-height: 50px;
-  margin: auto;
+  height: 33px;
+  margin:  0 auto;
 
   @media screen and (min-width: 400px) and (max-width: 800px)  {
     float: left;
@@ -563,14 +570,17 @@ header {
 
 .icon-strengths {
   @include img-svg('icon-strengths');
+  width: 26px;
 }
 
 .icon-chops {
   @include img-svg('icon-chops');
+  width: 47px;
 }
 
 .icon-quirks {
   @include img-svg('icon-quirks');
+  width: 37px;
 }
 
 
@@ -581,6 +591,117 @@ figure {
   text-align: center;
 }
 
+
+// Footer -----------------------------------------------------------------------
+
+footer {
+  position: relative;
+  @include img-svg('theater-seat', repeat-x);
+  background-position: right bottom;
+  min-height: 200px;
+  margin: 0;
+  padding-top: 25%;
+
+  @include breakpoint(baby-bear) { 
+    background-position: 16px bottom;
+  }
+}
+
+.mst3k {
+  @include img-svg('mst3k');
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  bottom: 50px;
+  right: 99px;
+
+  @include breakpoint(baby-bear) { 
+    right: 67px;
+  }
+}
+
+.snark-bucket {
+  position: absolute;
+  bottom: 120px;
+  right: 3em;
+  max-width: 45em;
+  text-align: right;
+
+  @include breakpoint(mama-bear) { 
+    width: 100%;
+  }
+
+  @include breakpoint(baby-bear) { 
+    right: 1em;
+  }
+}
+
+.tom-servo, .joel-robinson, .crow-t-robot {
+  position: relative;
+  display: inline-block;
+  // float: right;
+  border-radius: 8em;
+  background: #FFF;
+  color: #000;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  text-align: center;
+  vertical-align: bottom;
+  }
+
+.tom-servo:after, .joel-robinson:after, .crow-t-robot:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: #FFF transparent;
+  display: block;
+  width: 0;
+  }
+
+.tom-servo {
+  padding: 2.5em 2em;
+  max-width: 15em;
+  width: 40%;
+  width: calc(45% - 4em);
+  margin: 5em 0 0 0;
+  }
+
+.tom-servo:after {
+  bottom:-1em; /* value = - border-top-width - border-bottom-width */
+  right:20%; /* controls horizontal position */
+  border-width:2.5em 0 0 3em; /* vary these values to change the angle of the vertex */
+  }
+
+.joel-robinson {
+  margin: 0 0 10em 0;
+  padding: 2em 1.5em;
+  max-width: 6.5em;
+  min-width: 5em;
+  width: 25%;
+  width: calc(25% - 3em);
+  font-weight: bold;
+  }
+
+.joel-robinson:after {
+  border-width: 10em 15px 0;
+  margin-left: -15px;
+  bottom: -9em;
+  left: 50%;
+  }
+
+.crow-t-robot{
+  padding: 2em 1em;
+  min-width: 5em;
+  width: 15%;
+  width: calc(15% - 2em);
+  margin: 0 0 1.5em 0;
+  }
+
+.crow-t-robot:after {
+  bottom:-1.5em; /* value = - border-top-width - border-bottom-width */
+  right:40%; /* controls horizontal position */
+  border-width:2em 2em 0 0; /* vary these values to change the angle of the vertex */
+  }
 
 // Core Values Bubbles & "Hello" Social media Triangles -----------------------------------------------------------------------
 
@@ -650,7 +771,7 @@ figure {
 
 .bubble-content {
   padding: 30% 15%;
-  @include border-radius (100%);
+  border-radius: 100%;
   background: $main-bg-color;
 
   html.no-borderradius & {

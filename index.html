@@ -5,42 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta charset="utf-8">
     <title>Consider again, this pale, blue jen.</title>
+
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="js/modernizr.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!-- local version <script src="js/jquery-1.10.2.min.js"></script>-->
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!--     <link rel="shortcut icon" href="/static/img/favicon.ico">
 
-      ga('create', 'UA-43190579-1', 'palebluejen.com');
-      ga('send', 'pageview');
+    <link rel="apple-touch-icon-precomposed" href="/static/img/touch-icon@57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/img/touch-icon@72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/touch-icon@114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/touch-icon@144x144.png"> -->
 
-    </script>
-
-    <script>
-        $(function() {
-      $("#values li").each(function() {
-        // $(this).addClass($(this).text().length > 25 ? "lg" : "sm");
-        $(this).addClass("size-" + $(this).text().length);
-      });
-    });
-        /*  Should try and convert from jquery to plain js or find another thing to base the bubble size on
-            article on converting: http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/ (#5)
-            something like:
-            document.querySelector('#box').classList.add('wrap');
-
-            Copied and perverted from: http://stackoverflow.com/questions/2718374/add-css-class-to-link-based-on-character-count-with-jquery
-        */
-
-    </script>
+    <script src="js/modernizr-pbj-build.js"></script>
 </head>
 
 <body>
@@ -52,11 +27,11 @@
     </h1>
 
     <nav id="main-nav" class="main-nav">
-        <span class="roll-link"><a data-title="?" href="#belong">?</a></span>
-        <span class="roll-link"><a data-title="About" href="#about">About</a></span>
-        <span class="roll-link"><a data-title="Work" href="#work">Work</a></span>
-        <span class="roll-link"><a data-title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></span>
-        <span class="roll-link"><a data-title="Hello." href="#contact">Hello.</a></span>
+        <span class="roll-link"><a title="?" href="#belong">?</a></span>
+        <span class="roll-link"><a title="About" href="#about">About</a></span>
+        <span class="roll-link"><a title="Work" href="#work">Work</a></span>
+        <span class="roll-link"><a title="R&#xe9;sum&#xe9;" href="#resume">R&#xe9;sum&#xe9;</a></span>
+        <span class="roll-link"><a title="Hello." href="#contact">Hello.</a></span>
     </nav>
 
     <div class="menu-controls">
@@ -109,7 +84,7 @@
         <p>
           So, friends, please help me find where I belong. Choosing what to work on, and who to spend the majority of your waking hours with is never easy, and I tend to really dig into a project and see it all the way through, so it's not a light decision. I made this site to paint a more complete picture of who I am, and what I'm looking for, than my resume and portfolio can. If I could write my own ticket, it'd look something like this:
         </p>
-        <blockquote>
+        <blockquote class="my-own-ticket">
           I am seeking a lead design role on a life-changing, internet software project. With any luck, one of the lives it's been changing (or will) is mine. Ideally this role exists on a small, cross-functional, highly-autonomous team of self-managed, chummy, curious, achievers, who move swiftly to gather and measure user feedback and behavior, which they use to plan, build, and ship interesting and useful products and features. Even more ideally, this team lives within a optimistic and cheerful, socially and environmentally responsible company or organization, with a strong long-term vision and sense of values, who's  users' success and happiness are directly linked to it's subsistence. 
         </blockquote>
 
@@ -196,7 +171,7 @@
               <li>component/pattern style-guide musings</li>
               <li>non. stop. comedy.</li>
               <li>contagious karaoke obsession</li>
-              <li>98% percentile in clumsiness </li>
+              <li>98th percentile in clumsiness </li>
               <li><a href="http://www.wired.com/beyond_the_beyond/">Bruce Sterling</a> <span class="amp">&amp;</span> <a href="http://worrydream.com/">Bret Victor</a> fangirl</li>
             </ul>
           </div>
@@ -223,6 +198,7 @@
           <li class="bubble"> <p class="bubble-content">comedy matters</p></li>
           <li class="bubble"> <p class="bubble-content">No douchebags. <em>*personal definition of a douchebag: putting image over other people's feelings.</em></p></li>
           <li class="bubble"> <p class="bubble-content">abhor excess</p></li>
+          <li class="bubble"> <p class="bubble-content">Backlogs are bad.<em> Now, or you risk never. Maintenance is cheaper and better.</em></p></li>
           <li class="bubble"> <p class="bubble-content">transparency almost always pays off. <em> Share all the things</em></p></li>
           <li class="bubble"> <p class="bubble-content">investigate the impossible</p></li>
           <li class="bubble"> <p class="bubble-content">make choices that enable <em>(rather than limit)</em> further choices</p></li>
@@ -303,23 +279,23 @@
       <div class="text-block" style="margin-top: 1em">
         <p class="subhead">Luckily, I did everything wrong.</p>
         <p>
-          Thirteen years ago, I dropped out of art school in Colorado, to try to make a living working on the internet in New York City. What seemed (even to me) like a slew of dubious decisions at the time, could not have prepared me more perfectly for the way the world has been turning out. Young and hungry, I had motive and opportunity to become skilled and practiced among the best and brightest.
+          Thirteen years ago, I dropped out of art school in Colorado, to live the rap-song cliché of making it big on the internet in New York City. What seemed <em>(even to me)</em> like a slew of dubious decisions at the time, could not have prepared me more perfectly for the way the world has been turning out. Young and hungry, I had motive and opportunity to become skilled and practiced among the best and brightest.
         </p>
 
         <p>
-          In those early years nothing on the internet really worked yet. The browsers were fighting, the specs were bad, connection speeds were slow, platforms were numerous and treacherous, and no one really knew what the internet was good at, but it was supposed to change the world. In those strange days after the first bust, and before the next boom, most of the design money came from advertisers, so I became experienced at designing flashy, moving-target projects in war-time conditions, working first in a boutique studio, and later as a contractor for big-time ad agencies. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to web ui/product design.
+          In those early years nothing on the internet really worked yet. It was supposed to change the world, but no one really knew how. The browsers were warring, connection speeds were slow, and platforms were numerous and treacherous. In those strange days after the first bust, before the next boom, while Apple was just starting to regain it's foothold, most of the money for "design" came from advertisers, so I became experienced at designing flashy projects in war-time conditions, first at a boutique studio, and later as a contractor for big-time ad agencies. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to web ui/product design.
         </p>
 
         <p>
-          Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of TheLadders core product. In six months we built a brand-new application, and since I was involved from very beginning, and my awesome team was eager to experiment, we tried out a number of new approaches including responsive design, an atomic-style organization of components with a sass pattern library, and a new workflow for collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
+          Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of TheLadders core product. In six months we built a brand-new application, and since I was involved from very beginning, and my awesome team was eager to experiment, we test-drove a number of new approaches including responsive design, an atomic-style organization of components with a sass pattern library, and a new workflow I designed for collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
         </p>
 
-        <p>
+<!--         <p>
           I've been very fortunate to have taken a few short sabbaticals in-between big life changes to work on side projects and get new perspectives. I spent the last six months clearing out my own personal backlog, travelling to new corners of the world <em> (<a href="http://resonate.io/">Belgrade</a>, <a href="http://www.flickr.com/photos/b9punk/sets/72157633103844836/">Bali</a> and <a href="http://www.flickr.com/photos/b9punk/sets/72157633396847820/">Costa Rica</a>) </em>, <a href="http://pinterest.com">painting, drawing, crafting</a>, reading, gardening, running, and swimming. It has been wonderful vacation, but I'm eager to get back to the future.
-        </p>
+        </p> -->
 
         <p>
-          If Ray Kurzweil is right, and we are going to live forever, (and I keep up my lucky-streak), I'd love to learn new skills like data visualization, 3D, and motion graphics, explore generative art, metalworking, study math and science and the cosmos, and see the whole world. Mostly, I hope future versions of this story include many more tales of good and interesting projects, from the Internet Age and beyond, that have an important part to play in making our future one of the good ones.
+          If Ray Kurzweil is right, and we are going to live forever, <em>(and I keep up my lucky-streak)</em>, I'd love to learn new skills like data visualization, 3D, and motion graphics, explore generative art, metalworking, study philosophy, science and the cosmos, and visit the whole world. Mostly, I hope future versions of this story include many more tales of interesting projects, from the Internet Age and beyond, that have an important part to play in making our future one of the good ones.
         </p>
       </div>
 
@@ -331,7 +307,7 @@
           Hello.
       </h2>
 
-<!--       <img src="images/electronic-mail.gif" /> -->
+      <img src="images/electronic-mail.gif" />
 
       <div class="triangle-list-container">
         <ul class="triangle-list">
@@ -343,11 +319,99 @@
         </ul>
       </div>
 
-    </article>
+    </article> -->
 
+    <footer>
+      <div class="mst3k"></div>
+
+      <div class="snark-bucket">
+
+        <p class="tom-servo">
+          Much &hearts; to the open-source and (cc) communities. <a href="pinterest">Image credits</a>. All design and code source files for this site are shared on <a href="https://github.com/b9punk/pbj">github.</a>
+        </p>
+
+        <p class="joel-robinson">
+          Oh, you too? I *always* scroll for the end credits! 
+        </p>
+
+        <p class="crow-t-robot">
+          <a href="survey">So&hellip;what did you think?</a>
+        </p>
+
+      </div>
+
+    </footer>
+
+  <!-- end site-wrapper -->
   </div>
 
+    <!-- Calculate string length of bubbles and triangles, thanks to Wayne! (https://github.com/wawjr3d) -->
+    <script>
+      function text(node) {
 
+      if (node.nodeType == 3) {
+          return node.textContent;
+      }
+
+      if (!node.childNodes.length) {
+          return "";
+      }
+
+      var childNodeTexts = [];
+
+      for (var i = 0, len = node.childNodes.length; i < len; i++) {
+          var childNode = node.childNodes[i];
+          childNodeTexts.push(text(childNode));
+      }
+
+      return childNodeTexts.join("");
+      }
+
+      var values = document.querySelectorAll("#values li");
+
+      for (var i = 0, len =values.length; i < len; i++) {
+      var value = values[i];
+      var size = text(value); // assuming theres just simple text in there
+      value.classList.add("size-" + size.length); // use the shim on this page for ie9 https://developer.mozilla.org/en-US/docs/Web/API/element.classList
+      }
+    </script>
+
+    <!-- Google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43190579-1', 'palebluejen.com');
+      ga('send', 'pageview');
+
+    </script>
+
+    <!-- for handling ios screen-size issues. https://gist.github.com/mathiasbynens/901295 -->
+    <script>
+      (function(doc) {
+   
+        var addEvent = 'addEventListener',
+            type = 'gesturestart',
+            qsa = 'querySelectorAll',
+            scales = [1, 1],
+            meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+       
+        function fix() {
+          meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+          doc.removeEventListener(type, fix, true);
+        }
+       
+        if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+          fix();
+          scales = [.25, 1.6];
+          doc[addEvent](type, fix, true);
+        }
+       
+      }(document));
+
+    </script>
 
 </body>
 </html>
