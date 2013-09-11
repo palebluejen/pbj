@@ -57,6 +57,9 @@ $link-bg-color		   : #e1f2fb;
   @else if $point == baby-bear {
     @media (max-width: 650px)  { @content; }
   }
+  @else if $point == tiny-bear {
+    @media (max-width: 480px)  { @content; }
+  }
 }
 
 // Unpink this link! -----------------------------------------------------------------------
