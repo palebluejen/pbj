@@ -37,10 +37,8 @@ span.amp {
 
 a {
   color: $link-text-color;
-  // background: $link-bg-color;
   text-decoration: none;
   padding: 0 0.2em;
-  // border-radius: 0.3em;
   border-bottom: dotted 1px $link-text-color;
 
   &:hover, a:focus {
@@ -101,9 +99,6 @@ article {
   
   @include breakpoint(mama-bear) { 
     padding-top: 30%;
-  }
-  @include breakpoint(baby-bear) { 
-    padding-top: 50%;
   }
 }
 
@@ -424,37 +419,69 @@ header {
 
 // Belong -----------------------------------------------------------------------
 
-.string-blend-1, .string-blend-2 {
-  display: block;
+.extra-space {
+  margin-bottom: 4em;
+}
+
+.blend-box{
+  width: 80%;
+  max-width: 56.3em;
   margin: 0 auto;
-  width: 85%;
-  max-width: 56em;
-  min-height: 150px;
-  background-position: top center;
-  background-repeat: no-repeat;
-  @include background-size(contain);
 
   @include breakpoint(mama-bear) { 
-    width: 84%;
-    @include background-size(cover);
-    min-height: 82px;
+    min-height: 10em;
   }
 
   @include breakpoint(baby-bear) { 
-    width: 88%;
-    @include background-size(cover);
-    min-height: 60px;
+    width: 85%;
+  }
+
+  @include breakpoint(tiny-bear) { 
+    width: 90%;
   }
 }
 
-.string-blend-1 {
-  @include img-svg('string-blend-1');
+.blend-1, .blend-2 {
+  width: 100%;
+  // max-width: 56.3em;
+  min-height: 18em;
+  background-position: top center;
+  background-repeat: no-repeat;
+  @include background-size(100% auto);
 }
 
-.string-blend-2 {
-  @include img-svg('string-blend-2');
+.blend-1 {
+  @include img-svg('ice-blend-1');
+  margin-top: -5.7%;
+
+  @include breakpoint(mama-bear){
+  }
+
+
 }
 
+.blend-2 {
+  @include img-svg('drip-blend-1');
+  margin-top: 0%;
+
+}
+
+
+.text-block {
+  width: 70%;
+  max-width: 45em;
+  margin: auto;
+  padding: 2em 3em;
+  background: $main-bg-color;
+  font-size: 1.1em;
+
+  @include breakpoint(mama-bear) { 
+    width: 75%;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    padding: 1em 1.8em;
+  }
+}
 
 // Column Rules -----------------------------------------------------------------------
 
@@ -464,14 +491,17 @@ header {
   margin: auto auto 5em;
   overflow: auto;
 
-  @include breakpoint(mama-bear) {
-    width: 100%;
-    margin: auto;
-  }
-
-  @media screen and (min-width: 400px) and (max-width: 1000px) {
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
     width: 100%;
     font-size: 1em;
+  }
+
+  @include breakpoint(mama-bear) {
+    width: 100%;
+  }
+
+  @include breakpoint(tiny-bear) {
+    width: 100%;
   }
 }
 
@@ -479,13 +509,23 @@ header {
 .column {
   float: left;
   width: 27.3333%;
-  min-width: 13em;
+  min-width: 15em;
   margin: 2%;
+
+  @media screen and (min-width: 800px) and (max-width: 1000px) {
+    float: none;
+    width: 70%;
+    margin: 2% auto;
+  }
 
   @include breakpoint(mama-bear) { 
     float: none;
-    width: 90%;
+    width: 70%;
     margin: 2% auto;
+  }
+
+  @include breakpoint(tiny-bear) {
+    width: 90%;
   }
 
   .text-block {
@@ -504,7 +544,8 @@ header {
 
 .pbj-about {
   position: relative;
-  @include img-svg('pbj-about');
+  // @include img-svg('pbj-about');
+  background: image-url('pbj-about.png') no-repeat;
   @include background-size(100% auto);
   max-width: 50em;
   width: 85%;
@@ -559,17 +600,17 @@ header {
 
 .column-1 {
   @include img-svg('column-footer-1');
-  margin-top: -6em;
+  margin-top: -15%;
 }
 
 .column-2 {
   @include img-svg('column-footer-2');
-  margin-top: -2em;
+  margin-top: -12%;
 }
 
 .column-3 {
   @include img-svg('column-footer-3');
-  margin-top: -3em;
+  margin-top: -15%;
 }
 
 .icon-strengths, .icon-chops, .icon-quirks {
@@ -577,9 +618,6 @@ header {
   height: 33px;
   margin:  0 auto;
 
-  @media screen and (min-width: 400px) and (max-width: 800px)  {
-    float: left;
-  }
 }
 
 .icon-strengths {
@@ -741,10 +779,15 @@ footer {
 }
 
 .triangle-list {
-  @include img-svg('polygon-mesh-1');
+  @include img-svg('polygon-mesh-4');
   @include background-size(contain);
-  min-height: 30em;
-  padding-top: 20%;
+  background-position: center ;
+  padding: 10%;
+  max-width: 60em;
+
+  @include breakpoint(mama-bear) {
+    max-width: 80%;
+  }
 }
 
 .bubble, .triangle {
@@ -752,6 +795,7 @@ footer {
   min-width: 6em;
   display: inline-block;
   vertical-align: bottom;
+  @include perspective(1000); // hack for smoothing out the blurry text on hover of bubbles and triangles
 
   html.no-borderradius & {
     min-width: 8em;
@@ -764,7 +808,7 @@ footer {
 }
 
 .triangle {
-  margin: -1em;
+  margin: -1.3em;
 }
 
 .bubble:before, .triangle:before{
@@ -787,7 +831,17 @@ footer {
   z-index: 0;
 
   &:hover {
-    @include scale(1.2, 1.2);
+    @include scale(1.2);
+    z-index: 5;
+  }
+
+  a {
+    color: #000;
+    border-color: #000;
+  }
+
+  a:hover {
+    background-color: transparent;
   }
 }
 
@@ -810,7 +864,6 @@ footer {
 
     &:hover {
     @include single-box-shadow(rgba(255, 255, 255, 0.5), 0, 0, 0em, 1em);
-    z-index: 5;
   }
 }
 
@@ -846,6 +899,10 @@ $string-length: 1;
     width: sqrt($string-length) * 1.75em;
     @include breakpoint(mama-bear) { 
       font-size: 75%;
+    }
+    @include breakpoint(tiny-bear) { 
+      font-size: 60%;
+      width: sqrt($string-length) * 1.5em;
     }
   }
   $string-length: $string-length + 1;
