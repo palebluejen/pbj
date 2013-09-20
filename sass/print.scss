@@ -1,3 +1,142 @@
-/* Welcome to Compass. Use this file to define print styles.
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3/font-face";
+@import "base";
+
+
+@page {
+margin: 2cm;
+border: black 2px solid;
+}
+
+body {
+  font: 14px/18px 'Open Sans', sans-serif;
+  color: #000;
+ }
+
+.print-me {
+	display: inline;
+}
+
+header nav, footer {
+display: none;
+}
+
+a {
+color: #000;
+font-weight: bold;
+}
+
+p a[href^="http://"]:after {
+content: " (" attr(href) ")";
+font-size: 90%;
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 80%;
+}
+
+p a:after {
+content: " (" attr(href) ")";
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 80%;
+}
+
+p a[href^="#"]:after {
+display: none;
+}
+
+p a {
+word-wrap: break-word;
+}
+
+// a, a:visited { text-decoration: underline; }
+//   a[href]:after { content: " (" attr(href) ")"; }
+//   abbr[title]:after { content: " (" attr(title) ")"; }
+//   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+
+br {
+	display: none;
+}
+
+.impossible {
+	display: none;
+}
+
+h1 {
+	width: 100%;
+	margin: 0 auto 1em;
+	text-align: center;
+}
+
+.logo a {
+  display: none;
+}
+
+.pbj-home {
+	display: none;
+}
+
+h2, h3 {
+  width: 50%;
+  max-width: 20em;
+  margin: 0 auto 2em;
+  padding: 0.5em 2em;
+  font: 14px/18px 'Novecento', 'Open Sans', sans-serif;
+  letter-spacing: 0.1em;
+  border: solid #000 .2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+#about, #core-values, #work, #resume, #contact {
+	page-break-before: always;
+}
+
+.pbj-about {
+	text-align: center;
+}
+
+.column-container {
+  width: 100%;
+  overflow: auto;
+ }
+
+.column{
+  float: left;
+  width: 28%;
+  margin: 1em;
+
+  ul, li {
+  	margin: 0 0 0 0.5em;
+  	padding: 0;
+  }
+ }
+
+.bubble-content{
+  font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+
+  em {
+    font-size: 0.8em;
+    font-family: Georgia, sans-serif;
+ 	font-weight: normal;
+  	font-style: italic;
+  }
+}
+
+figure {
+  float: left;
+  width: 45%;
+  margin: 1em;
+}
+
+img {
+	max-width: 280px;
+}
+

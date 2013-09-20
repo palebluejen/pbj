@@ -55,7 +55,7 @@ body {
   color: $main-text-color;
   border-left: 4em solid $frame-color;
   border-right: 4em solid $frame-color;
-  background:  image-url('backup-bg.jpg') top center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
+  background:  image-url('backup-bg.jpg') bottom center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
   background-color: $page-bg-color; // Old browsers
   @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#04061b 96%,#22234f 100%));  
   @include breakpoint(baby-bear) {
@@ -333,7 +333,6 @@ header {
       width: 1.5em;
       height: 1.8em;
       margin: 0.3em;
-      // border-radius: 100%;
       border: none;
   }
 
@@ -443,7 +442,6 @@ header {
 
 .blend-1, .blend-2 {
   width: 100%;
-  // max-width: 56.3em;
   min-height: 18em;
   background-position: top center;
   background-repeat: no-repeat;
@@ -547,7 +545,6 @@ header {
 
 .pbj-about {
   position: relative;
-  // @include img-svg('pbj-about');
   background: image-url('pbj-about.png') no-repeat;
   @include background-size(100% auto);
   max-width: 50em;
@@ -638,12 +635,47 @@ header {
   width: 37px;
 }
 
+html.svg .impossible, html.no-svg .impossible  {
+  @include background-size(40%);
+  background-position: center;
+}
+
+.impossible-1 {
+  @include img-svg('impossible-1');
+}
+
+.impossible-2 {
+  @include img-svg('impossible-2');
+}
+
+.impossible-3 {
+  @include img-svg('impossible-3');
+}
+
+.impossible-4 {
+  @include img-svg('impossible-4');
+}
+
+.impossible-5 {
+  @include img-svg('impossible-5');
+}
+
+.impossible-6 {
+  @include img-svg('impossible-6');
+}
+
+.impossible-7 {
+  @include img-svg('impossible-7');
+}
+
+.impossible-8 {
+  @include img-svg('impossible-8');
+}
 
 // Work -----------------------------------------------------------------------
 
 figure {
   float: left;
-  // text-align: center;
   max-width: 350px;
   width: 27.3333%;
   min-width: 15em;
@@ -662,7 +694,6 @@ figure {
     width: calc(100% - 1em);
     border: solid 0.5em $main-bg-color;
     background: $main-bg-color;
-    // @include transition(all .3s ease-in);
     @include transition(box-shadow .2s ease-in);
 
     &:hover {
@@ -747,7 +778,6 @@ footer {
 .tom-servo, .joel-robinson, .crow-t-robot {
   position: relative;
   display: inline-block;
-  // float: right;
   border-radius: 8em;
   background: #FFF;
   color: #000;
@@ -827,7 +857,7 @@ footer {
 }
 
 .triangle-list {
-  @include img-svg('polygon-mesh-4');
+  @include img-svg('polygon-mesh');
   @include background-size(contain);
   background-position: center ;
   padding: 10%;
@@ -899,7 +929,7 @@ footer {
   @include transition(box-shadow .1s ease-in);
 
   html.no-borderradius & {
-    /* thought about doing a resizable svg circle graphic as the bg here, but browsers without border-radius also do not have svg, instead squares */
+    /* thought about doing a re-sizable svg circle graphic as the bg here, but browsers without border-radius also do not have svg, instead squares */
     border: solid 0.5em black;
     padding: 10%;
   }
