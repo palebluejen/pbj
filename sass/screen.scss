@@ -119,58 +119,6 @@ h2, h3 {
   }
 }
 
-.title-block{
-  font: 9em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $heading-text-color;
-  text-transform: uppercase;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  letter-spacing: 0.3em;
-  margin: 1.5em auto;
-  @include animate(bounceIn, 1s, 3s);
-
-  @include breakpoint(mama-bear) { 
-    font-size: .5em;
-    letter-spacing: 0.5em;
-    font-size: 5em;
-    margin-top: 2.5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    font-size: .3em;
-    letter-spacing: 0.5em;
-    font-size: 3em;
-    margin-top: 3em;
-  }
-}
-
-.super-title {
-  white-space: nowrap;
-  display: block;
-  position: relative;
-  padding: 0 0.5em;
-  border-bottom: solid 0.08em #FFFFFF;
-  margin: auto;
-  width: 4em;
-  text-shadow: .1em .1em 0 $main-text-color ;
-  filter: progid:DXImageTransform.Microsoft.DropShadow(offX=2,offY=2,color=000000);
-
-  &:last-child {
-    border: none;
-  }
-
-  @include breakpoint(mama-bear) { 
-    width: 5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    width: 5em;
-  }
-}
-
-
 .section-header {
   font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
   color: $heading-text-color;
@@ -691,7 +639,7 @@ figure {
   }
 
   img {
-    width: calc(100% - 1em);
+    width: 95%;
     border: solid 0.5em $main-bg-color;
     background: $main-bg-color;
     @include transition(box-shadow .2s ease-in);
@@ -799,7 +747,7 @@ footer {
 .tom-servo {
   padding: 2em 1.5em;
   max-width: 15em;
-  width: 40%;
+  width: 32%;
   width: calc(46% - 3em);
   margin: 5em 0 0 0;
   }
@@ -815,7 +763,7 @@ footer {
   padding: 2em 1.5em;
   max-width: 6.5em;
   min-width: 4em;
-  width: 25%;
+  width: 13%;
   width: calc(25% - 3em);
   font-weight: bold;
   }
@@ -830,7 +778,7 @@ footer {
 .crow-t-robot{
   padding: 2em 1em;
   min-width: 3em;
-  width: 15%;
+  width: 12%;
   width: calc(15% - 2em);
   margin: 0 0 1.5em 0;
   }
