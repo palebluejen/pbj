@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<!--[if gt IE 6]>  <html class="ie" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en">             <!--<![endif]-->
 <head>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta charset="utf-8">
     <title>Consider again, this pale, blue jen.</title>
 
+
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+
 
     <link rel="shortcut icon" href="favicon.ico">
 
@@ -312,11 +316,11 @@
         </p>
 
         <p>
-          In those early years nothing on the internet really worked yet. It was supposed to change the world, but no one really knew how. The browsers were warring, connection speeds were slow, and platforms were numerous and treacherous. In those strange days after the first bust, before the next boom, while Apple was just starting to regain it's foothold, most of the money for "design" came from advertisers, so I became experienced at designing flashy projects in war-time conditions, first at a boutique studio, and later as a contractor for big-time ad agencies. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to web ui/product design.
+          In those early years nothing on the internet really worked yet. It was supposed to change the world, but no one really knew how. The browsers were warring, connection speeds were slow, and platforms were numerous and treacherous. In those strange days after the first bust, before the next boom, while Apple was just starting to regain it's foothold, most of the money for "design" came from advertisers, so I became experienced at designing flashy projects in war-time conditions, first at a <a href="http://behaviordesign.com">boutique studio</a>, and later as a contractor for <a href="http://atmospherebbdo.com/">big-time ad agencies</a>. Shortly after the critical mass hit <em>(in my estimation somewhere around 2007 at the "early majority" stage of Facebook)</em> I transitioned totally from client work to in-house <a href="http://interactiveone.com/">web ui/product design</a>.
         </p>
 
         <p>
-          Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of TheLadders core product. In six months we built a brand-new application, and since I was involved from very beginning, and my awesome team was eager to experiment, we test-drove a number of new approaches including responsive design, an atomic-style organization of components with a sass pattern library, and a new workflow I designed for collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
+          Skipping ahead a few years to today, we're in the age of "mobile" and the browsers, platforms, and connection speeds to support have multiplied! It all turned out to be good practice for my latest (and greatest) project: a complete re-design of <a href="http://www.theladders.com/">TheLadders</a> core product. In six months we built a <a href="http://work.palebluejen.com/167677/1838168/work/theladders-responsive-reboot">brand-new application</a>, and since I was involved from very beginning, and my awesome team was eager to experiment, we test-drove a number of new approaches including responsive design, an <a href="http://www.slideshare.net/jgergen/better-faster-uxier-atomic-design">atomic-style organization of components</a> with a sass pattern library, and a new workflow I designed for collaborating on design and copy assets in version control. Along the way there were some <a href="http://newyork.cbslocal.com/video/8160491-those-cute-animal-pictures-could-change-your-life/">lulz and cats</a>.
         </p>
 
         <p>
@@ -421,7 +425,7 @@
       for (var i = 0, len =values.length; i < len; i++) {
       var value = values[i];
       var size = text(value); // assuming theres just simple text in there
-      value.classList.add("size-" + size.length); // use the shim on this page for ie9 https://developer.mozilla.org/en-US/docs/Web/API/element.classList
+      value.className +=" size-" + size.length; // use the shim on this page for ie9 https://developer.mozilla.org/en-US/docs/Web/API/element.classList
       }
     </script>
 

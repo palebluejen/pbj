@@ -1,5 +1,20 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+@import "compass/css3/font-face";
+@import "compass/css3/transition";
+@import "base";
+
+.roll-link {
+
+  a {
+    @include unpink;
+    display: block;
+    position: relative;
+    padding: 0 0.5em;
+    @include transition(all 400ms ease);
+  }
+
+  a:hover{
+    padding: 0 0.5em;
+    color: $main-text-color;
+    background: $main-bg-color;
+  }
+}

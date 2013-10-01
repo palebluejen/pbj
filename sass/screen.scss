@@ -58,6 +58,8 @@ body {
   background:  image-url('backup-bg.jpg') bottom center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
   background-color: $page-bg-color; // Old browsers
   @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#04061b 96%,#22234f 100%));  
+  padding-bottom: 4em;
+
   @include breakpoint(baby-bear) {
     border-left: none;
     border-right: none; 
@@ -73,6 +75,7 @@ body:after {
   right: 0;
   height: 4em;
   bottom: 0;
+  border-top: 1px solid $frame-color;
 
   @include breakpoint(baby-bear) {
     height: 0;
@@ -80,8 +83,7 @@ body:after {
 }
 
 .site-wrapper {
-  margin: 4em auto;
-  // border: 1px solid $frame-color;
+  margin: 4em auto 0;
   background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
   
   @include breakpoint(papa-bear) { 
@@ -315,6 +317,7 @@ header {
   }
 }
 
+
 .roll-link {
   display: inline-block;
   overflow: hidden;
@@ -360,7 +363,72 @@ header {
     // @include translate3d(0px, 105%, 0px);
     // @include rotateX(-90deg);
     // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
+  }
+
+}
+
+.ie .roll-link { /* hack to target IE 8 and lower */
+  display: inline-block;
+  @include perspective(none);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  a {
+    @include unpink;
+    color: $nav-color;
+    display: block;
+    position: relative;
+    padding: 0 0.5em;
+    @include transition(all 400ms ease);
+  }
+
+  a:hover {
+    padding: 0 0.5em;
+    color: $main-text-color;
+    background: $main-bg-color;
+    @include transform(none);
+  }
+
+  a:after {
+    content: "";
+    display: none;
+    @include transform(none);
+  }
+}
+
+@media screen and (min-width:0\0) { /* hack to target IE 9 and IE 10 */
+  
+  .roll-link {
+    display: inline-block;
+    @include perspective(none);
+
+    &:hover {
+      text-decoration: none;
     }
+
+    a {
+      @include unpink;
+      display: block;
+      position: relative;
+      padding: 0 0.5em;
+      @include transition(all 400ms ease);
+    }
+
+    a:hover {
+      padding: 0 0.5em;
+      color: $main-text-color;
+      background: $main-bg-color;
+      @include transform(none);
+    }
+
+    a:after {
+      content: "";
+      display: none;
+      @include transform(none);
+    }
+  }
 }
 
 
@@ -827,6 +895,11 @@ footer {
     min-width: 8em;
     vertical-align: middle;
   }
+
+  &:hover {
+    z-index: 10;
+  }
+
 }
 
 .bubble {
