@@ -55,9 +55,10 @@ body {
   color: $main-text-color;
   border-left: 4em solid $frame-color;
   border-right: 4em solid $frame-color;
-  background:  image-url('backup-bg.jpg') bottom center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
+  //background:  image-url('backup-bg.jpg') bottom center repeat-x; // Backup image for IE (doesn't load if gradient is supported, filter is no good because it's not multi-stop)
   background-color: $page-bg-color; // Old browsers
-  @include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#04061b 96%,#22234f 100%));  
+  //@include background-image(linear-gradient(top, #000000 0%,#000106 4%,#03030f 7%,#04061b 12%,#06061e 17%,#09071d 20%,#0c0a20 23%,#131126 26%,#161429 29%,#20182d 32%,#22192c 35%,#2c1b2b 38%,#3a2029 41%,#3a232d 44%,#482b2d 47%,#4c302f 50%,#5b3f3c 53%,#674a44 56%,#7a5a4d 59%,#846755 62%,#9f8576 65%,#bbab9b 68%,#c6b599 71%,#b28f71 74%,#a47959 77%,#804729 80%,#642110 83%,#5d1910 86%,#51150d 89%,#40110b 92%,#04061b 96%,#22234f 100%));  
+  @include background-image(linear-gradient(top, #000000 0%,#04061b 95%,#22234f 98.5%, #000000 100%));  
   padding-bottom: 4em;
 
   @include breakpoint(baby-bear) {
@@ -205,35 +206,294 @@ header {
   }
 }
 
+// .logo {
+//   @include img-svg(pbj-site-logo);
+//   @include animate(fadeInDown, 1s, 0s);
+//   width: 100px;
+//   height: 30px;
+//   position: absolute;
+//   top: 2em;
+//   left: 4em;
+
+//   a {
+//     @include unpink;
+//     width: 100px;
+//     height: 30px;
+//     display: block;
+//     text-indent: -9999em;   
+//     z-index: 100;
+//     background-position: 0 4em;
+    
+
+//     &:hover {
+//       @include img-svg(pbj-site-logo-arrows);
+//       @include single-transition(background-position, 0.5s, ease)
+//     }
+//   }
+
+//   @include breakpoint(baby-bear) { 
+//     display: none;
+//   }
+// }
+
 .logo {
-  @include img-svg(pbj-site-logo);
-  @include animate(fadeInDown, 1s, 0s);
+  -webkit-animation: fadeInDown 1s 0s ease both;
+  -moz-animation: fadeInDown 1s 0s ease both;
+  -ms-animation: fadeInDown 1s 0s ease both;
+  -o-animation: fadeInDown 1s 0s ease both;
+  animation: fadeInDown 1s 0s ease both;
   width: 100px;
   height: 30px;
   position: absolute;
   top: 2em;
   left: 4em;
+}
 
-  a {
-    @include unpink;
-    width: 100px;
-    height: 30px;
-    display: block;
-    text-indent: -9999em;   
-    z-index: 100;
-    background-position: 0 4em;
-    
+html.svg .logo {
+  background-image: url("../images/pbj-site-logo.svg?1375622054");
+  background-repeat: no-repeat;
+}
 
-    &:hover {
-      @include img-svg(pbj-site-logo-arrows);
-      @include single-transition(background-position, 0.5s, ease)
-    }
-  }
+html.no-svg .logo {
+  background-image: url("../images/fallbacks/pbj-site-logo.png?1375622043");
+  background-repeat: no-repeat;
+}
 
-  @include breakpoint(baby-bear) { 
+.logo a {
+  background: none;
+  border: none;
+  color: inherit;
+  width: 100px;
+  height: 30px;
+  display: block;
+  text-indent: -9999em;
+  z-index: 100;
+  background-position: 0 4em;
+}
+
+.logo a:hover {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.logo a:hover {
+  -webkit-transition: background-position 0.5s ease;
+  -moz-transition: background-position 0.5s ease;
+  -o-transition: background-position 0.5s ease;
+  transition: background-position 0.5s ease;
+}
+
+html.svg .logo a:hover {
+  background-image: url("../images/pbj-site-logo-arrows.svg?1378890603");
+  background-repeat: no-repeat;
+}
+
+html.no-svg .logo a:hover {
+  background-image: url("../images/fallbacks/pbj-site-logo-arrows.png?1378890679");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 650px) {
+  .logo {
     display: none;
   }
 }
+
+// .main-nav {
+//   position: absolute;
+//   top: 2em;
+//   right: 4em;
+//   display: block;
+//   font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+//   @include animate(fadeInDown, 0.5s, 0s);
+
+//   @include breakpoint(baby-bear) { 
+//     top: 0;
+//     right: 0;
+//   }
+
+//   span {
+//     display: inline-block;
+    
+//     @include breakpoint(mama-bear) { 
+//       margin: 0;
+//       padding: 0;
+//     }
+//   }
+
+//   span a {
+//     color: $nav-color;
+//     font-weight: bold;
+//     text-decoration: none;
+//   }
+// }
+
+// .menu-controls a{
+//   display: none;
+// }
+  
+
+// @include breakpoint(baby-bear){  
+//   .menu-controls a {
+//       position: fixed;
+//       display: block;
+//       @include img-svg('menu-white');
+//       background-position: center ;
+//       background-color: $frame-color;
+//       text-align: center;
+//       text-decoration: none;
+//       transition: all 0.3s ease;
+//       width: 1.5em;
+//       height: 1.8em;
+//       margin: 0.3em;
+//       border: none;
+//   }
+
+//   .main-nav {
+//     display: none;
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     padding: 1em 0;
+//     background: black;
+//     text-align: center;
+//     transition: height 0.3s ease;
+    
+//     a {
+//       display: inline-block;
+//       color: white;
+//       font-size: 0.8em;
+//       margin: 0;
+//     }
+//   }
+
+//   #main-nav:target {
+//     display: block;
+
+//     .close-menu {
+//       display: inline-block;
+//     }
+//   }
+  
+//   #main-nav:target + .menu-controls {
+//        display: none; 
+//   }
+// }
+
+
+// .roll-link {
+//   display: inline-block;
+//   overflow: hidden;
+//   vertical-align: top;
+//   @include perspective(600px);
+//   @include perspective-origin(50% 50%);
+
+//   &:hover {
+//     text-decoration: none;
+//   }
+
+//   a {
+//     @include unpink;
+//     display: block;
+//     position: relative;
+//     padding: 0 0.5em;
+//     @include transition(all 400ms ease);
+//     @include transform-origin(50%, 0%);
+//     @include transform-style(preserve-3d);
+//   }
+
+//   a:hover{
+//     background: $main-bg-color;
+//     @include translate3d(0, 0, -30px);
+//     @include rotateX(90deg);
+//   }
+
+//   a:after{
+//     content: attr(title);
+//     display: block;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     padding: 0 0.5em;
+//     color: $main-text-color;
+//     background: $main-bg-color;
+//     @include transform-origin(50%, 0%);
+//     -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+//     -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+//     -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+//     transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+//     // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
+//     // @include translate3d(0px, 105%, 0px);
+//     // @include rotateX(-90deg);
+//     // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
+//   }
+
+// }
+
+// .ie .roll-link { /* hack to target IE 8 and lower */
+//   display: inline-block;
+//   @include perspective(none);
+
+//   &:hover {
+//     text-decoration: none;
+//   }
+
+//   a {
+//     @include unpink;
+//     color: $nav-color;
+//     display: block;
+//     position: relative;
+//     padding: 0 0.5em;
+//     @include transition(all 400ms ease);
+//   }
+
+//   a:hover {
+//     padding: 0 0.5em;
+//     color: $main-text-color;
+//     background: $main-bg-color;
+//     @include transform(none);
+//   }
+
+//   a:after {
+//     content: "";
+//     display: none;
+//     @include transform(none);
+//   }
+// }
+
+// @media screen and (min-width:0\0) { /* hack to target IE 9 and IE 10 */
+  
+//   .roll-link {
+//     display: inline-block;
+//     @include perspective(none);
+
+//     &:hover {
+//       text-decoration: none;
+//     }
+
+//     a {
+//       @include unpink;
+//       display: block;
+//       position: relative;
+//       padding: 0 0.5em;
+//       @include transition(all 400ms ease);
+//     }
+
+//     a:hover {
+//       padding: 0 0.5em;
+//       color: $main-text-color;
+//       background: $main-bg-color;
+//       @include transform(none);
+//     }
+
+//     a:after {
+//       content: "";
+//       display: none;
+//       @include transform(none);
+//     }
+//   }
+// }
 
 
 .main-nav {
@@ -242,50 +502,63 @@ header {
   right: 4em;
   display: block;
   font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
-  @include animate(fadeInDown, 0.5s, 0s);
+  -webkit-animation: fadeInDown 0.5s 0s ease both;
+  -moz-animation: fadeInDown 0.5s 0s ease both;
+  -ms-animation: fadeInDown 0.5s 0s ease both;
+  -o-animation: fadeInDown 0.5s 0s ease both;
+  animation: fadeInDown 0.5s 0s ease both;
+}
 
-  @include breakpoint(baby-bear) { 
+@media (max-width: 650px) {
+  .main-nav {
     top: 0;
     right: 0;
   }
+}
 
-  span {
-    display: inline-block;
-    
-    @include breakpoint(mama-bear) { 
-      margin: 0;
-      padding: 0;
-    }
-  }
+.main-nav span {
+  display: inline-block;
+}
 
-  span a {
-    color: $nav-color;
-    font-weight: bold;
-    text-decoration: none;
+@media (max-width: 800px) {
+  .main-nav span {
+    margin: 0;
+    padding: 0;
   }
 }
 
-.menu-controls a{
+.main-nav span a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-controls a {
   display: none;
 }
-  
 
-@include breakpoint(baby-bear){  
+@media (max-width: 650px) {
   .menu-controls a {
-      position: fixed;
-      display: block;
-      @include img-svg('menu-white');
-      background-position: center ;
-      background-color: $frame-color;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      width: 1.5em;
-      height: 1.8em;
-      margin: 0.3em;
-      border: none;
+    position: fixed;
+    display: block;
+    background-position: center;
+    background-color: #000;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 1.5em;
+    height: 1.8em;
+    margin: 0.3em;
+    border: none;
   }
-
+  html.svg .menu-controls a {
+    background-image: url("../images/menu-white.svg?1359749387");
+    background-repeat: no-repeat;
+  }
+  html.no-svg .menu-controls a {
+    background-image: url("../images/fallbacks/menu-white.png?1359749387");
+    background-repeat: no-repeat;
+  }
   .main-nav {
     display: none;
     position: fixed;
@@ -295,142 +568,210 @@ header {
     background: black;
     text-align: center;
     transition: height 0.3s ease;
-    
-    a {
-      display: inline-block;
-      color: white;
-      font-size: 0.8em;
-      margin: 0;
-    }
   }
-
+  .main-nav a {
+    display: inline-block;
+    color: white;
+    font-size: 0.8em;
+    margin: 0;
+  }
   #main-nav:target {
     display: block;
-
-    .close-menu {
-      display: inline-block;
-    }
   }
-  
+  #main-nav:target .close-menu {
+    display: inline-block;
+  }
   #main-nav:target + .menu-controls {
-       display: none; 
+    display: none;
   }
 }
-
 
 .roll-link {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  @include perspective(600px);
-  @include perspective-origin(50% 50%);
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  a {
-    @include unpink;
-    display: block;
-    position: relative;
-    padding: 0 0.5em;
-    @include transition(all 400ms ease);
-    @include transform-origin(50%, 0%);
-    @include transform-style(preserve-3d);
-  }
-
-  a:hover{
-    background: $main-bg-color;
-    @include translate3d(0, 0, -30px);
-    @include rotateX(90deg);
-  }
-
-  a:after{
-    content: attr(title);
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 0.5em;
-    color: $main-text-color;
-    background: $main-bg-color;
-    @include transform-origin(50%, 0%);
-    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-    // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
-    // @include translate3d(0px, 105%, 0px);
-    // @include rotateX(-90deg);
-    // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
-  }
-
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  -ms-perspective: 600px;
+  -o-perspective: 600px;
+  perspective: 600px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
 }
 
-.ie .roll-link { /* hack to target IE 8 and lower */
+.roll-link:hover {
+  text-decoration: none;
+}
+
+.roll-link a {
+  background: none;
+  border: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  padding: 0 0.5em;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.roll-link a:hover {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.roll-link a:hover {
+  background: #fff;
+  -webkit-transform: translate3d(0, 0, -30px);
+  -moz-transform: translate3d(0, 0, -30px);
+  -ms-transform: translate3d(0, 0, -30px);
+  -o-transform: translate3d(0, 0, -30px);
+  transform: translate3d(0, 0, -30px);
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+
+.roll-link a:after {
+  content: attr(title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 0.5em;
+  color: #000;
+  background: #fff;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -moz-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  -ms-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+}
+
+.ie .roll-link {
   display: inline-block;
-  @include perspective(none);
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  a {
-    @include unpink;
-    color: $nav-color;
-    display: block;
-    position: relative;
-    padding: 0 0.5em;
-    @include transition(all 400ms ease);
-  }
-
-  a:hover {
-    padding: 0 0.5em;
-    color: $main-text-color;
-    background: $main-bg-color;
-    @include transform(none);
-  }
-
-  a:after {
-    content: "";
-    display: none;
-    @include transform(none);
-  }
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  -ms-perspective: none;
+  -o-perspective: none;
+  perspective: none;
 }
 
-@media screen and (min-width:0\0) { /* hack to target IE 9 and IE 10 */
-  
+.ie .roll-link:hover {
+  text-decoration: none;
+}
+
+.ie .roll-link a {
+  background: none;
+  border: none;
+  color: inherit;
+  color: #fff;
+  display: block;
+  position: relative;
+  padding: 0 0.5em;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.ie .roll-link a:hover {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.ie .roll-link a:hover {
+  padding: 0 0.5em;
+  color: #000;
+  background: #fff;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+.ie .roll-link a:after {
+  content: "";
+  display: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+@media screen and (min-width: 0 \0) {
   .roll-link {
     display: inline-block;
-    @include perspective(none);
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    a {
-      @include unpink;
-      display: block;
-      position: relative;
-      padding: 0 0.5em;
-      @include transition(all 400ms ease);
-    }
-
-    a:hover {
-      padding: 0 0.5em;
-      color: $main-text-color;
-      background: $main-bg-color;
-      @include transform(none);
-    }
-
-    a:after {
-      content: "";
-      display: none;
-      @include transform(none);
-    }
+    -webkit-perspective: none;
+    -moz-perspective: none;
+    -ms-perspective: none;
+    -o-perspective: none;
+    perspective: none;
+  }
+  .roll-link:hover {
+    text-decoration: none;
+  }
+  .roll-link a {
+    background: none;
+    border: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    padding: 0 0.5em;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+  }
+  .roll-link a:hover {
+    background: none;
+    border: none;
+    color: inherit;
+  }
+  .roll-link a:hover {
+    padding: 0 0.5em;
+    color: #000;
+    background: #fff;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .roll-link a:after {
+    content: "";
+    display: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
   }
 }
-
 
 // Belong -----------------------------------------------------------------------
 
@@ -735,6 +1076,108 @@ figure {
 
   @include breakpoint(tiny-bear) {
     width: 75%;
+  }
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+
+.case-study-container {
+  width: 80%;
+  max-width: 80em;
+  margin: auto auto 5em;
+  overflow: auto;
+  text-align: center;
+  // border: solid 1px red;
+
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 95%;
+    padding: 2.5%;
+  }
+
+  @include breakpoint(mama-bear) {
+    width: 98%;
+    padding: 1em 0;
+  }
+
+}
+
+figure.case-study {
+  float: right;
+  max-width: 100%;
+  width: 90%;
+  min-width: 15em;
+  margin: 2% 5% 2% 2%;
+  // border: solid 1px blue;
+  text-align: center;
+
+  a {
+    @include unpink;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    @include perspective(1000); // hack for smoothing out the blur on hover
+  }
+
+  img {
+    width: 95%;
+    border: solid 0.5em $main-bg-color;
+    background: $main-bg-color;
+    @include transition(box-shadow .2s ease-in);
+
+    &:hover {
+      @include scale(1.1);
+      @include single-box-shadow(rgba(0, 0, 0, 0.3), 0, 0, 0.5em, 0.5em);
+    }
+  }
+
+  @media screen and (min-width: 1000px) and (max-width: 1000px) {
+    width: 80%;
+    margin: 2%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 90%;
+  }
+
+  @include breakpoint(mama-bear) { 
+    float: none;
+    width: 90%;
+    margin: 2% auto;
+  }
+
+  @include breakpoint(tiny-bear) {
+    width: 90%;
+  }
+}
+
+.case-study-label {
+  position: absolute;
+  display: block;
+  max-width: 20em;
+  margin: 3em auto auto 3em;
+  padding: 1em 2em;
+  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  color: $heading-text-color;
+  // border: solid $heading-text-color .3em;
+  background: $heading-bg-color;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-align: center;
+  z-index: 100;
+  
+  @include breakpoint(mama-bear) {
+    width: 60%;
+    padding: 0.5em 1em;
   }
 }
 

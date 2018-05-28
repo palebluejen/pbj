@@ -1,1 +1,174 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);.print-me{display:none}@font-face{src:local("☺")}@font-face{font-family:"Novecento";src:url('../fonts/Novecentowide-Light-webfont.eot');src:url('../fonts/Novecentowide-Light-webfont.eot?#iefix') format('eot'),url('../fonts/Novecentowide-Light-webfont.ttf') format('truetype'), url('../fonts/Novecentowide-Light-webfont.woff') format('woff'), url('../fonts/Novecentowide-Light-webfont.otf') format('opentype');font-weight:normal;font-style:normal}@font-face{font-family:"Novecento";src:url('../fonts/Novecentowide-Bold-webfont.eot');src:url('../fonts/Novecentowide-Bold-webfont.eot?#iefix') format('eot'),url('../fonts/Novecentowide-Bold-webfont.ttf') format('truetype'), url('../fonts/Novecentowide-Bold-webfont.woff') format('woff'), url('../fonts/Novecentowide-Bold-webfont.otf') format('opentype');font-weight:bold;font-style:normal}@page{margin:2cm;border:black 2px solid}body{font:14px/18px 'Open Sans', sans-serif;color:#000}.print-me{display:inline}header nav,footer{display:none}a{color:#000;font-weight:bold}p a[href^="http://"]:after{content:" (" attr(href) ")";font-size:90%;font-family:Georgia, sans-serif;font-weight:normal;font-style:italic;font-size:80%}p a:after{content:" (" attr(href) ")";font-family:Georgia, sans-serif;font-weight:normal;font-style:italic;font-size:80%}p a[href^="#"]:after{display:none}p a{word-wrap:break-word}br{display:none}.impossible{display:none}h1{width:100%;margin:0 auto 1em;text-align:center}.logo a{display:none}.pbj-home{display:none}h2,h3{width:50%;max-width:20em;margin:0 auto 2em;padding:0.5em 2em;font:14px/18px 'Novecento', 'Open Sans', sans-serif;letter-spacing:0.1em;border:solid #000 .2em;text-transform:uppercase;text-align:center;font-weight:bold}#about,#core-values,#work,#resume,#contact{page-break-before:always}.pbj-about{text-align:center}.column-container{width:100%;overflow:auto}.column{float:left;width:28%;margin:1em}.column ul,.column li{margin:0 0 0 0.5em;padding:0}.bubble-content{font:1em/2em 'Novecento', 'Open Sans', sans-serif;font-weight:bold;padding:0;margin:0}.bubble-content em{font-size:0.8em;font-family:Georgia, sans-serif;font-weight:normal;font-style:italic}figure{float:left;width:45%;margin:1em}img{max-width:280px}
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+/* line 10, ../sass/_base.scss */
+.print-me {
+  display: none;
+}
+
+@font-face {
+  src: local("☺");
+}
+@font-face {
+  font-family: "Novecento";
+  src: url('../fonts/Novecentowide-Light-webfont.eot?1527377416');
+  src: url('../fonts/Novecentowide-Light-webfont.eot?&1527377416#iefix') format('embedded-opentype'), url('../fonts/Novecentowide-Light-webfont.ttf?1527377416') format('truetype'), url('../fonts/Novecentowide-Light-webfont.woff?1527377416') format('woff'), url('../fonts/Novecentowide-Light-webfont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Novecento";
+  src: url('../fonts/Novecentowide-Bold-webfont.eot?1527377416');
+  src: url('../fonts/Novecentowide-Bold-webfont.eot?&1527377416#iefix') format('embedded-opentype'), url('../fonts/Novecentowide-Bold-webfont.ttf?1527377416') format('truetype'), url('../fonts/Novecentowide-Bold-webfont.woff?1527377416') format('woff'), url('../fonts/Novecentowide-Bold-webfont.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@page {
+  margin: 2cm;
+  border: black 2px solid;
+}
+/* line 11, ../sass/print.scss */
+body {
+  font: 14px/18px 'Open Sans', sans-serif;
+  color: #000;
+}
+
+/* line 16, ../sass/print.scss */
+.print-me {
+  display: inline;
+}
+
+/* line 20, ../sass/print.scss */
+header nav, footer {
+  display: none;
+}
+
+/* line 24, ../sass/print.scss */
+a {
+  color: #000;
+  font-weight: bold;
+}
+
+/* line 29, ../sass/print.scss */
+p a[href^="http://"]:after {
+  content: " (" attr(href) ")";
+  font-size: 90%;
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 80%;
+}
+
+/* line 38, ../sass/print.scss */
+p a:after {
+  content: " (" attr(href) ")";
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 80%;
+}
+
+/* line 46, ../sass/print.scss */
+p a[href^="#"]:after {
+  display: none;
+}
+
+/* line 50, ../sass/print.scss */
+p a {
+  word-wrap: break-word;
+}
+
+/* line 60, ../sass/print.scss */
+br {
+  display: none;
+}
+
+/* line 64, ../sass/print.scss */
+.impossible {
+  display: none;
+}
+
+/* line 68, ../sass/print.scss */
+h1 {
+  width: 100%;
+  margin: 0 auto 1em;
+  text-align: center;
+}
+
+/* line 74, ../sass/print.scss */
+.logo a {
+  display: none;
+}
+
+/* line 78, ../sass/print.scss */
+.pbj-home {
+  display: none;
+}
+
+/* line 82, ../sass/print.scss */
+h2, h3 {
+  width: 50%;
+  max-width: 20em;
+  margin: 0 auto 2em;
+  padding: 0.5em 2em;
+  font: 14px/18px 'Novecento', 'Open Sans', sans-serif;
+  letter-spacing: 0.1em;
+  border: solid #000 .2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 95, ../sass/print.scss */
+#about, #core-values, #work, #resume, #contact {
+  page-break-before: always;
+}
+
+/* line 99, ../sass/print.scss */
+.pbj-about {
+  text-align: center;
+}
+
+/* line 103, ../sass/print.scss */
+.column-container {
+  width: 100%;
+  overflow: auto;
+}
+
+/* line 108, ../sass/print.scss */
+.column {
+  float: left;
+  width: 28%;
+  margin: 1em;
+}
+/* line 113, ../sass/print.scss */
+.column ul, .column li {
+  margin: 0 0 0 0.5em;
+  padding: 0;
+}
+
+/* line 119, ../sass/print.scss */
+.bubble-content {
+  font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+/* line 125, ../sass/print.scss */
+.bubble-content em {
+  font-size: 0.8em;
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 133, ../sass/print.scss */
+figure {
+  float: left;
+  width: 45%;
+  margin: 1em;
+}
+
+/* line 139, ../sass/print.scss */
+img {
+  max-width: 280px;
+}

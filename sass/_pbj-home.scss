@@ -1,6 +1,6 @@
 
 @import "base";
-@import "animate";
+// @import "animations";
 
 
 @mixin bgshifter($xpos, $ypos, $orig-w, $orig-h) {
@@ -42,32 +42,6 @@
   }
 }
 
-.title-block{
-  font: 9em 'Novecento', 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: $heading-text-color;
-  text-transform: uppercase;
-  text-align: center;
-  width: 90%;
-  position: absolute;
-  letter-spacing: 0.3em;
-  margin: 1.5em auto;
-  @include animate(bounceIn, 1s, 3s);
-
-  @include breakpoint(mama-bear) { 
-    font-size: .5em;
-    letter-spacing: 0.5em;
-    font-size: 5em;
-    margin-top: 2.5em;
-  }
-
-  @include breakpoint(baby-bear) { 
-    font-size: .3em;
-    letter-spacing: 0.5em;
-    font-size: 3em;
-    margin-top: 3em;
-  }
-}
 
 .super-title {
   white-space: nowrap;
@@ -94,92 +68,6 @@
 }
 
 
-.layer-12 { /* string blend */
-  @include img-svg (pbj-home-layer-12);
-  @include bgshifter (50%, 0em, 844px, 300px);
-  @include animate(fadeIn, 1s, 0s);
-}
-
-.layer-11 { /* petri dish */
-  background: image-url('pbj-home-layer-11.gif') no-repeat;
-  @include bgshifter (5%, 0em, 475px, 237px);
-  @include animate(fadeInDown, 1s, 1s);
-}
-
-.layer-10 { /* hypercube */
-  @include img-svg (pbj-home-layer-10);
-  @include bgshifter (18%, 32em, 320px, 320px);
-  @include animate(bounceInLeft, 2s, 3s);
-}
-
-.layer-9 { /* black triange + lightning */
-  background: image-url('pbj-home-layer-9.gif') no-repeat;
-  @include bgshifter (50%, 30em, 1200px, 418px);
-  @include animate(fadeInUp, 1s, 2s);
-}
-
-.layer-8 { /* wonder wheel */
-  background: image-url('pbj-home-layer-8.gif') no-repeat;
-  @include bgshifter (90%, 3em, 591px, 591px);
-  @include animate(bounceInRight, 2s, 3s);
-}
-
-.layer-7r { /*arc + microscope */
-  background: image-url('pbj-home-layer-7r.gif') no-repeat;
-  @include bgshifter (70%, 8em, 310px, 371px);
-  @include animate(fadeInDown, 1s, 3.5s);
-}
-
-.layer-7l { /* arc + triangle + gem + microbs */
-  background: image-url('pbj-home-layer-7l.gif') no-repeat;
-  @include bgshifter (12%, 12em, 472px, 445px);
-  @include animate(fadeInUp, 1s, 3s);
-}
-
-.layer-6 { /* small gem */
-  background: image-url('pbj-home-layer-6.gif') no-repeat;
-  @include bgshifter (75%, 50em, 46px, 38px);
-  @include animate(rotateInDownRight, .5s, 4s);
-}
-
-.layer-5 { /* impossible triangle */
-  background: image-url('pbj-home-layer-5.gif') no-repeat;
-  @include bgshifter (70%, 24em, 278px, 238px);
-  @include animate(fadeIn, 2s, 2s);
-}
-
-.layer-4 { /* squiggle */
-  background: image-url('pbj-home-layer-4.png') no-repeat;
-  @include bgshifter (10%, 40em, 666px, 22px);
-  @include animate(bounceInLeft, 3s, 0s);
-}
-
-/* Title text lives between these layers */
-
-.layer-3l { /* jellyfish + triangle */
-  background: image-url('pbj-home-layer-3l.gif') no-repeat;
-  @include bgshifter (5%, 25em, 381px, 472px);
-  @include animate(fadeInUp, 1s, 3s);
-}
-
-.layer-3r { /* jellyfish + shell */
-  background: image-url('pbj-home-layer-3r.gif') no-repeat;
-  @include bgshifter (85%, 1em, 156px, 191px);
-  @include animate(fadeInUp, 1s, 2s);
-}
-
-.layer-2 { /* bubbles */
-  background: image-url('pbj-home-layer-2.gif') no-repeat;
-  @include bgshifter (20%, 5em, 144px, 520px);
-  @include animate(bounceIn, 1s, 0s);
-}
-
-.layer-1 { /* liquid + shattered glass */
-  background: image-url('pbj-home-layer-1.gif') no-repeat;
-  @include bgshifter(70%, 5em, 761px, 1114px);
-  @include animate(fadeInDown, 3s, 3s);
-}
-
 .pbj-collage {
   overflow: hidden;
   position: absolute;
@@ -194,5 +82,892 @@
   }
   @include breakpoint(baby-bear) {
     display: none;
+  }
+}
+
+
+/// Animations //
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05);
+  }
+  70% {
+    -moz-transform: scale(0.9);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px);
+  }
+  80% {
+    -moz-transform: translateX(10px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px);
+  }
+  80% {
+    -moz-transform: translateX(-10px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -ms-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-transform: translateY(0);
+  }
+}
+
+@-ms-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -ms-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-transform: translateY(0);
+  }
+}
+
+@-ms-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -ms-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -ms-transform: scale(1.05);
+  }
+  70% {
+    -ms-transform: scale(0.9);
+  }
+  100% {
+    -ms-transform: scale(1);
+  }
+}
+
+@-ms-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -ms-transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -ms-transform: translateX(-30px);
+  }
+  80% {
+    -ms-transform: translateX(10px);
+  }
+  100% {
+    -ms-transform: translateX(0);
+  }
+}
+
+@-ms-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -ms-transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -ms-transform: translateX(30px);
+  }
+  80% {
+    -ms-transform: translateX(-10px);
+  }
+  100% {
+    -ms-transform: translateX(0);
+  }
+}
+
+@-ms-keyframes rotateInDownRight {
+  0% {
+    -ms-transform-origin: right bottom;
+    -ms-transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    -ms-transform-origin: right bottom;
+    -ms-transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+/// Animated things ///
+
+.title-block {
+  font: 9em 'Novecento', 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+  position: absolute;
+  letter-spacing: 0.3em;
+  margin: 1.5em auto;
+  -webkit-animation: bounceIn 1s 3s ease both;
+  -moz-animation: bounceIn 1s 3s ease both;
+  -ms-animation: bounceIn 1s 3s ease both;
+  -o-animation: bounceIn 1s 3s ease both;
+  animation: bounceIn 1s 3s ease both;
+}
+
+@media (max-width: 800px) {
+  .title-block {
+    font-size: .5em;
+    letter-spacing: 0.5em;
+    font-size: 5em;
+    margin-top: 2.5em;
+  }
+}
+
+@media (max-width: 650px) {
+  .title-block {
+    font-size: .3em;
+    letter-spacing: 0.5em;
+    font-size: 3em;
+    margin-top: 3em;
+  }
+}
+
+.layer-12 {
+  background-position: 50% 0em;
+  -webkit-animation: fadeIn 1s 0s ease both;
+  -moz-animation: fadeIn 1s 0s ease both;
+  -ms-animation: fadeIn 1s 0s ease both;
+  -o-animation: fadeIn 1s 0s ease both;
+  animation: fadeIn 1s 0s ease both;
+}
+
+html.svg .layer-12 {
+  background-image: url("../images/pbj-home-layer-12.svg?1376252507");
+  background-repeat: no-repeat;
+}
+
+html.no-svg .layer-12 {
+  background-image: url("../images/fallbacks/pbj-home-layer-12.png?1376252548");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 800px) {
+  .layer-12 {
+    background-position-x: 50%;
+    background-position-y: 0em;
+    -webkit-background-size: 590.8px,210px;
+    -moz-background-size: 590.8px,210px;
+    -o-background-size: 590.8px,210px;
+    background-size: 590.8px,210px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-12 {
+    background-position-x: 60%;
+    background-position-y: 0em;
+    -webkit-background-size: 379.8px,135px;
+    -moz-background-size: 379.8px,135px;
+    -o-background-size: 379.8px,135px;
+    background-size: 379.8px,135px;
+  }
+}
+
+.layer-11 {
+  background: url("../images/pbj-home-layer-11.gif?1376002385") no-repeat;
+  background-position: 5% 0em;
+  -webkit-animation: fadeInDown 1s 1s ease both;
+  -moz-animation: fadeInDown 1s 1s ease both;
+  -ms-animation: fadeInDown 1s 1s ease both;
+  -o-animation: fadeInDown 1s 1s ease both;
+  animation: fadeInDown 1s 1s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-11 {
+    background-position-x: 5%;
+    background-position-y: 0em;
+    -webkit-background-size: 332.5px,165.9px;
+    -moz-background-size: 332.5px,165.9px;
+    -o-background-size: 332.5px,165.9px;
+    background-size: 332.5px,165.9px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-11 {
+    background-position-x: 0%;
+    background-position-y: 0em;
+    -webkit-background-size: 213.75px,106.65px;
+    -moz-background-size: 213.75px,106.65px;
+    -o-background-size: 213.75px,106.65px;
+    background-size: 213.75px,106.65px;
+  }
+}
+
+.layer-10 {
+  background-position: 18% 32em;
+  -webkit-animation: bounceInLeft 2s 3s ease both;
+  -moz-animation: bounceInLeft 2s 3s ease both;
+  -ms-animation: bounceInLeft 2s 3s ease both;
+  -o-animation: bounceInLeft 2s 3s ease both;
+  animation: bounceInLeft 2s 3s ease both;
+}
+
+html.svg .layer-10 {
+  background-image: url("../images/pbj-home-layer-10.svg?1376252933");
+  background-repeat: no-repeat;
+}
+
+html.no-svg .layer-10 {
+  background-image: url("../images/fallbacks/pbj-home-layer-10.png?1376252756");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 800px) {
+  .layer-10 {
+    background-position-x: 18%;
+    background-position-y: 28.8em;
+    -webkit-background-size: 224px,224px;
+    -moz-background-size: 224px,224px;
+    -o-background-size: 224px,224px;
+    background-size: 224px,224px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-10 {
+    background-position-x: 13%;
+    background-position-y: 24em;
+    -webkit-background-size: 144px,144px;
+    -moz-background-size: 144px,144px;
+    -o-background-size: 144px,144px;
+    background-size: 144px,144px;
+  }
+}
+
+.layer-9 {
+  background: url("../images/pbj-home-layer-9.gif?1376002345") no-repeat;
+  background-position: 50% 30em;
+  -webkit-animation: fadeInUp 1s 2s ease both;
+  -moz-animation: fadeInUp 1s 2s ease both;
+  -ms-animation: fadeInUp 1s 2s ease both;
+  -o-animation: fadeInUp 1s 2s ease both;
+  animation: fadeInUp 1s 2s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-9 {
+    background-position-x: 50%;
+    background-position-y: 27em;
+    -webkit-background-size: 840px,292.6px;
+    -moz-background-size: 840px,292.6px;
+    -o-background-size: 840px,292.6px;
+    background-size: 840px,292.6px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-9 {
+    background-position-x: 60%;
+    background-position-y: 22.5em;
+    -webkit-background-size: 540px,188.1px;
+    -moz-background-size: 540px,188.1px;
+    -o-background-size: 540px,188.1px;
+    background-size: 540px,188.1px;
+  }
+}
+
+.layer-8 {
+  background: url("../images/pbj-home-layer-8.gif?1376004582") no-repeat;
+  background-position: 90% 3em;
+  -webkit-animation: bounceInRight 2s 3s ease both;
+  -moz-animation: bounceInRight 2s 3s ease both;
+  -ms-animation: bounceInRight 2s 3s ease both;
+  -o-animation: bounceInRight 2s 3s ease both;
+  animation: bounceInRight 2s 3s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-8 {
+    background-position-x: 90%;
+    background-position-y: 2.7em;
+    -webkit-background-size: 413.7px,413.7px;
+    -moz-background-size: 413.7px,413.7px;
+    -o-background-size: 413.7px,413.7px;
+    background-size: 413.7px,413.7px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-8 {
+    background-position-x: 100%;
+    background-position-y: 2.25em;
+    -webkit-background-size: 265.95px,265.95px;
+    -moz-background-size: 265.95px,265.95px;
+    -o-background-size: 265.95px,265.95px;
+    background-size: 265.95px,265.95px;
+  }
+}
+
+.layer-7r {
+  background: url("../images/pbj-home-layer-7r.gif?1375971410") no-repeat;
+  background-position: 70% 8em;
+  -webkit-animation: fadeInDown 1s 3.5s ease both;
+  -moz-animation: fadeInDown 1s 3.5s ease both;
+  -ms-animation: fadeInDown 1s 3.5s ease both;
+  -o-animation: fadeInDown 1s 3.5s ease both;
+  animation: fadeInDown 1s 3.5s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-7r {
+    background-position-x: 70%;
+    background-position-y: 7.2em;
+    -webkit-background-size: 217px,259.7px;
+    -moz-background-size: 217px,259.7px;
+    -o-background-size: 217px,259.7px;
+    background-size: 217px,259.7px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-7r {
+    background-position-x: 80%;
+    background-position-y: 6em;
+    -webkit-background-size: 139.5px,166.95px;
+    -moz-background-size: 139.5px,166.95px;
+    -o-background-size: 139.5px,166.95px;
+    background-size: 139.5px,166.95px;
+  }
+}
+
+.layer-7l {
+  background: url("../images/pbj-home-layer-7l.gif?1375971513") no-repeat;
+  background-position: 12% 12em;
+  -webkit-animation: fadeInUp 1s 3s ease both;
+  -moz-animation: fadeInUp 1s 3s ease both;
+  -ms-animation: fadeInUp 1s 3s ease both;
+  -o-animation: fadeInUp 1s 3s ease both;
+  animation: fadeInUp 1s 3s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-7l {
+    background-position-x: 12%;
+    background-position-y: 10.8em;
+    -webkit-background-size: 330.4px,311.5px;
+    -moz-background-size: 330.4px,311.5px;
+    -o-background-size: 330.4px,311.5px;
+    background-size: 330.4px,311.5px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-7l {
+    background-position-x: 7%;
+    background-position-y: 9em;
+    -webkit-background-size: 212.4px,200.25px;
+    -moz-background-size: 212.4px,200.25px;
+    -o-background-size: 212.4px,200.25px;
+    background-size: 212.4px,200.25px;
+  }
+}
+
+.layer-6 {
+  background: url("../images/pbj-home-layer-6.gif?1375971337") no-repeat;
+  background-position: 75% 50em;
+  -webkit-animation: rotateInDownRight 0.5s 4s ease both;
+  -moz-animation: rotateInDownRight 0.5s 4s ease both;
+  -ms-animation: rotateInDownRight 0.5s 4s ease both;
+  -o-animation: rotateInDownRight 0.5s 4s ease both;
+  animation: rotateInDownRight 0.5s 4s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-6 {
+    background-position-x: 75%;
+    background-position-y: 45em;
+    -webkit-background-size: 32.2px,26.6px;
+    -moz-background-size: 32.2px,26.6px;
+    -o-background-size: 32.2px,26.6px;
+    background-size: 32.2px,26.6px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-6 {
+    background-position-x: 85%;
+    background-position-y: 37.5em;
+    -webkit-background-size: 20.7px,17.1px;
+    -moz-background-size: 20.7px,17.1px;
+    -o-background-size: 20.7px,17.1px;
+    background-size: 20.7px,17.1px;
+  }
+}
+
+.layer-5 {
+  background: url("../images/pbj-home-layer-5.gif?1375971170") no-repeat;
+  background-position: 70% 24em;
+  -webkit-animation: fadeIn 2s 2s ease both;
+  -moz-animation: fadeIn 2s 2s ease both;
+  -ms-animation: fadeIn 2s 2s ease both;
+  -o-animation: fadeIn 2s 2s ease both;
+  animation: fadeIn 2s 2s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-5 {
+    background-position-x: 70%;
+    background-position-y: 21.6em;
+    -webkit-background-size: 194.6px,166.6px;
+    -moz-background-size: 194.6px,166.6px;
+    -o-background-size: 194.6px,166.6px;
+    background-size: 194.6px,166.6px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-5 {
+    background-position-x: 80%;
+    background-position-y: 18em;
+    -webkit-background-size: 125.1px,107.1px;
+    -moz-background-size: 125.1px,107.1px;
+    -o-background-size: 125.1px,107.1px;
+    background-size: 125.1px,107.1px;
+  }
+}
+
+.layer-4 {
+  background: url("../images/pbj-home-layer-4.png?1375971026") no-repeat;
+  background-position: 10% 40em;
+  -webkit-animation: bounceInLeft 3s 0s ease both;
+  -moz-animation: bounceInLeft 3s 0s ease both;
+  -ms-animation: bounceInLeft 3s 0s ease both;
+  -o-animation: bounceInLeft 3s 0s ease both;
+  animation: bounceInLeft 3s 0s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-4 {
+    background-position-x: 10%;
+    background-position-y: 36em;
+    -webkit-background-size: 466.2px,15.4px;
+    -moz-background-size: 466.2px,15.4px;
+    -o-background-size: 466.2px,15.4px;
+    background-size: 466.2px,15.4px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-4 {
+    background-position-x: 5%;
+    background-position-y: 30em;
+    -webkit-background-size: 299.7px,9.9px;
+    -moz-background-size: 299.7px,9.9px;
+    -o-background-size: 299.7px,9.9px;
+    background-size: 299.7px,9.9px;
+  }
+}
+
+.layer-3l {
+  background: url("../images/pbj-home-layer-3l.gif?1375970902") no-repeat;
+  background-position: 5% 25em;
+  -webkit-animation: fadeInUp 1s 3s ease both;
+  -moz-animation: fadeInUp 1s 3s ease both;
+  -ms-animation: fadeInUp 1s 3s ease both;
+  -o-animation: fadeInUp 1s 3s ease both;
+  animation: fadeInUp 1s 3s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-3l {
+    background-position-x: 5%;
+    background-position-y: 22.5em;
+    -webkit-background-size: 266.7px,330.4px;
+    -moz-background-size: 266.7px,330.4px;
+    -o-background-size: 266.7px,330.4px;
+    background-size: 266.7px,330.4px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-3l {
+    background-position-x: 0%;
+    background-position-y: 18.75em;
+    -webkit-background-size: 171.45px,212.4px;
+    -moz-background-size: 171.45px,212.4px;
+    -o-background-size: 171.45px,212.4px;
+    background-size: 171.45px,212.4px;
+  }
+}
+
+.layer-3r {
+  background: url("../images/pbj-home-layer-3r.gif?1375970861") no-repeat;
+  background-position: 85% 1em;
+  -webkit-animation: fadeInUp 1s 2s ease both;
+  -moz-animation: fadeInUp 1s 2s ease both;
+  -ms-animation: fadeInUp 1s 2s ease both;
+  -o-animation: fadeInUp 1s 2s ease both;
+  animation: fadeInUp 1s 2s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-3r {
+    background-position-x: 85%;
+    background-position-y: 0.9em;
+    -webkit-background-size: 109.2px,133.7px;
+    -moz-background-size: 109.2px,133.7px;
+    -o-background-size: 109.2px,133.7px;
+    background-size: 109.2px,133.7px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-3r {
+    background-position-x: 95%;
+    background-position-y: 0.75em;
+    -webkit-background-size: 70.2px,85.95px;
+    -moz-background-size: 70.2px,85.95px;
+    -o-background-size: 70.2px,85.95px;
+    background-size: 70.2px,85.95px;
+  }
+}
+
+.layer-2 {
+  background: url("../images/pbj-home-layer-2.gif?1375970755") no-repeat;
+  background-position: 20% 5em;
+  -webkit-animation: bounceIn 1s 0s ease both;
+  -moz-animation: bounceIn 1s 0s ease both;
+  -ms-animation: bounceIn 1s 0s ease both;
+  -o-animation: bounceIn 1s 0s ease both;
+  animation: bounceIn 1s 0s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-2 {
+    background-position-x: 20%;
+    background-position-y: 4.5em;
+    -webkit-background-size: 100.8px,364px;
+    -moz-background-size: 100.8px,364px;
+    -o-background-size: 100.8px,364px;
+    background-size: 100.8px,364px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-2 {
+    background-position-x: 15%;
+    background-position-y: 3.75em;
+    -webkit-background-size: 64.8px,234px;
+    -moz-background-size: 64.8px,234px;
+    -o-background-size: 64.8px,234px;
+    background-size: 64.8px,234px;
+  }
+}
+
+.layer-1 {
+  background: url("../images/pbj-home-layer-1.gif?1375970476") no-repeat;
+  background-position: 70% 5em;
+  -webkit-animation: fadeInDown 3s 3s ease both;
+  -moz-animation: fadeInDown 3s 3s ease both;
+  -ms-animation: fadeInDown 3s 3s ease both;
+  -o-animation: fadeInDown 3s 3s ease both;
+  animation: fadeInDown 3s 3s ease both;
+}
+
+@media (max-width: 800px) {
+  .layer-1 {
+    background-position-x: 70%;
+    background-position-y: 4.5em;
+    -webkit-background-size: 532.7px,779.8px;
+    -moz-background-size: 532.7px,779.8px;
+    -o-background-size: 532.7px,779.8px;
+    background-size: 532.7px,779.8px;
+  }
+}
+
+@media (max-width: 650px) {
+  .layer-1 {
+    background-position-x: 80%;
+    background-position-y: 3.75em;
+    -webkit-background-size: 342.45px,501.3px;
+    -moz-background-size: 342.45px,501.3px;
+    -o-background-size: 342.45px,501.3px;
+    background-size: 342.45px,501.3px;
   }
 }
