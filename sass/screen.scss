@@ -1112,10 +1112,10 @@ figure {
 
 figure.case-study {
   float: right;
-  max-width: 100%;
-  width: 90%;
+  max-width: 90%;
+  width: 75%;
   min-width: 15em;
-  margin: 2% 5% 2% 2%;
+  margin: 2% 13% 6% 2%;
   // border: solid 1px blue;
   text-align: center;
 
@@ -1135,7 +1135,7 @@ figure.case-study {
     @include transition(box-shadow .2s ease-in);
 
     &:hover {
-      @include scale(1.1);
+      @include scale(1.03);
       @include single-box-shadow(rgba(0, 0, 0, 0.3), 0, 0, 0.5em, 0.5em);
     }
   }
@@ -1147,6 +1147,7 @@ figure.case-study {
 
   @media screen and (min-width: 800px) and (max-width: 1000px) {
     width: 90%;
+    margin: 2%;
   }
 
   @include breakpoint(mama-bear) { 
@@ -1163,7 +1164,6 @@ figure.case-study {
 .case-study-label {
   position: absolute;
   display: block;
-  max-width: 20em;
   margin: 3em auto auto 3em;
   padding: 1em 2em;
   font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
@@ -1172,12 +1172,13 @@ figure.case-study {
   background: $heading-bg-color;
   letter-spacing: 0.1em;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   z-index: 100;
   
   @include breakpoint(mama-bear) {
-    width: 60%;
     padding: 0.5em 1em;
+    margin: 1.5em auto auto 1.5em;
+    max-width: 16em;
   }
 }
 
