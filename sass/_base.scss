@@ -17,7 +17,7 @@
  src: local('☺');
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600&display=swap');
 @include font-face("Novecento",font-files("Novecentowide-Light-webfont.ttf",ttf,"Novecentowide-Light-webfont.woff",woff,"Novecentowide-Light-webfont.otf",opentype),"Novecentowide-Light-webfont.eot",normal,normal);
 @include font-face("Novecento",font-files("Novecentowide-Bold-webfont.ttf",ttf,"Novecentowide-Bold-webfont.woff",woff,"Novecentowide-Bold-webfont.otf",opentype),"Novecentowide-Bold-webfont.eot",bold,normal);
 
@@ -32,8 +32,11 @@ $heading-text-color  : #FFFFFF;
 $heading-bg-color    : #000000;
 $special-text-color  : #000000;
 $special-bg-color    : #FFFAD2;
-$link-text-color     : #ff0000;
-$link-bg-color		   : #e1f2fb;
+$link-text-color     : #1B73E8;
+$link-bg-color		   : #1B73E8;
+$meetup-red          : #ED1B41;
+$tpt-green           : #00a96c;
+$ladders-blue        : #1D5685;
 
 // SVG Fallback -----------------------------------------------------------------------
 

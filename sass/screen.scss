@@ -19,15 +19,15 @@ p {
 }
 
 em {
-  font-family: Georgia, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: normal;
-  font-style: italic;
+  //font-style: italic;
   font-size: 80%;
   line-height: 1.4em;
 }
 
 span.amp {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
   }
@@ -36,7 +36,22 @@ span.amp {
 // Links -----------------------------------------------------------------------
 
 a {
+  color: $heading-text-color;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 0.2em;
+  border-bottom: solid 3px $link-text-color;
+
+  &:hover, a:focus {
+    color: white;
+    background: $link-text-color;
+    border-radius: 0.2em;
+  }
+}
+
+a.reverse-link {
   color: $link-text-color;
+  font-weight: 300;
   text-decoration: none;
   padding: 0 0.2em;
   border-bottom: dotted 1px $link-text-color;
@@ -48,10 +63,12 @@ a {
   }
 }
 
+
 // Layout -----------------------------------------------------------------------
 
 body {
-  font: 1em/1.6em 'Open Sans', sans-serif;
+  font: 1em/1.6em 'Work Sans', sans-serif;
+  font-weight: 300;
   color: $main-text-color;
   border-left: 4em solid $frame-color;
   border-right: 4em solid $frame-color;
@@ -63,7 +80,8 @@ body {
 
   @include breakpoint(baby-bear) {
     border-left: none;
-    border-right: none; 
+    border-right: none;
+    padding-bottom: 0;
   }
 }
 
@@ -84,7 +102,8 @@ body:after {
 }
 
 .site-wrapper {
-  margin: 4em auto 0;
+  margin: 0 auto;
+  //border: 1px solid red;
   background:  image-url('stars-01.gif') fixed center center repeat-y /*, image-url('space-19.gif') fixed center center no-repeat*/;
   
   @include breakpoint(papa-bear) { 
@@ -123,7 +142,7 @@ h2, h3 {
 }
 
 .section-header {
-  font: 1.4em/1.5em 'Novecento', 'Open Sans', sans-serif;
+  font: 1.4em/1.5em 'Novecento', 'Work Sans', sans-serif;
   color: $heading-text-color;
   border: solid $heading-text-color .3em;
   background: $heading-bg-color;
@@ -178,6 +197,9 @@ h2, h3 {
     font-size: 100%;
   }
 }
+.center-text {
+  text-align: center;
+}
 
 .my-own-ticket {
   font-size: 80%;
@@ -196,45 +218,16 @@ header {
   left: 0; 
   right: 0;
   top: 0;
-  // padding: 2em 4em 0em;
-  height: 6em;
+  padding: 2em 4em 0em;
+  height: 4em;
   z-index: 99;
+
 
   @include breakpoint(baby-bear) {
     padding: 0;
     height: 0;
   }
 }
-
-// .logo {
-//   @include img-svg(pbj-site-logo);
-//   @include animate(fadeInDown, 1s, 0s);
-//   width: 100px;
-//   height: 30px;
-//   position: absolute;
-//   top: 2em;
-//   left: 4em;
-
-//   a {
-//     @include unpink;
-//     width: 100px;
-//     height: 30px;
-//     display: block;
-//     text-indent: -9999em;   
-//     z-index: 100;
-//     background-position: 0 4em;
-    
-
-//     &:hover {
-//       @include img-svg(pbj-site-logo-arrows);
-//       @include single-transition(background-position, 0.5s, ease)
-//     }
-//   }
-
-//   @include breakpoint(baby-bear) { 
-//     display: none;
-//   }
-// }
 
 .logo {
   -webkit-animation: fadeInDown 1s 0s ease both;
@@ -300,208 +293,34 @@ html.no-svg .logo a:hover {
   }
 }
 
-// .main-nav {
-//   position: absolute;
-//   top: 2em;
-//   right: 4em;
-//   display: block;
-//   font: 1em/2em 'Novecento', 'Work Sans', sans-serif;
-//   @include animate(fadeInDown, 0.5s, 0s);
+.top-link a {
+  color: #fff;
+  text-decoration: none;
+  font: 1.4em/3em 'Novecento', 'Work Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 0 2em;
 
-//   @include breakpoint(baby-bear) { 
-//     top: 0;
-//     right: 0;
-//   }
+}
 
-//   span {
-//     display: inline-block;
-    
-//     @include breakpoint(mama-bear) { 
-//       margin: 0;
-//       padding: 0;
-//     }
-//   }
+@media (max-width: 650px) {
+  .top-link {
+  font-size: 1em;
+  }
+}
 
-//   span a {
-//     color: $nav-color;
-//     font-weight: bold;
-//     text-decoration: none;
-//   }
-// }
-
-// .menu-controls a{
-//   display: none;
-// }
-  
-
-// @include breakpoint(baby-bear){  
-//   .menu-controls a {
-//       position: fixed;
-//       display: block;
-//       @include img-svg('menu-white');
-//       background-position: center ;
-//       background-color: $frame-color;
-//       text-align: center;
-//       text-decoration: none;
-//       transition: all 0.3s ease;
-//       width: 1.5em;
-//       height: 1.8em;
-//       margin: 0.3em;
-//       border: none;
-//   }
-
-//   .main-nav {
-//     display: none;
-//     position: fixed;
-//     top: 0;
-//     width: 100%;
-//     padding: 1em 0;
-//     background: black;
-//     text-align: center;
-//     transition: height 0.3s ease;
-    
-//     a {
-//       display: inline-block;
-//       color: white;
-//       font-size: 0.8em;
-//       margin: 0;
-//     }
-//   }
-
-//   #main-nav:target {
-//     display: block;
-
-//     .close-menu {
-//       display: inline-block;
-//     }
-//   }
-  
-//   #main-nav:target + .menu-controls {
-//        display: none; 
-//   }
-// }
-
-
-// .roll-link {
-//   display: inline-block;
-//   overflow: hidden;
-//   vertical-align: top;
-//   @include perspective(600px);
-//   @include perspective-origin(50% 50%);
-
-//   &:hover {
-//     text-decoration: none;
-//   }
-
-//   a {
-//     @include unpink;
-//     display: block;
-//     position: relative;
-//     padding: 0 0.5em;
-//     @include transition(all 400ms ease);
-//     @include transform-origin(50%, 0%);
-//     @include transform-style(preserve-3d);
-//   }
-
-//   a:hover{
-//     background: $main-bg-color;
-//     @include translate3d(0, 0, -30px);
-//     @include rotateX(90deg);
-//   }
-
-//   a:after{
-//     content: attr(title);
-//     display: block;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     padding: 0 0.5em;
-//     color: $main-text-color;
-//     background: $main-bg-color;
-//     @include transform-origin(50%, 0%);
-//     -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-//     -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-//     -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-//     transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-//     // tried to use compass mixins for these transforms, but couldn't figure out the right stuff for "create-transform" and the others can't be used together
-//     // @include translate3d(0px, 105%, 0px);
-//     // @include rotateX(-90deg);
-//     // @include create-transform(false, false, false, false, -90deg, false, false, false, 0px, 105%, 0px, false, false, 50%, 0%);
-//   }
-
-// }
-
-// .ie .roll-link { /* hack to target IE 8 and lower */
-//   display: inline-block;
-//   @include perspective(none);
-
-//   &:hover {
-//     text-decoration: none;
-//   }
-
-//   a {
-//     @include unpink;
-//     color: $nav-color;
-//     display: block;
-//     position: relative;
-//     padding: 0 0.5em;
-//     @include transition(all 400ms ease);
-//   }
-
-//   a:hover {
-//     padding: 0 0.5em;
-//     color: $main-text-color;
-//     background: $main-bg-color;
-//     @include transform(none);
-//   }
-
-//   a:after {
-//     content: "";
-//     display: none;
-//     @include transform(none);
-//   }
-// }
-
-// @media screen and (min-width:0\0) { /* hack to target IE 9 and IE 10 */
-  
-//   .roll-link {
-//     display: inline-block;
-//     @include perspective(none);
-
-//     &:hover {
-//       text-decoration: none;
-//     }
-
-//     a {
-//       @include unpink;
-//       display: block;
-//       position: relative;
-//       padding: 0 0.5em;
-//       @include transition(all 400ms ease);
-//     }
-
-//     a:hover {
-//       padding: 0 0.5em;
-//       color: $main-text-color;
-//       background: $main-bg-color;
-//       @include transform(none);
-//     }
-
-//     a:after {
-//       content: "";
-//       display: none;
-//       @include transform(none);
-//     }
-//   }
-// }
-
+.main-nav span a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 .main-nav {
   position: absolute;
   top: 2em;
   right: 4em;
   display: block;
-  font: 1em/2em 'Novecento', 'Open Sans', sans-serif;
+  font: 1em/2em 'Novecento', 'Work Sans', sans-serif;
   -webkit-animation: fadeInDown 0.5s 0s ease both;
   -moz-animation: fadeInDown 0.5s 0s ease both;
   -ms-animation: fadeInDown 0.5s 0s ease both;
@@ -838,13 +657,163 @@ html.no-svg .logo a:hover {
   }
 }
 
+.intro-text {
+  font: 2em/1.5em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+  background: black;
+
+  @include breakpoint(mama-bear) {
+  font: 1.5em/1.5em 'Work Sans', sans-serif; 
+  font-weight: 300;
+  }
+}
+
+.intro-text-small {
+  font: 1.5em/2em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+  background: black;
+}
+
+.emoji {
+  height: 32px;
+  width: 32px;
+
+  @include breakpoint(mama-bear) {
+  height: 24px;
+  width: 24px;
+  }
+}
+
+a.meetup-red  {
+  font-weight: 600;
+  color: $heading-text-color;
+  border-bottom: 3px solid $meetup-red;
+  text-decoration: none;
+
+  &:hover, a:focus {
+    background: $meetup-red;
+  }
+}
+
+a.tpt-green {
+  font-weight: 600;
+  color: $heading-text-color;
+  border-bottom: 3px solid $tpt-green;
+  text-decoration: none;
+  
+  &:hover, a:focus {
+    background: $tpt-green;
+  }
+}
+
+a.ladders-blue {
+  font-weight: 600;
+  color: $heading-text-color;
+  border-bottom: 3px solid $ladders-blue;
+  text-decoration: none;
+
+  &:hover, a:focus {
+    background: $ladders-blue;
+  }
+}
+
+.invisible-box {
+  width: 75%;
+  // max-width: 45em;
+  margin: 2em auto;
+  // padding: 2em 3em;
+
+
+  @include breakpoint(mama-bear) { 
+    width: 75%;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    padding: 1em 1.8em;
+  }
+}
+
+.intro-text-special {
+  font: 2em/1.5em 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: $heading-text-color;
+  background: black;
+  padding: 0.3em;
+}
+
+.user-story-table {
+  margin: 1em auto;
+  //border: solid 1px red;
+  overflow: hidden;
+  width: 90%;
+}
+
+.us-table-cell-left {
+  margin: 2%;
+  vertical-align: top;
+  text-align: right;
+  width: 20%;
+  float:left;
+  //border: solid 1px blue;
+
+  @include breakpoint(mama-bear) {
+    float: none;
+    width: 90%;
+    font-size: 1em;
+    text-align: left;
+    margin: 1em 0;
+  }
+}
+
+.us-table-cell-right {
+  margin: 2%;
+  vertical-align: top;
+  width: 70%;
+  float: right;
+  //border: solid 1px green;
+
+  @include breakpoint(mama-bear) {
+    float: none;
+    width: 90%;
+    font-size: 1em;
+    margin: 1em 0;
+  }
+}
+
+.us-list {
+  // font: 2em/1.5em 'Work Sans', sans-serif;
+  // font-weight: 300;
+  // color: $heading-text-color;
+}
+
+.us-list-item {
+  padding: 0 0 2em 0;
+
+}
+
+.us-ad-lib {
+  font: 1.5em/2em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+  background: #221898;
+  border-radius: 10px;
+  padding: 0.5em;
+  //font-style: italic;
+}
+
+
+
+
 // Column Rules -----------------------------------------------------------------------
 
 .column-container {
   width: 80%;
   max-width: 80em;
-  margin: auto auto 5em;
-  overflow: hidden;
+  margin: 2em auto ;
+  min-height: 16em;
+  //border: 1px solid green;
+  //overflow: hidden;
 
   @media screen and (min-width: 1000px) and (max-width: 1200px) {
     width: 100%;
@@ -869,6 +838,8 @@ html.no-svg .logo a:hover {
   width: 27.3333%;
   min-width: 15em;
   margin: 2%;
+  //border: 1px solid red;
+
 
   @media screen and (min-width: 800px) and (max-width: 1000px) {
     float: none;
@@ -897,6 +868,134 @@ html.no-svg .logo a:hover {
   }
 }
 
+// Card Rules -----------------------------------------------------------------------
+
+
+.card-container {
+  width: 80%;
+  max-width: 45em;
+  margin: auto;
+  //background:pink;
+  //min-height: 16em;
+
+    &:hover {
+      @include scale(1.03);
+      // @include single-box-shadow(red, 0, 10px, 0px, 0px);
+    }
+
+}
+.card-container .card.flipped {
+    -webkit-transform: rotatey(-180deg);
+}
+.card-container .card {
+    width: 100%;
+    height: 100%;
+    min-height: 16em;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 1s;
+
+    @include breakpoint(mama-bear) {
+    min-height: 9em;
+    margin: 2em auto;
+    
+  }
+}
+.card-container .card .face {
+    width: 100%;
+    height: 100%;
+    padding: 0 2em;
+  margin: auto;
+    -webkit-backface-visibility: hidden;
+    z-index: 2;
+
+
+}
+.card-container .card .front {
+    position: absolute;
+    left: -2em;
+    z-index: 1;
+    background: #221898;
+    color: white;
+    border: solid 4px #221898;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-container .card .back {
+     position: absolute;
+  -webkit-transform: rotatey(-180deg);
+  left: -2em;
+    background: black;
+    border: solid 4px #221898;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.statement-text {
+  font: 1.5em/1.5em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+
+  @include breakpoint(mama-bear) {
+  font: 1.5em/1.5em 'Work Sans', sans-serif;
+  font-weight: 300;
+  }
+}
+
+// .bump-down {
+//   margin-top: 2.5em;
+
+//   @include breakpoint(mama-bear) {
+//     margin-top: 1.5em;
+//   }
+// }
+
+.truth-or-lie {
+  font: 1.3em/1.3em 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: $heading-text-color;
+
+  @include breakpoint(mama-bear) {
+  font: 1em/1.2em 'Work Sans', sans-serif;
+  font-weight: 600;
+  }
+}
+
+.extra-text {
+  font: 1.3em/1.5em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+
+  @include breakpoint(mama-bear) {
+  font: 1em/1.2em 'Work Sans', sans-serif;
+  font-weight: 300;
+  }
+}
+
+.emoji-small {
+  height: 18px;
+  width: 18px;
+  margin-top: 0.8em;
+
+  @include breakpoint(mama-bear) {
+  height: 15px;
+  width: 15px;
+  margin-top: 0.5em;
+  }
+}
+
+.emoji-big {
+  height: 48px;
+  width: 48px;
+  margin: 0.3em;
+
+  @include breakpoint(mama-bear) {
+  height: 24px;
+  width: 24px;
+  margin: 0;
+  }
+}
 
 // About -----------------------------------------------------------------------
 
@@ -1031,6 +1130,199 @@ html.svg .impossible, html.no-svg .impossible  {
 
 // Work -----------------------------------------------------------------------
 
+.work-container {
+  width: 90%;
+  //max-width: 80em;
+  margin: 8em auto 0;
+  overflow: hidden;
+  //border: solid 1px red;
+
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 90%;
+  }
+
+  @include breakpoint(mama-bear) {
+    width: 90%;
+    margin: 4em auto 0;
+    //padding: 1em 0;
+  }
+
+}
+
+.work-block {
+  //max-width: 650px;
+  //width: 46%;
+  min-width: 15em;
+  margin: 1.5%;
+  text-align: center;
+  //border: solid 1px blue;
+
+  @media (max-width: 1200px) {  
+    width: 100%;
+    margin: 1.5% auto;
+  }
+
+  @include breakpoint(mama-bear) { 
+    margin: 0.5%;
+  }
+
+  img {
+    max-width: 100%;
+    //border: solid 0.5em $main-bg-color;
+    border-radius: 10px;
+
+    @media (max-width: 1200px) {  
+      width: 100%;
+    }
+  }
+}
+
+.float-right {
+  float: right;
+  text-align: left;
+
+  @media (max-width: 1200px) {  
+      text-align: left;
+      float: none;
+    }
+}
+
+.float-left {
+  float: left;
+  text-align: right;
+
+    @media (max-width: 1200px) {  
+      float: none;
+    }
+}
+
+
+.fat-side {
+  width: 55%;
+
+  @media (max-width: 1200px) {  
+      width: 90%;
+      margin: auto;
+    }
+}
+
+.skinny-side {
+  width: 38%;
+
+    @media (max-width: 1200px) {  
+      width: 90%;
+      margin: auto;
+    }
+}
+
+.work-blurb {
+  width: 75%;
+  max-width: 35em;
+  //margin: 5em 0 0 0;
+  padding: 1em 3em;
+  background: black;
+  color: white;
+  text-align: left;
+  //border: 1px red solid;
+
+  @include breakpoint(mama-bear) { 
+    width: 90%;
+    padding: 1em 1.5em;
+  }
+}
+
+.work-blurb-subhead {
+  font: 1.8em/1em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+
+  @include breakpoint(mama-bear) { 
+    font: 1.5em/1.5em 'Work Sans', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.work-blurb-body {
+  font: 1.2em/1.8em 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: $heading-text-color;
+
+    @include breakpoint(mama-bear) { 
+    font: 1.1em/1.5em 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+  
+}
+
+.img-shrink-70 {
+  width: 70%;
+  height: 70%;
+}
+
+.push-down {
+  margin-top: 8em;
+
+  @media (max-width: 1200px) {
+    margin-top:0;
+  }
+}
+
+.pull-up {
+  margin-top: -20em;
+
+  @media (max-width: 1200px) {
+    margin-top:0;
+  }
+}
+
+.shove-right {
+  margin-left: 12%;
+
+  @media (max-width: 1200px) {
+    margin-left:0;
+  }
+}
+
+// .intro-text {
+//   font: 2em/1.5em 'Work Sans', sans-serif;
+//   font-weight: 300;
+//   color: $heading-text-color;
+//   background: black;
+
+//   @include breakpoint(mama-bear) {
+//   font: 1.5em/1.5em 'Work Sans', sans-serif; 
+//   font-weight: 300;
+//   }
+// }
+
+// Rotating gallery -----------------------------------------------------------------------
+
+.image-loop-container{
+  position: relative;
+  overflow: hidden;
+  min-height: 30em;
+
+  @include breakpoint(mama-bear) {
+    min-height: 18em;
+  }
+
+  img.loop-me {
+    position: absolute;
+    transition: opacity 1s ease-in;
+  }
+
+  img + img { opacity: 0; }
+
+}
+
+
+
+
+// OLD Work styles-----------------------------------------------------------------------
 figure {
   float: left;
   max-width: 350px;
@@ -1166,7 +1458,7 @@ figure.case-study {
   display: block;
   margin: 3em auto auto 3em;
   padding: 1em 2em;
-  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  font: 1em/1.2em 'Novecento', 'Work Sans', sans-serif;
   color: $heading-text-color;
   // border: solid $heading-text-color .3em;
   background: $heading-bg-color;
@@ -1191,14 +1483,11 @@ footer {
   background-position: right bottom;
   min-height: 200px;
   margin: 0;
-  padding-top: 25%;
+  padding-top: 20em;
 
   @include breakpoint(baby-bear) { 
-    padding-top: 35%;
-  }
-
-  @include breakpoint(tiny-bear) { 
-    padding-top: 55%;
+    padding-top: 20em;
+    border-bottom: 4em solid black; 
   }
 }
 
@@ -1367,7 +1656,7 @@ footer {
   bottom: 0;
   right: 0;
   margin: 0;
-  font: 1em/1.2em 'Novecento', 'Open Sans', sans-serif;
+  font: 1em/1.2em 'Novecento', 'Work Sans', sans-serif;
   font-weight: bold;
   color: $main-text-color;
   text-align: center;

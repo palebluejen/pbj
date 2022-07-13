@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600&display=swap");
 /* line 10, ../sass/_base.scss */
 .print-me {
   display: none;
@@ -35,7 +35,7 @@
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
 }
-/* line 76, ../sass/_base.scss */
+/* line 79, ../sass/_base.scss */
 .roll-link a:hover {
   background: none;
   border: none;
